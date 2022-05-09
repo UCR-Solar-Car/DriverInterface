@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPainter>
+#include <QString>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,11 +32,13 @@ private slots:
 
     void on_ResetMPH_clicked();
 
+    void renderOverheatWarning();
 private:
     Ui::MainWindow *ui;
-private:
     int number = 100;
     int mph = 0;
+    QPixmap warnOverheatBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnOverheatBattery_OFF; //Stores image of warning label when OFF and (x,y) where its placed
 };
 
 
