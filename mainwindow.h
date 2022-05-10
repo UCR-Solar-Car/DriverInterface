@@ -20,12 +20,15 @@ public:
 
 private slots:
 
-    void renderOverheatWarning();
+    void renderOverheatBatteryWarning();
+    void renderOverheatSolarWarning();
 
 private:
     Ui::MainWindow *ui;
     QPixmap warnOverheatBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
     QPixmap warnOverheatBattery_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    //QPixmap warnOverheatBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    //QPixmap warnOverheatBattery_OFF; //Stores image of warning label when OFF and (x,y) where its placed
 };
 
 
