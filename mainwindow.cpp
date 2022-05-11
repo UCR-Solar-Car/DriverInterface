@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     renderOverheatBatteryWarning();
-    renderOverheatWarning();
-    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_OFF);
+    renderOverheatSolarWarning();
+    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_ON);
 }
 
 MainWindow::~MainWindow()
@@ -23,29 +23,16 @@ void MainWindow::renderOverheatBatteryWarning()
     //  warnOverheatBattery_OFF
     int h = ui->warnLabelBatteryHeat->height();
     int w = ui->warnLabelBatteryHeat->width();
-    QColor warningRed = QColor(255,0,0);
     QColor softBlackBG = QColor(27,30,35);
     QColor batteryGreen = QColor(0,169,0);
-    QColor softGray = QColor(211,211,211);
-    QColor limeGreen = QColor(57,255,20);
+//    QColor softGray = QColor(211,211,211);
+//    QColor limeGreen = QColor(57,255,20);
 
     //rendering: warnOverheatBattery_ON
     warnOverheatBattery_ON = QPixmap(w, h);
     QPainter paint(&warnOverheatBattery_ON);
     warnOverheatBattery_ON.fill(softBlackBG);
-    paint.setBrush(warningRed);
-    paint.setPen(warningRed);
-    QVector<QPoint> rhombusPattern;
-    for(int vOffset = 5; vOffset < h; vOffset = vOffset + h - 15){
-        for(int hOffset = 0; hOffset < w+10; hOffset = hOffset + 16){
-            rhombusPattern.append(QPoint(0 + hOffset, 0 + vOffset)); //top left corner
-            rhombusPattern.append(QPoint(-4 + hOffset, 4 + vOffset)); //bottom left corner
-            rhombusPattern.append(QPoint(4 + hOffset, 4 + vOffset)); //bottom right corner
-            rhombusPattern.append(QPoint(8 + hOffset, 0 + vOffset)); //top right corner
-            paint.drawPolygon(QPolygon(rhombusPattern));
-            rhombusPattern.pop_back(); rhombusPattern.pop_back(); rhombusPattern.pop_back(); rhombusPattern.pop_back();
-        }
-    }
+    renderRhombus(paint, h, w);
     paint.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("OVERHEAT     "));
     paint.setBrush(batteryGreen);
     paint.setPen(batteryGreen);
@@ -76,3 +63,25 @@ void MainWindow::renderOverheatBatteryWarning()
 //    paintOff.end();
 }
 
+void MainWindow::renderOverheatSolarWarning(){
+    int h = ui->warnLabelSolarHeat->height();
+    int w = ui->warnLabelSolarHeat->width();
+
+}
+
+void MainWindow::renderRhombus(QPainter &paint, int h, int w){
+    QColor warningRed = QColor(255,0,0);
+    paint.setBrush(warningRed);
+    paint.setPen(warningRed);
+    QVector<QPoint> rhombusPattern;
+    for(int vOffset = 5; vOffset < h; vOffset = vOffset + h - 15){
+        for(int hOffset = 0; hOffset < w+10; hOffset = hOffset + 16){
+            rhombusPattern.append(QPoint(0 + hOffset, 0 + vOffset)); //top left corner
+            rhombusPattern.append(QPoint(-4 + hOffset, 4 + vOffset)); //bottom left corner
+            rhombusPattern.append(QPoint(4 + hOffset, 4 + vOffset)); //bottom right corner
+            rhombusPattern.append(QPoint(8 + hOffset, 0 + vOffset)); //top right corner
+            paint.drawPolygon(QPolygon(rhombusPattern));
+            rhombusPattern.pop_back(); rhombusPattern.pop_back(); rhombusPattern.pop_back(); rhombusPattern.pop_back();
+        }
+    }
+}
