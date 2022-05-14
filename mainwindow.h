@@ -33,7 +33,6 @@ private slots:
     void on_TurnOffLeftBlinker_clicked();
 
     void on_LeftBlinker_2_clicked();
-    void renderBattery();
 
     void on_decreaseBattery_clicked();
 
@@ -44,20 +43,13 @@ private slots:
 private:
     Ui::MainWindow *ui;
 private:
-    int percentage = 100;
     int mph = 0;
-    double decrement = 25.0/33.3;
-    double Height2 = 14;
-    double Height3 = 52;
-    double batteryHeight1 = 25;
-    double batteryHeight2 = 25;
-    double batteryHeight3 = 25;
-    double increaseHeight3 = 0;
-    double increaseHeight2 = 0;
-    double increaseHeight1 = 0;
-    double lower3 = 25;
-    double lower2 = 25;
-    double lower1 = 25;
-    QPixmap fullBattery;
+    int percentage = 100;
+    int height1 = 33;
+    int verticalShift1 = 0;
+    int height2 = 33;
+    int verticalShift2 = 0;
+    int height3 = 33;
+    int verticalShift3 = 0;
 };
 #endif // MAINWINDOW_H
