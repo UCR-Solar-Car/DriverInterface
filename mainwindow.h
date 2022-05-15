@@ -20,20 +20,6 @@ public:
 
 private slots:
 
-    void on_IncreaseMPH_clicked();
-
-    void on_DecreaseMPH_clicked();
-
-    void on_ResetMPH_clicked();
-
-    void on_TurnRightBlinker_clicked();
-
-    void on_TurOffBlinkers_clicked();
-
-    void on_TurnOffLeftBlinker_clicked();
-
-    void on_LeftBlinker_2_clicked();
-
     void on_decreaseBattery_clicked();
 
     void on_resetBattery_clicked();
@@ -43,7 +29,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
 private:
-    int mph = 0;
     int percentage = 100;
     int height1 = 33;
     int verticalShift1 = 0;
