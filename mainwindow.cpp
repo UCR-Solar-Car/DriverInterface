@@ -6,8 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50 (3).png"));
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_2.png"));
     ui->batteryPercent->setNum(percentage);
 }
 
@@ -15,59 +13,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-
-void MainWindow::on_IncreaseMPH_clicked()
-{
-    if(mph < 100){
-        mph++;
-        ui->MPH->display(mph);
-    }
-}
-
-
-void MainWindow::on_DecreaseMPH_clicked()
-{
-    if(mph > 0){
-        mph--;
-        ui->MPH->display(mph);
-    }
-}
-
-
-void MainWindow::on_ResetMPH_clicked()
-{
-    mph = 0;
-    ui->MPH->display(mph);
-}
-
-
-void MainWindow::on_TurnRightBlinker_clicked()
-{
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_1 (1).png"));
-
-}
-
-
-void MainWindow::on_TurOffBlinkers_clicked()
-{
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50 (3).png"));
-}
-
-
-
-void MainWindow::on_TurnOffLeftBlinker_clicked()
-{
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_2.png"));
-}
-
-
-void MainWindow::on_LeftBlinker_2_clicked()
-{
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_1 (3).png"));
-}
-
 
 
 void MainWindow::on_decreaseBattery_clicked()
