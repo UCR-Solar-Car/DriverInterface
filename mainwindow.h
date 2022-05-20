@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QString>
 #include <QPixmap>
+#include <math.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,7 +23,7 @@ private slots:
 
     void renderOverheatBatteryWarning();
     void renderOverheatSolarWarning();
-    void renderRhombus(QPainter &paint, int h, int w);
+    void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
 
 private:
     Ui::MainWindow *ui;
