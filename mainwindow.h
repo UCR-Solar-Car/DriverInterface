@@ -21,8 +21,9 @@ public:
 
 private slots:
 
-    void renderOverheatBatteryWarning();
-    void renderOverheatSolarWarning();
+    void renderBatteryWarning();
+    void renderSolarWarning();
+    void renderMotorWarning();
     void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
 
     void on_batteryWarning_OFF_clicked();
@@ -32,6 +33,10 @@ private slots:
     void on_solarWarning_ON_clicked();
 
     void on_solarWarning_OFF_clicked();
+
+    void on_motorWarning_ON_clicked();
+
+    void on_motorWarning_OFF_clicked();
 
 private:
     Ui::MainWindow *ui;

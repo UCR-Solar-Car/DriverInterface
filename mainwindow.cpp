@@ -7,8 +7,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    renderOverheatBatteryWarning();
-    renderOverheatSolarWarning();
+    renderBatteryWarning();
+    renderSolarWarning();
+    renderMotorWarning();
 }
 
 MainWindow::~MainWindow()
@@ -16,14 +17,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::renderOverheatBatteryWarning()
+void MainWindow::renderBatteryWarning()
 {
     int h = ui->warnLabelBatteryHeat->height();
     int w = ui->warnLabelBatteryHeat->width();
     QColor softBlackBG = QColor(27,30,35);
     QColor batteryGreen = QColor(0,169,0);
 
-    // RENDERS BATTERY OVERHEAT WARNING LABEL
+    // RENDERS BATTERY WARNING LABEL
     warnBattery_ON = QPixmap(w, h);
     QPainter paint(&warnBattery_ON);
     warnBattery_ON.fill(softBlackBG);
@@ -40,21 +41,21 @@ void MainWindow::renderOverheatBatteryWarning()
 
 
 
-    // RENDERS EMPTY BATTERY OVERHEAT WARNING LABEL
+    // RENDERS EMPTY BATTERY WARNING LABEL
     warnBattery_OFF = QPixmap(w,h);
     QPainter paintOff(&warnBattery_OFF);
     warnBattery_OFF.fill(softBlackBG);
     paintOff.end();
 }
 
-void MainWindow::renderOverheatSolarWarning(){
+void MainWindow::renderSolarWarning(){
     int h = ui->warnLabelSolarHeat->height();
     int w = ui->warnLabelSolarHeat->width();
     QColor softBlackBG = QColor(27,30,35);
     QColor solarBlue = QColor(2, 102, 250);
 
 
-    // RENDERS SOLAR HEAT WARNING LABEL
+    // RENDERS SOLAR WARNING LABEL
     warnSolar_ON = QPixmap(w,h);
     QPainter paintON(&warnSolar_ON);
     warnSolar_ON.fill(softBlackBG);
@@ -77,12 +78,31 @@ void MainWindow::renderOverheatSolarWarning(){
     paintON.end();
 
 
-    //RENDERS EMPTY SOLAR OVERHEAT WARNING LABEL
+    // RENDERS EMPTY SOLAR WARNING LABEL
     warnSolar_OFF = QPixmap(w,h);
     QPainter paintOFF(&warnSolar_OFF);
     warnSolar_OFF.fill(softBlackBG);
     paintOFF.end();
 
+}
+
+void MainWindow::renderMotorWarning(){
+    int h = ui->warnLabelMotor->height();
+    int w = ui->warnLabelMotor->width();
+    QColor softBlackBG = QColor(27,30,35);
+
+    // RENDERS MOTOR WARNING LABEL
+    warnMotor_ON = QPixmap(w,h);
+    QPainter paintON(&warnMotor_ON);
+    warnMotor_ON.fill(softBlackBG);
+    renderRhombus(paintON, h, w, 5, 4);
+    paintON.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT         "));
+
+    // RENDERS EMPTY MOTOR WARNING LABEL
+    warnMotor_OFF = QPixmap(w,h);
+    QPainter paintOFF(&warnMotor_OFF);
+    warnMotor_OFF.fill(softBlackBG);
+    paintOFF.end();
 }
 
 void MainWindow::renderRhombus(QPainter &paint, int h, int w, int vOff, int hOff){//sets brush and pen to red after call
@@ -123,5 +143,17 @@ void MainWindow::on_solarWarning_ON_clicked()
 void MainWindow::on_solarWarning_OFF_clicked()
 {
     ui->warnLabelSolarHeat->setPixmap(warnSolar_OFF);
+}
+
+
+void MainWindow::on_motorWarning_ON_clicked()
+{
+    ui->warnLabelMotor->setPixmap(warnMotor_ON);
+}
+
+
+void MainWindow::on_motorWarning_OFF_clicked()
+{
+    ui->warnLabelMotor->setPixmap(warnMotor_OFF);
 }
 
