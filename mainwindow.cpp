@@ -24,9 +24,9 @@ void MainWindow::renderOverheatBatteryWarning()
     QColor batteryGreen = QColor(0,169,0);
 
     // RENDERS BATTERY OVERHEAT WARNING LABEL
-    warnOverheatBattery_ON = QPixmap(w, h);
-    QPainter paint(&warnOverheatBattery_ON);
-    warnOverheatBattery_ON.fill(softBlackBG);
+    warnBattery_ON = QPixmap(w, h);
+    QPainter paint(&warnBattery_ON);
+    warnBattery_ON.fill(softBlackBG);
     renderRhombus(paint, h, w, 5 ,0);
     paint.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT           "));
     paint.setBrush(batteryGreen);
@@ -41,24 +41,9 @@ void MainWindow::renderOverheatBatteryWarning()
 
 
     // RENDERS EMPTY BATTERY OVERHEAT WARNING LABEL
-    warnOverheatBattery_OFF = QPixmap(w,h);
-    QPainter paintOff(&warnOverheatBattery_OFF);
-    warnOverheatBattery_OFF.fill(softBlackBG);
-//    QColor softGray = QColor(211,211,211);
-//    QColor limeGreen = QColor(57,255,20);
-//    paintOff.setBrush(limeGreen);
-//    paintOff.drawRoundedRect(0,0,w,h,10,10);
-//    paintOff.setBrush(softBlackBG);
-//    paintOff.drawRoundedRect(5,5,w-10,h-10,10,10);
-//    paintOff.setPen(limeGreen);
-//    paintOff.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("TEMPERATURE   "));
-//    paintOff.setBrush(batteryGreen);
-//    paintOff.setPen(batteryGreen);
-//    paintOff.drawRoundedRect(w*.095, h*.38, 30,11,2,2);//Battery Case
-//    paintOff.setBrush(softBlackBG);
-//    paintOff.setPen(softBlackBG);
-//    paintOff.drawRect(w*.095+9, h*.38, 1,11);//Battery Line 1
-//    paintOff.drawRect(w*.095+19, h*.38, 1,11);//Battery Line 2
+    warnBattery_OFF = QPixmap(w,h);
+    QPainter paintOff(&warnBattery_OFF);
+    warnBattery_OFF.fill(softBlackBG);
     paintOff.end();
 }
 
@@ -70,9 +55,9 @@ void MainWindow::renderOverheatSolarWarning(){
 
 
     // RENDERS SOLAR HEAT WARNING LABEL
-    warnOverheatSolar_ON = QPixmap(w,h);
-    QPainter paintON(&warnOverheatSolar_ON);
-    warnOverheatSolar_ON.fill(softBlackBG);
+    warnSolar_ON = QPixmap(w,h);
+    QPainter paintON(&warnSolar_ON);
+    warnSolar_ON.fill(softBlackBG);
     renderRhombus(paintON, h, w, 5, -5);
     paintON.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT         "));
 
@@ -93,9 +78,9 @@ void MainWindow::renderOverheatSolarWarning(){
 
 
     //RENDERS EMPTY SOLAR OVERHEAT WARNING LABEL
-    warnOverheatSolar_OFF = QPixmap(w,h);
-    QPainter paintOFF(&warnOverheatSolar_OFF);
-    warnOverheatSolar_OFF.fill(softBlackBG);
+    warnSolar_OFF = QPixmap(w,h);
+    QPainter paintOFF(&warnSolar_OFF);
+    warnSolar_OFF.fill(softBlackBG);
     paintOFF.end();
 
 }
@@ -121,22 +106,22 @@ void MainWindow::renderRhombus(QPainter &paint, int h, int w, int vOff, int hOff
 
 void MainWindow::on_batteryWarning_ON_clicked()
 {
-    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_ON);
+    ui->warnLabelBatteryHeat->setPixmap(warnBattery_ON);
 }
 
 void MainWindow::on_batteryWarning_OFF_clicked()
 {
-    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_OFF);
+    ui->warnLabelBatteryHeat->setPixmap(warnBattery_OFF);
 }
 
 void MainWindow::on_solarWarning_ON_clicked()
 {
-    ui->warnLabelSolarHeat->setPixmap(warnOverheatSolar_ON);
+    ui->warnLabelSolarHeat->setPixmap(warnSolar_ON);
 }
 
 
 void MainWindow::on_solarWarning_OFF_clicked()
 {
-    ui->warnLabelSolarHeat->setPixmap(warnOverheatSolar_OFF);
+    ui->warnLabelSolarHeat->setPixmap(warnSolar_OFF);
 }
 
