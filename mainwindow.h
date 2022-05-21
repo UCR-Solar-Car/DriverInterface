@@ -25,6 +25,14 @@ private slots:
     void renderOverheatSolarWarning();
     void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
 
+    void on_batteryWarning_OFF_clicked();
+
+    void on_batteryWarning_ON_clicked();
+
+    void on_solarWarning_ON_clicked();
+
+    void on_solarWarning_OFF_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPixmap warnOverheatBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed

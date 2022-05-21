@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     renderOverheatBatteryWarning();
     renderOverheatSolarWarning();
-    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_OFF);
-    ui->warnLabelSolarHeat->setPixmap(warnOverheatSolar_ON);
 }
 
 MainWindow::~MainWindow()
@@ -30,7 +28,7 @@ void MainWindow::renderOverheatBatteryWarning()
     QPainter paint(&warnOverheatBattery_ON);
     warnOverheatBattery_ON.fill(softBlackBG);
     renderRhombus(paint, h, w, 5 ,0);
-    paint.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("OVERHEAT     "));
+    paint.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT           "));
     paint.setBrush(batteryGreen);
     paint.setPen(batteryGreen);
     paint.drawRoundedRect(w*.095, h*.38, 30,11,2,2);//Battery Case
@@ -76,7 +74,7 @@ void MainWindow::renderOverheatSolarWarning(){
     QPainter paintON(&warnOverheatSolar_ON);
     warnOverheatSolar_ON.fill(softBlackBG);
     renderRhombus(paintON, h, w, 5, -5);
-    paintON.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("OVERHEAT     "));
+    paintON.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT         "));
 
     //renders solar array
     int xCord = 2;
@@ -85,7 +83,7 @@ void MainWindow::renderOverheatSolarWarning(){
     paintON.setPen(solarBlue);
     for(int i = 8; i < 50; i = i + 10){//rows
         for(int j = 8; j < 30; j = j + 9){//columns
-            solarBlue.setHsv(210+i/3-j/4,230+i/3,240+j/8);// color gradient
+            solarBlue.setHsv(210+i/3-j/3.4,230,240-i/3);// color gradient
             paintON.setBrush(solarBlue);
             paintON.setPen(solarBlue);
             paintON.drawRoundedRect(xCord + i, yCord + j, 7,7,1,1);
@@ -95,6 +93,11 @@ void MainWindow::renderOverheatSolarWarning(){
 
 
     //RENDERS EMPTY SOLAR OVERHEAT WARNING LABEL
+    warnOverheatSolar_OFF = QPixmap(w,h);
+    QPainter paintOFF(&warnOverheatSolar_OFF);
+    warnOverheatSolar_OFF.fill(softBlackBG);
+    paintOFF.end();
+
 }
 
 void MainWindow::renderRhombus(QPainter &paint, int h, int w, int vOff, int hOff){//sets brush and pen to red after call
@@ -114,3 +117,26 @@ void MainWindow::renderRhombus(QPainter &paint, int h, int w, int vOff, int hOff
     }
 
 }
+
+
+void MainWindow::on_batteryWarning_ON_clicked()
+{
+    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_ON);
+}
+
+void MainWindow::on_batteryWarning_OFF_clicked()
+{
+    ui->warnLabelBatteryHeat->setPixmap(warnOverheatBattery_OFF);
+}
+
+void MainWindow::on_solarWarning_ON_clicked()
+{
+    ui->warnLabelSolarHeat->setPixmap(warnOverheatSolar_ON);
+}
+
+
+void MainWindow::on_solarWarning_OFF_clicked()
+{
+    ui->warnLabelSolarHeat->setPixmap(warnOverheatSolar_OFF);
+}
+
