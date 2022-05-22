@@ -11,6 +11,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -29,12 +30,19 @@ private slots:
 
     void on_ResetMPH_clicked();
 
+    void on_TurnRightBlinker_clicked();
+
+    void on_TurOffBlinkers_clicked();
+
+    void on_TurnOffLeftBlinker_clicked();
+
+    void on_LeftBlinker_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 private:
     int number = 100;
     int mph = 0;
+    long unsigned delay = 500;
 };
-
-
-#endif
+#endif // MAINWINDOW_H

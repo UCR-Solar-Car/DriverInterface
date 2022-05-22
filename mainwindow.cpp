@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->battery->setRange(0, 100);
     ui->battery->setValue(100);
     ui->display->setText("100");
+    ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50 (3).png"));
+    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_2.png"));
 }
 
 MainWindow::~MainWindow()
@@ -51,8 +53,8 @@ void MainWindow::on_DecreaseButton_clicked()
 
 void MainWindow::on_ResetButton_clicked()
 {
-    number = 50;
-    ui->battery->setValue(50);
+    number = 100;
+    ui->battery->setValue(100);
     ui->display->setText(QString::number(number));
 }
 
@@ -80,3 +82,30 @@ void MainWindow::on_ResetMPH_clicked()
     mph = 0;
     ui->MPH->display(mph);
 }
+
+
+void MainWindow::on_TurnRightBlinker_clicked()
+{
+   ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50_1 (1).png"));
+
+}
+
+
+void MainWindow::on_TurOffBlinkers_clicked()
+{
+   ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50 (3).png"));
+}
+
+
+
+void MainWindow::on_TurnOffLeftBlinker_clicked()
+{
+    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_2.png"));
+}
+
+
+void MainWindow::on_LeftBlinker_2_clicked()
+{
+    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_1 (3).png"));
+}
+
