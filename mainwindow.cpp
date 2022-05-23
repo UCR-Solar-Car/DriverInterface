@@ -90,6 +90,9 @@ void MainWindow::renderMotorWarning(){
     int h = ui->warnLabelMotor->height();
     int w = ui->warnLabelMotor->width();
     QColor softBlackBG = QColor(27,30,35);
+    QColor motorSymbol = QColor(255, 211, 13);
+    int xOff = 5;
+    int yOff = -2;
 
     // RENDERS MOTOR WARNING LABEL
     warnMotor_ON = QPixmap(w,h);
@@ -97,6 +100,26 @@ void MainWindow::renderMotorWarning(){
     warnMotor_ON.fill(softBlackBG);
     renderRhombus(paintON, h, w, 5, 4);
     paintON.drawText(0,0,w,h,Qt::AlignRight | Qt::AlignVCenter,QString("FAULT         "));
+    paintON.setBrush(softBlackBG);
+    paintON.setPen(motorSymbol);
+    paintON.drawEllipse( 7+xOff, 17+yOff, 22, 22);
+    paintON.drawEllipse( 8+xOff, 18+yOff, 20, 20);//big circle
+    paintON.drawEllipse(39+xOff,14+yOff, 12, 12);
+    paintON.drawEllipse(40+xOff,15+yOff, 10, 10);//small circle
+    paintON.drawLine(8+10+xOff,17+yOff,40+5+xOff,14+yOff);
+    paintON.drawLine(8+10+xOff,18+yOff,40+5+xOff,15+yOff);//top belt
+    paintON.drawLine(8+10+xOff,19+yOff+20,40+5+xOff,15+10+yOff);
+    paintON.drawLine(8+10+xOff,19+21+yOff,40+5+xOff,15+11+yOff);//bottombelt
+
+    paintON.setBrush(motorSymbol);
+    paintON.drawEllipse( 7+10+xOff, 17+5-1+yOff, 2, 2);//top point
+    paintON.drawEllipse( 7+10+xOff, 17+15+1+yOff, 2, 2);//bottom point
+    paintON.drawEllipse( 7+15+1+xOff, 17+10+yOff, 2, 2);//right point
+    paintON.drawEllipse( 7+5-1+xOff, 17+10+yOff, 2, 2);//left point
+
+    paintON.drawEllipse( 7+9+xOff, 17+9+yOff, 4, 4);//middle point big circle
+    paintON.drawEllipse( 44+xOff, 19+yOff, 2, 2);//middle point small circle
+
 
     // RENDERS EMPTY MOTOR WARNING LABEL
     warnMotor_OFF = QPixmap(w,h);
