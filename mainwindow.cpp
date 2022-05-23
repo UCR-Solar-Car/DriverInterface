@@ -6,11 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->battery->setRange(0, 100);
-    ui->battery->setValue(100);
-    ui->display->setText("100");
-    ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50 (3).png"));
-    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_2.png"));
+    ui->batteryPercent->setNum(percentage);
 }
 
 MainWindow::~MainWindow()
@@ -19,93 +15,95 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_IncreaseButton_clicked()
+void MainWindow::on_decreaseBattery_clicked()
 {
-    if(number > 0 && number < 100){
-        number++;
-        ui->battery->setValue(number);
-        ui->display->setText(QString::number(number));
+    if(percentage > 0){
+       percentage--;
     }
-    else if(number <= 0){
-        number = 0;
-        number++;
-        ui->battery->setValue(number);
-        ui->display->setText(QString::number(number));
+
+    ui->batteryPercent->setNum(percentage);
+    if(height1 > 0 && percentage < 99){
+        height1--;
+        verticalShift1++;
+        ui->batteryHeight1->setFixedHeight(height1);
+        ui->batteryHeight1->setGeometry(670, 300+verticalShift1, 71, height1);
     }
-}
-
-
-void MainWindow::on_DecreaseButton_clicked()
-{
-    if(number > 0 && number < 100){
-        number--;
-        ui->battery->setValue(number);
-        ui->display->setText(QString::number(number));
+    else if(height1 == 0 && height2 > 0){
+        height2--;
+        verticalShift2++;
+        ui->batteryHeight2->setFixedHeight(height2);
+        ui->batteryHeight2->setGeometry(670, 340+verticalShift2, 71, height2);
     }
-    else if(number >= 100){
-        number = 100;
-        number--;
-        ui->battery->setValue(number);
-        ui->display->setText(QString::number(number));
+    else if(height2 == 0 && height3 > 0){
+        height3--;
+        verticalShift3++;
+        ui->batteryHeight3->setFixedHeight(height3);
+        ui->batteryHeight3->setGeometry(670, 380+verticalShift3, 71, height3);
     }
-}
-
-
-void MainWindow::on_ResetButton_clicked()
-{
-    number = 100;
-    ui->battery->setValue(100);
-    ui->display->setText(QString::number(number));
-}
-
-
-void MainWindow::on_IncreaseMPH_clicked()
-{
-    if(mph < 100){
-        mph++;
-        ui->MPH->display(mph);
+    if(percentage <= 20){
+        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-battery-alert-48.png"));
     }
-}
-
-
-void MainWindow::on_DecreaseMPH_clicked()
-{
-    if(mph > 0){
-        mph--;
-        ui->MPH->display(mph);
+    else{
+        ui->lowBatteryWarning->setPixmap(QPixmap("blank"));
     }
-}
-
-
-void MainWindow::on_ResetMPH_clicked()
-{
-    mph = 0;
-    ui->MPH->display(mph);
-}
-
-
-void MainWindow::on_TurnRightBlinker_clicked()
-{
-   ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50_1 (1).png"));
 
 }
 
 
-void MainWindow::on_TurOffBlinkers_clicked()
+
+
+void MainWindow::on_resetBattery_clicked()
 {
-   ui->rightBlinker->setPixmap(QPixmap("icons8-arrow-50 (3).png"));
+    percentage = 100;
+    ui->batteryPercent->setNum(percentage);
+    height1 = 33;
+    verticalShift1 = 0;
+    ui->batteryHeight1->setFixedHeight(height1);
+    ui->batteryHeight1->setGeometry(670, 300, 71, height1);
+
+    height2 = 33;
+    verticalShift2 = 0;
+    ui->batteryHeight2->setFixedHeight(height2);
+    ui->batteryHeight2->setGeometry(670, 340, 71, height2);
+
+    height3 = 33;
+    verticalShift3 = 0;
+     ui->batteryHeight3->setFixedHeight(height3);
+    ui->batteryHeight3->setGeometry(670, 380, 71, height3);
 }
 
 
-
-void MainWindow::on_TurnOffLeftBlinker_clicked()
+void MainWindow::on_increaseBattery_clicked()
 {
-    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_2.png"));
-}
+    if(percentage < 100){
+       percentage++;
+    }
 
+    ui->batteryPercent->setNum(percentage);
+    if(height3 < 33){
+        height3++;
+        verticalShift3--;
+        ui->batteryHeight3->setFixedHeight(height3);
+        ui->batteryHeight3->setGeometry(670, 380+verticalShift3, 71, height3);
+    }
+    else if(height3 == 33 && height2 < 33){
+        height2++;
+        verticalShift2--;
+        ui->batteryHeight2->setFixedHeight(height2);
+        ui->batteryHeight2->setGeometry(670, 340+verticalShift2, 71, height2);
+    }
+    else if(height2 == 33 && height1 < 33){
+        height1++;
+        verticalShift1--;
+        ui->batteryHeight1->setFixedHeight(height1);
+        ui->batteryHeight1->setGeometry(670, 300+verticalShift1, 71, height1);
+    }
+    if(percentage <= 20){
+        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-battery-alert-48.png"));
+    }
+    else{
+        ui->lowBatteryWarning->setPixmap(QPixmap("blank"));
+    }
 
-void MainWindow::on_LeftBlinker_2_clicked()
-{
-    ui->LeftBlinker->setPixmap(QPixmap("icons8-arrow-50_1 (3).png"));
 }
 
