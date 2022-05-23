@@ -104,5 +104,6 @@ void MainWindow::on_increaseBattery_clicked()
     else{
         ui->lowBatteryWarning->setPixmap(QPixmap("blank"));
     }
+
 }
 
