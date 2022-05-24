@@ -37,6 +37,31 @@ private slots:
     void on_motorWarning_ON_clicked();
 
     void on_motorWarning_OFF_clicked();
+    void on_decreaseBattery_clicked();
+
+    void on_resetBattery_clicked();
+
+    void on_increaseBattery_clicked();
+
+    void on_IncreaseButton_clicked();
+
+    void on_DecreaseButton_clicked();
+
+    void on_ResetButton_clicked();
+
+    void on_IncreaseMPH_clicked();
+
+    void on_DecreaseMPH_clicked();
+
+    void on_ResetMPH_clicked();
+
+    void on_TurnRightBlinker_clicked();
+
+    void on_TurOffBlinkers_clicked();
+
+    void on_TurnOffLeftBlinker_clicked();
+
+    void on_LeftBlinker_2_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -46,6 +71,16 @@ private:
     QPixmap warnSolar_OFF; //Stores image of warning label when OFF and (x,y) where its placed
     QPixmap warnMotor_ON;  //Stores image of warning label when ON  and (x,y) where its placed
     QPixmap warnMotor_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    int percentage = 100;
+    int height1 = 33;
+    int verticalShift1 = 0;
+    int height2 = 33;
+    int verticalShift2 = 0;
+    int height3 = 33;
+    int verticalShift3 = 0;
+    int number = 100;
+    int mph = 0;
+    long unsigned delay = 500;
 };
 
 
