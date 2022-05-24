@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-#include <QPixmap>
 #include <QPainter>
-
+#include <QString>
+#include <QPixmap>
+#include <math.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,13 +15,28 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
 
+    void renderBatteryWarning();
+    void renderSolarWarning();
+    void renderMotorWarning();
+    void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
+
+    void on_batteryWarning_OFF_clicked();
+
+    void on_batteryWarning_ON_clicked();
+
+    void on_solarWarning_ON_clicked();
+
+    void on_solarWarning_OFF_clicked();
+
+    void on_motorWarning_ON_clicked();
+
+    void on_motorWarning_OFF_clicked();
     void on_decreaseBattery_clicked();
 
     void on_resetBattery_clicked();
@@ -48,10 +63,14 @@ private slots:
 
     void on_LeftBlinker_2_clicked();
 
-
 private:
     Ui::MainWindow *ui;
-private:
+    QPixmap warnBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnBattery_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    QPixmap warnSolar_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnSolar_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    QPixmap warnMotor_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnMotor_OFF; //Stores image of warning label when OFF and (x,y) where its placed
     int percentage = 100;
     int height1 = 33;
     int verticalShift1 = 0;
@@ -62,6 +81,7 @@ private:
     int number = 100;
     int mph = 0;
     long unsigned delay = 500;
-
 };
-#endif // MAINWINDOW_H
+
+
+#endif
