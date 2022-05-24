@@ -24,11 +24,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    icons8-arrow-50 (3).png \
-    icons8-arrow-50 (3).png \
-    icons8-arrow-50 (3).png \
-    icons8-arrow-50_1 (1).png \
-    icons8-arrow-50_1 (1).png \
-    icons8-arrow-50_1 (3).png \
-    icons8-arrow-50_1 (3).png \
-    icons8-arrow-50_2.png
+#    icons8-arrow-50 (3).png \
+#    icons8-arrow-50 (3).png \
+#    icons8-arrow-50 (3).png \
+#    icons8-arrow-50_1 (1).png \
+#    icons8-arrow-50_1 (1).png \
+#    icons8-arrow-50_1 (3).png \
+#    icons8-arrow-50_1 (3).png \
+#    icons8-arrow-50_2.png
