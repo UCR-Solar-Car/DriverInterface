@@ -96,7 +96,7 @@ void MainWindow::on_decreaseBattery_clicked()
         ui->batteryHeight3->setGeometry(670, 380+verticalShift3, 71, height3);
     }
     if(percentage <= 20){
-        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-battery-alert-48.png"));
+        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/icons8-battery-alert-48.png"));
     }
     else{
         ui->lowBatteryWarning->setPixmap(QPixmap("blank"));

@@ -26,5 +26,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     leftEmpty.png \
     leftFull.png \
+    phone-battery-icon-vector-6.jpeg \
     rightEmpty.png \
     rightFull.png
