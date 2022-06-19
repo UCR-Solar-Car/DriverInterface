@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50 (3).png"));
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_2.png"));
+    ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightEmpty.png"));
+    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftEmpty.png"));
     ui->batteryPercent->setNum(percentage);
 }
 
@@ -45,27 +45,27 @@ void MainWindow::on_ResetMPH_clicked()
 
 void MainWindow::on_TurnRightBlinker_clicked()
 {
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_1 (1).png"));
+   ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightFull.png"));
 
 }
 
 
 void MainWindow::on_TurOffBlinkers_clicked()
 {
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50 (3).png"));
+   ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightEmpty.png"));
 }
 
 
 
 void MainWindow::on_TurnOffLeftBlinker_clicked()
 {
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_2.png"));
+    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftEmpty.png"));
 }
 
 
 void MainWindow::on_LeftBlinker_2_clicked()
 {
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-arrow-50_1 (3).png"));
+    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftFull.png"));
 }
 
 
