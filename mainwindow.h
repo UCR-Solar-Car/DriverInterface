@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPixmap>
 #include <QPainter>
+#include <QString>
+#include <QPixmap>
+#include <math.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,13 +15,12 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-
+    
     void on_IncreaseMPH_clicked();
 
     void on_DecreaseMPH_clicked();
@@ -40,9 +41,31 @@ private slots:
 
     void on_increaseBattery_clicked();
 
+    void renderBatteryWarning();
+    void renderSolarWarning();
+    void renderMotorWarning();
+    void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
+
+    void on_batteryWarning_OFF_clicked();
+
+    void on_batteryWarning_ON_clicked();
+
+    void on_solarWarning_ON_clicked();
+
+    void on_solarWarning_OFF_clicked();
+
+    void on_motorWarning_ON_clicked();
+
+    void on_motorWarning_OFF_clicked();
+
 private:
     Ui::MainWindow *ui;
-private:
+    QPixmap warnBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnBattery_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    QPixmap warnSolar_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnSolar_OFF; //Stores image of warning label when OFF and (x,y) where its placed
+    QPixmap warnMotor_ON;  //Stores image of warning label when ON  and (x,y) where its placed
+    QPixmap warnMotor_OFF; //Stores image of warning label when OFF and (x,y) where its placed
     int mph = 0;
     int percentage = 100;
     int height1 = 33;
@@ -56,4 +79,6 @@ private:
     const char* rightBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/rightFull.png";
     const char* rightBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/rightEmpty.png";
 };
-#endif // MAINWINDOW_H
+
+
+#endif
