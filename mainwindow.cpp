@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
     renderBatteryWarning();
     renderSolarWarning();
     renderMotorWarning();
+    ui->warnLabelBatteryHeat->setPixmap(warnBattery_OFF);
+    ui->warnLabelSolarHeat->setPixmap(warnSolar_OFF);
+    ui->warnLabelMotor->setPixmap(warnMotor_OFF);
 }
 
 MainWindow::~MainWindow()
