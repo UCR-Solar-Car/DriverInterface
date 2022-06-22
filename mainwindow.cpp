@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightEmpty.png"));
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftEmpty.png"));
+    ui->rightBlinker->setPixmap(QPixmap(rightBlinkPath_OFF));
+    ui->LeftBlinker->setPixmap(QPixmap(leftBlinkPath_OFF));
     ui->batteryPercent->setNum(percentage);
 }
 
@@ -45,27 +45,27 @@ void MainWindow::on_ResetMPH_clicked()
 
 void MainWindow::on_TurnRightBlinker_clicked()
 {
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightFull.png"));
+   ui->rightBlinker->setPixmap(QPixmap(rightBlinkPath_ON));
 
 }
 
 
 void MainWindow::on_TurOffBlinkers_clicked()
 {
-   ui->rightBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/rightEmpty.png"));
+   ui->rightBlinker->setPixmap(QPixmap(rightBlinkPath_OFF));
 }
 
 
 
 void MainWindow::on_TurnOffLeftBlinker_clicked()
 {
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftEmpty.png"));
+    ui->LeftBlinker->setPixmap(QPixmap(leftBlinkPath_ON));
 }
 
 
 void MainWindow::on_LeftBlinker_2_clicked()
 {
-    ui->LeftBlinker->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/leftFull.png"));
+    ui->LeftBlinker->setPixmap(QPixmap(leftBlinkPath_OFF));
 }
 
 

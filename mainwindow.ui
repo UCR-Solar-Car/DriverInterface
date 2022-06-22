@@ -120,7 +120,7 @@ color: rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="text">
-     <string>RightBlinker</string>
+     <string>Right Blinker ON</string>
     </property>
    </widget>
    <widget class="QPushButton" name="TurOffBlinkers">
@@ -133,7 +133,7 @@ color: rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="text">
-     <string>TurnOffRightBlinkers</string>
+     <string>Right Blinker OFF</string>
     </property>
    </widget>
    <widget class="QLabel" name="LeftBlinker">
@@ -159,7 +159,7 @@ color: rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="text">
-     <string>TurnOffLeftBlinker</string>
+     <string>Left Blinker ON</string>
     </property>
    </widget>
    <widget class="QPushButton" name="LeftBlinker_2">
@@ -172,7 +172,7 @@ color: rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="text">
-     <string>LeftBlinker</string>
+     <string>Left Blinker OFF</string>
     </property>
    </widget>
    <widget class="QPushButton" name="decreaseBattery">

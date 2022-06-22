@@ -51,5 +51,9 @@ private:
     int verticalShift2 = 0;
     int height3 = 33;
     int verticalShift3 = 0;
+    const char* leftBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/leftFull.png";
+    const char* leftBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/leftEmpty.png";
+    const char* rightBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/rightFull.png";
+    const char* rightBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/firstMerges/Driver-Interface-2022/rightEmpty.png";
 };
 #endif // MAINWINDOW_H
