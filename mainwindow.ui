@@ -246,19 +246,6 @@ border-radius: 10px</string>
      <string>ResetMPH</string>
     </property>
    </widget>
-   <widget class="QLabel" name="blinkerColor">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>20</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>#2BD31F</string>
-    </property>
-   </widget>
    <widget class="QLCDNumber" name="MPH">
     <property name="geometry">
      <rect>
@@ -481,6 +468,71 @@ color: rgb(0, 0, 0);</string>
      <enum>Qt::AutoText</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="dayLightButton">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>100</y>
+      <width>151</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>dayLight Button</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="offButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>100</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>offButton</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>100</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>nightButton</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nightLight">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>120</y>
+      <width>131</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dayLight">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>120</y>
+      <width>131</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label_4</zorder>
    <zorder>warnLabelBatteryHeat</zorder>
    <zorder>warnLabelSolarHeat</zorder>
@@ -496,7 +548,6 @@ color: rgb(0, 0, 0);</string>
    <zorder>label_2</zorder>
    <zorder>batteryHeight2</zorder>
    <zorder>ResetMPH</zorder>
-   <zorder>blinkerColor</zorder>
    <zorder>MPH</zorder>
    <zorder>LeftBlinker</zorder>
    <zorder>rightBlinker</zorder>
@@ -513,6 +564,11 @@ color: rgb(0, 0, 0);</string>
    <zorder>LeftBlinker_2</zorder>
    <zorder>label</zorder>
    <zorder>batteryHeight3</zorder>
+   <zorder>dayLightButton</zorder>
+   <zorder>offButton</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>nightLight</zorder>
+   <zorder>dayLight</zorder>
   </widget>
  </widget>
  <resources/>
