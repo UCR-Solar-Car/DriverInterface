@@ -20,45 +20,29 @@ public:
     ~MainWindow();
 
 private slots:
-
     void renderBatteryWarning();
     void renderSolarWarning();
     void renderMotorWarning();
     void renderRhombus(QPainter &paint, int h, int w,  int vOff, int hOff);
-
     void on_batteryWarning_OFF_clicked();
-
     void on_batteryWarning_ON_clicked();
-
     void on_solarWarning_ON_clicked();
-
     void on_solarWarning_OFF_clicked();
-
     void on_motorWarning_ON_clicked();
-
     void on_motorWarning_OFF_clicked();
-
-
     void on_IncreaseMPH_clicked();
-
     void on_DecreaseMPH_clicked();
-
     void on_ResetMPH_clicked();
-
     void on_TurnRightBlinker_clicked();
-
     void on_TurOffBlinkers_clicked();
-
     void on_TurnOffLeftBlinker_clicked();
-
     void on_LeftBlinker_2_clicked();
-
     void on_decreaseBattery_clicked();
-
     void on_resetBattery_clicked();
-
     void on_increaseBattery_clicked();
-
+    void on_dayLightButton_clicked();
+    void on_offButton_clicked();
+    void on_pushButton_clicked();
 private:
     Ui::MainWindow *ui;
     QPixmap warnBattery_ON;  //Stores image of warning label when ON  and (x,y) where its placed
@@ -75,10 +59,14 @@ private:
     int verticalShift2 = 0;
     int height3 = 33;
     int verticalShift3 = 0;
-    const char* leftBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/another1/Driver-Interface-2022/leftFull.png";
-    const char* leftBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/another1/Driver-Interface-2022/leftEmpty.png";
-    const char* rightBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/another1/Driver-Interface-2022/rightFull.png";
-    const char* rightBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/another1/Driver-Interface-2022/rightEmpty.png";
+    const char* leftBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/leftFull.png";
+    const char* leftBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/leftEmpty.png";
+    const char* rightBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/rightFull.png";
+    const char* rightBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/rightEmpty.png";
+    const char* nightlightImgPath = "C:/Users/justiny/Downloads/icons8-light-bulb-48.png";
+    const char* daylightImgPath = "C:/Users/justiny/Downloads/icons8-idea-48.png";
+    const char* lowbatteryImgPath = "C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/icons8-battery-alert-48.png";
+    const char* blankImgPath = "blank";
 };
 
 

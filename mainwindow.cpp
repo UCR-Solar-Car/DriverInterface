@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->warnLabelBatteryHeat->setPixmap(warnBattery_OFF);
     ui->warnLabelSolarHeat->setPixmap(warnSolar_OFF);
     ui->warnLabelMotor->setPixmap(warnMotor_OFF);
+    ui->dayLight->setPixmap(QPixmap(blankImgPath));
+    ui->nightLight->setPixmap(QPixmap(blankImgPath));
 }
 
 MainWindow::~MainWindow()
@@ -261,10 +263,10 @@ void MainWindow::on_decreaseBattery_clicked()
         ui->batteryHeight3->setGeometry(670, 380+verticalShift3, 71, height3);
     }
     if(percentage <= 20){
-        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/icons8-battery-alert-48.png"));
+        ui->lowBatteryWarning->setPixmap(QPixmap(lowbatteryImgPath));
     }
     else{
-        ui->lowBatteryWarning->setPixmap(QPixmap("blank"));
+        ui->lowBatteryWarning->setPixmap(QPixmap(blankImgPath));
     }
 
 }
@@ -319,10 +321,29 @@ void MainWindow::on_increaseBattery_clicked()
         ui->batteryHeight1->setGeometry(670, 300+verticalShift1, 71, height1);
     }
     if(percentage <= 20){
-        ui->lowBatteryWarning->setPixmap(QPixmap("C:/Users/justiny/Downloads/icons8-battery-alert-48.png"));
+        ui->lowBatteryWarning->setPixmap(QPixmap(lowbatteryImgPath));
     }
     else{
-        ui->lowBatteryWarning->setPixmap(QPixmap("blank"));
+        ui->lowBatteryWarning->setPixmap(QPixmap(blankImgPath));
     }
+}
+
+void MainWindow::on_dayLightButton_clicked()
+{
+    ui->dayLight->setPixmap(QPixmap(daylightImgPath));
+    ui->nightLight->setPixmap(QPixmap(blankImgPath));
+}
+
+void MainWindow::on_offButton_clicked()
+{
+    ui->dayLight->setPixmap(QPixmap(blankImgPath));
+    ui->nightLight->setPixmap(QPixmap(blankImgPath));
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->nightLight->setPixmap(QPixmap(nightlightImgPath));
+    ui->dayLight->setPixmap(QPixmap(blankImgPath));
 }
 
