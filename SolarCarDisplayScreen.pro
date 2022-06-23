@@ -24,7 +24,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    dayLightImg.png \
     leftEmpty.png \
     leftFull.png \
+    lowBatteryImg.png \
+    nightLightImg.png \
     rightEmpty.png \
     rightFull.png
