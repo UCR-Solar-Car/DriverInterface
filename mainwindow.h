@@ -63,9 +63,9 @@ private:
     const char* leftBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/leftEmpty.png";
     const char* rightBlinkPath_ON = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/rightFull.png";
     const char* rightBlinkPath_OFF = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/rightEmpty.png";
-    const char* nightlightImgPath = "C:/Users/justiny/Downloads/icons8-light-bulb-48.png";
-    const char* daylightImgPath = "C:/Users/justiny/Downloads/icons8-idea-48.png";
-    const char* lowbatteryImgPath = "C:/Users/iseanbhanot/Documents/SolarCar/mergeFold2/Driver-Interface-2022/icons8-battery-alert-48.png";
+    const char* nightlightImgPath = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/nightLightImg.png";
+    const char* daylightImgPath = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/dayLightImg.png";
+    const char* lowbatteryImgPath = "/Users/iseanbhanot/Documents/SolarCar/Driver-Interface-2022/lowBatteryImg.png";
     const char* blankImgPath = "blank";
 };
 

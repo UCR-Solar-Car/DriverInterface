@@ -10,11 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     renderBatteryWarning();
     renderSolarWarning();
     renderMotorWarning();
+
     ui->warnLabelBatteryHeat->setPixmap(warnBattery_OFF);
     ui->warnLabelSolarHeat->setPixmap(warnSolar_OFF);
     ui->warnLabelMotor->setPixmap(warnMotor_OFF);
     ui->dayLight->setPixmap(QPixmap(blankImgPath));
     ui->nightLight->setPixmap(QPixmap(blankImgPath));
+    ui->LeftBlinker->setPixmap(QPixmap(leftBlinkPath_OFF));
+    ui->rightBlinker->setPixmap(QPixmap(rightBlinkPath_OFF));
 }
 
 MainWindow::~MainWindow()
