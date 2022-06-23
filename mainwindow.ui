@@ -174,8 +174,8 @@
    <widget class="QLabel" name="batteryHeight3">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>350</y>
+      <x>670</x>
+      <y>380</y>
       <width>71</width>
       <height>33</height>
      </rect>
@@ -203,8 +203,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>260</y>
+      <x>660</x>
+      <y>290</y>
       <width>91</width>
       <height>131</height>
      </rect>
@@ -220,8 +220,8 @@ border-radius: 10px</string>
    <widget class="QLabel" name="batteryHeight2">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>310</y>
+      <x>670</x>
+      <y>340</y>
       <width>71</width>
       <height>33</height>
      </rect>
@@ -303,8 +303,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>240</y>
+      <x>690</x>
+      <y>270</y>
       <width>31</width>
       <height>16</height>
      </rect>
@@ -332,8 +332,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="batteryPercent">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>200</y>
+      <x>680</x>
+      <y>230</y>
       <width>121</width>
       <height>20</height>
      </rect>
@@ -384,8 +384,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="batteryHeight1">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>270</y>
+      <x>670</x>
+      <y>300</y>
       <width>71</width>
       <height>33</height>
      </rect>
@@ -426,8 +426,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="lowBatteryWarning">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>410</y>
+      <x>660</x>
+      <y>440</y>
       <width>91</width>
       <height>51</height>
      </rect>
@@ -452,8 +452,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>230</y>
+      <x>640</x>
+      <y>260</y>
       <width>131</width>
       <height>171</height>
      </rect>
@@ -481,6 +481,38 @@ color: rgb(0, 0, 0);</string>
      <enum>Qt::AutoText</enum>
     </property>
    </widget>
+   <zorder>label_4</zorder>
+   <zorder>warnLabelBatteryHeat</zorder>
+   <zorder>warnLabelSolarHeat</zorder>
+   <zorder>batteryWarning_ON</zorder>
+   <zorder>batteryWarning_OFF</zorder>
+   <zorder>solarWarning_ON</zorder>
+   <zorder>solarWarning_OFF</zorder>
+   <zorder>warnLabelMotor</zorder>
+   <zorder>motorWarning_ON</zorder>
+   <zorder>motorWarning_OFF</zorder>
+   <zorder>TurnRightBlinker</zorder>
+   <zorder>TurnOffLeftBlinker</zorder>
+   <zorder>label_2</zorder>
+   <zorder>batteryHeight2</zorder>
+   <zorder>ResetMPH</zorder>
+   <zorder>blinkerColor</zorder>
+   <zorder>MPH</zorder>
+   <zorder>LeftBlinker</zorder>
+   <zorder>rightBlinker</zorder>
+   <zorder>label_7</zorder>
+   <zorder>increaseBattery</zorder>
+   <zorder>batteryPercent</zorder>
+   <zorder>IncreaseMPH</zorder>
+   <zorder>resetBattery</zorder>
+   <zorder>decreaseBattery</zorder>
+   <zorder>batteryHeight1</zorder>
+   <zorder>TurOffBlinkers</zorder>
+   <zorder>DecreaseMPH</zorder>
+   <zorder>lowBatteryWarning</zorder>
+   <zorder>LeftBlinker_2</zorder>
+   <zorder>label</zorder>
+   <zorder>batteryHeight3</zorder>
   </widget>
  </widget>
  <resources/>
