@@ -80,4 +80,3 @@ void MainWindow::on_lightsOFF_clicked()
 {
     lights.off();
 }
-
