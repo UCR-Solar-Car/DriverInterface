@@ -13,14 +13,16 @@ SOURCES += \
     indicators.cpp \
     lights.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    warnings.cpp
 
 HEADERS += \
     battery.h \
     indicators.h \
     lights.h \
     mainwindow.h \
-    states.h
+    states.h \
+    warnings.h
 
 FORMS += \
     mainwindow.ui
