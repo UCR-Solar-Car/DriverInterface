@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     battery.setup(ui);
     lights.setup(ui);
     warnings.setup(ui);
+    speed.setup(ui);
 }
 
 MainWindow::~MainWindow()
@@ -96,4 +97,12 @@ void MainWindow::on_motorWarningON_clicked(){
 
 void MainWindow::on_motorWarningOFF_clicked(){
     warnings.motor_off();
+}
+
+void MainWindow::on_increaseMPH_clicked() {
+    speed.increaseSpeed(1);
+}
+
+void MainWindow::on_decreaseMPH_clicked() {
+    speed.decreaseSpeed(1);
 }
