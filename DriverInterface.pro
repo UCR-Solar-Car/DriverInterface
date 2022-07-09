@@ -10,18 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     battery.cpp \
+    distance.cpp \
     indicators.cpp \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
+    range.cpp \
     speed.cpp \
     warnings.cpp
 
 HEADERS += \
     battery.h \
+    distance.h \
     indicators.h \
     lights.h \
     mainwindow.h \
+    range.h \
     speed.h \
     states.h \
     warnings.h
