@@ -26,17 +26,13 @@
     <property name="styleSheet">
      <string notr="true">QProgressBar
 {
-    background: green;
-    color: #0a9dff;
-    border-style: outset;
-    border-width: 2px;
-    border-color: #74c8ff;
-    border-radius: 7px;
-    text-align: left;
+    background: black;
+	border: 2px solid #2dcc6b;
+
 }
 QProgressBar::chunk
 {
-    background-color:  green;
+    background-color:  #2dcc6b;
 }</string>
     </property>
     <property name="value">
