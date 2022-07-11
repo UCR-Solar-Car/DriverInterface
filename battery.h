@@ -12,7 +12,7 @@ public:
     void increase_battery(int);
     int get_battery();
     int get_range();
-    ~Battery() {}
+    ~Battery() {};
 private:
     int battery;
     int range;

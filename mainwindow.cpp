@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     indicators.setup(ui);
     battery.setup(ui);
     lights.setup(ui);
+    warnings.setup(ui);
 }
 
 MainWindow::~MainWindow()
@@ -79,4 +80,20 @@ void MainWindow::on_nightLightsOFF_clicked()
 void MainWindow::on_lightsOFF_clicked()
 {
     lights.off();
+}
+
+void MainWindow::on_batteryWarningON_clicked(){
+    warnings.battery_on();
+}
+
+void MainWindow::on_batteryWarningOFF_clicked(){
+    warnings.battery_off();
+}
+
+void MainWindow::on_motorWarningON_clicked(){
+    warnings.motor_on();
+}
+
+void MainWindow::on_motorWarningOFF_clicked(){
+    warnings.motor_off();
 }

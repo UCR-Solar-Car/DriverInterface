@@ -5,6 +5,7 @@
 #include "battery.h"
 #include "indicators.h"
 #include "lights.h"
+#include "warnings.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -45,10 +46,19 @@ private slots:
 
     void on_lightsOFF_clicked();
 
+    void on_batteryWarningON_clicked();
+
+    void on_batteryWarningOFF_clicked();
+
+    void on_motorWarningON_clicked();
+
+    void on_motorWarningOFF_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
     Indicators indicators;
     Lights lights;
+    Warnings warnings;
 };
 #endif // MAINWINDOW_H
