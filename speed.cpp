@@ -9,7 +9,7 @@ void Speed::setup(Ui::MainWindow *ui) {
 }
 
 void Speed::increaseSpeed(int value) {
-  if (speed + value < 99) {
+  if (speed + value < 100) {
     this->speed += value;
     this->ui->speed->display(speed);
   }

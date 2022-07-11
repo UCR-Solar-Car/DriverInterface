@@ -8,7 +8,7 @@ void Battery::setup(Ui::MainWindow *ui) {
 }
 
 void Battery::increase_battery(int val) {
-  if (battery < 99 && battery > -1) {
+  if (battery < 100 && battery > -1) {
     battery += val;
     range += val;
     this->ui->battery->setValue(battery);
