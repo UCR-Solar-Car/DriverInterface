@@ -13,6 +13,9 @@ public:
     int get_battery();
     int get_range();
     ~Battery() {};
+private slots:
+    void on_increaseMPH_clicked();
+
 private:
     int battery;
     int range;

@@ -6,6 +6,7 @@
 #include "indicators.h"
 #include "lights.h"
 #include "warnings.h"
+#include "speed.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -54,11 +55,16 @@ private slots:
 
     void on_motorWarningOFF_clicked();
 
+    void on_increaseMPH_clicked();
+
+    void on_decreaseMPH_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
     Indicators indicators;
     Lights lights;
     Warnings warnings;
+    Speed speed;
 };
 #endif // MAINWINDOW_H
