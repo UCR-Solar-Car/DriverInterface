@@ -42,4 +42,6 @@ DISTFILES += \
     right.png \
     left.png \
     night.png \
-    day.png
+    day.png \
+    battery.png \
+    motor.png \
