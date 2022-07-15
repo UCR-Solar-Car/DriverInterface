@@ -17,6 +17,8 @@ public:
 private:
     states battery;
     states motor;
+    QPixmap batteryLabel;
+    QPixmap motorLabel;
     Ui::MainWindow *ui;
 };
 
