@@ -24,15 +24,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QProgressBar
-{
-    background: black;
-	border: 2px solid #2dcc6b;
-
+     <string notr="true">QProgressBar {
+background: black;
+ 	border: 2px solid #2dcc6b;
 }
-QProgressBar::chunk
-{
-    background-color:  #2dcc6b;
+
+QProgressBar::chunk {
+background-color:  #2dcc6b;
 }</string>
     </property>
     <property name="value">
