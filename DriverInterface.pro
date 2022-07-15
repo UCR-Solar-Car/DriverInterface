@@ -15,7 +15,6 @@ SOURCES += \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
-    range.cpp \
     speed.cpp \
     warnings.cpp
 
@@ -25,7 +24,6 @@ HEADERS += \
     indicators.h \
     lights.h \
     mainwindow.h \
-    range.h \
     speed.h \
     states.h \
     warnings.h
