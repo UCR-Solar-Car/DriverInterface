@@ -8,7 +8,6 @@
 #include "warnings.h"
 #include "speed.h"
 #include "distance.h"
-#include "range.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -69,7 +68,6 @@ private:
     Warnings warnings;
     Speed speed;
     Distance distance;
-    Range range;
 
 };
 #endif // MAINWINDOW_H
