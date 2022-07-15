@@ -7,8 +7,8 @@ void Indicators::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   this->ui->leftIndicator->setText("OFF");
   this->ui->rightIndicator->setText("OFF");
-  leftSignal = QPixmap("/Users/iseanbhanot/Documents/GitHub/Driver-Interface-2022/left.png");
-  rightSignal = QPixmap("/Users/iseanbhanot/Documents/GitHub/Driver-Interface-2022/right.png");
+  leftSignal = QPixmap(":/icons/left.png");
+  rightSignal = QPixmap(":/icons/right.png");
 }
 
 void Indicators::left_on() {

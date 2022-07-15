@@ -6,8 +6,8 @@ void Lights::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   ui->nightLights->setText("OFF");
   ui->dayLights->setText("OFF");
-  dayLights = QPixmap("/Users/shahdivyank/Documents/DriverInterface/day.png");
-  nightLights = QPixmap("/Users/shahdivyank/Documents/DriverInterface/night.png");
+  dayLights = QPixmap(":/icons/day.png");
+  nightLights = QPixmap(":/icons/night.png");
 }
 
 void Lights::day_on() {

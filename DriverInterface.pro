@@ -36,10 +36,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    right.png \
-    left.png \
-    night.png \
-    day.png \
-    battery.png \
-    motor.png \
+RESOURCES += \
+    icons.qrc
