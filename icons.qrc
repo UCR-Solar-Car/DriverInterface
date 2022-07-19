@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>battery.png</file>
+        <file>day.png</file>
+        <file>motor.png</file>
+        <file>night.png</file>
+        <file>right.png</file>
+        <file>left.png</file>
+    </qresource>
+</RCC>

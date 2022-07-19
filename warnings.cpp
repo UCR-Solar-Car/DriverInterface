@@ -4,8 +4,8 @@ Warnings::Warnings() : battery(OFF), motor(OFF) { return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  batteryLabel = QPixmap("/Users/iseanbhanot/Documents/GitHub/Driver-Interface-2022/battery.png");
-  motorLabel = QPixmap("/Users/iseanbhanot/Documents/GitHub/Driver-Interface-2022/motor.png");
+  batteryLabel = QPixmap(":/icons/battery.png");
+  motorLabel = QPixmap(":/icons/motor.png");
   this->ui->batteryWarning->setText("OFF");
   this->ui->motorWarning->setText("OFF");
 }
