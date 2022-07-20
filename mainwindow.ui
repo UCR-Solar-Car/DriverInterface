@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>831</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -157,6 +157,16 @@ QProgressBar::chunk
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLabel" name="hornSignal">
+       <property name="text">
+        <string>hornSignal</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget">
@@ -165,7 +175,7 @@ QProgressBar::chunk
       <x>10</x>
       <y>90</y>
       <width>781</width>
-      <height>80</height>
+      <height>90</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -236,6 +246,24 @@ QProgressBar::chunk
          </item>
          <item>
           <widget class="QPushButton" name="motorWarningOFF">
+           <property name="text">
+            <string>OFF</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QPushButton" name="hornSignalON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="hornSignalOFF">
            <property name="text">
             <string>OFF</string>
            </property>
@@ -519,8 +547,8 @@ QProgressBar::chunk
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>24</height>
+     <width>831</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

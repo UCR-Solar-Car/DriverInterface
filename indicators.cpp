@@ -13,7 +13,7 @@ void Indicators::left_on() {
   left = ON;
   right = OFF;
   this->ui->leftIndicator->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/left.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\left.png"));
   this->ui->rightIndicator->setText("OFF");
 }
 
@@ -26,7 +26,7 @@ void Indicators::right_on() {
   right = ON;
   left = OFF;
   this->ui->rightIndicator->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/right.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\right.png"));
   this->ui->leftIndicator->setText("OFF");
 }
 
@@ -39,9 +39,9 @@ void Indicators::hazard_on() {
   left = ON;
   right = ON;
   this->ui->leftIndicator->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/left.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\left.png"));
   this->ui->rightIndicator->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/right.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\right.png"));
 }
 
 void Indicators::hazard_off() {
@@ -50,3 +50,4 @@ void Indicators::hazard_off() {
   this->ui->leftIndicator->setText("OFF");
   this->ui->rightIndicator->setText("OFF");
 }
+

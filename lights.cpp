@@ -12,7 +12,7 @@ void Lights::day_on() {
   day = ON;
   night = OFF;
   ui->dayLights->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/day.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\day.png"));
   ui->nightLights->setText("OFF");
 }
 
@@ -25,7 +25,7 @@ void Lights::night_on() {
   day = OFF;
   night = ON;
   ui->nightLights->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/night.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\night.png"));
   ui->dayLights->setText("OFF");
 }
 

@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
   speed.setup(ui);
     distance.setup(ui);
     range.setup(ui);
+    horn.setup(ui);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -52,3 +53,7 @@ void MainWindow::on_motorWarningOFF_clicked() { warnings.motor_off(); }
 void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); range.decrease_range(1); }
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); range.increase_range(1); }
+
+void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
+
+void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}

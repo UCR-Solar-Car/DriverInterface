@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     battery.cpp \
     distance.cpp \
+    horn.cpp \
     indicators.cpp \
     lights.cpp \
     main.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 HEADERS += \
     battery.h \
     distance.h \
+    horn.h \
     indicators.h \
     lights.h \
     mainwindow.h \
@@ -39,6 +41,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    horn.png \
     right.png \
     left.png \
     night.png \

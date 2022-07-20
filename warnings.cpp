@@ -11,7 +11,7 @@ void Warnings::setup(Ui::MainWindow *ui) {
 void Warnings::battery_on() {
   this->battery = ON;
   this->ui->batteryWarning->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/battery.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\battery.png"));
 }
 
 void Warnings::battery_off() {
@@ -22,10 +22,11 @@ void Warnings::battery_off() {
 void Warnings::motor_on() {
   this->motor = ON;
   this->ui->motorWarning->setPixmap(
-      QPixmap("/Users/shahdivyank/Documents/DriverInterface/motor.png"));
+      QPixmap("C:\\Users\\kavin\\OneDrive\\Desktop\\School\\Solar Car\\Driver-Interface-2022\\motor.png"));
 }
 
 void Warnings::motor_off() {
   this->motor = OFF;
   this->ui->motorWarning->setText("OFF");
 }
+
