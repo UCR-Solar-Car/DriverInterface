@@ -8,6 +8,7 @@
 #include "warnings.h"
 #include "speed.h"
 #include "distance.h"
+#include "horn.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -60,6 +61,10 @@ private slots:
 
     void on_decreaseMPH_clicked();
 
+    void on_hornSignalON_clicked();
+
+    void on_hornSignalOFF_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
@@ -68,6 +73,7 @@ private:
     Warnings warnings;
     Speed speed;
     Distance distance;
+    Horn horn;
 
 };
 #endif // MAINWINDOW_H

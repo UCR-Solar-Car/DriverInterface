@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     battery.cpp \
     distance.cpp \
+    horn.cpp \
     indicators.cpp \
     lights.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     battery.h \
     distance.h \
+    horn.h \
     indicators.h \
     lights.h \
     mainwindow.h \
@@ -36,5 +38,17 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+<<<<<<< HEAD
+DISTFILES += \
+    horn.png \
+    right.png \
+    left.png \
+    night.png \
+    day.png \
+    battery.png \
+    motor.png \
+    horn.png \
+=======
 RESOURCES += \
     icons.qrc
+>>>>>>> 0d1f134f94eb1de2f0f0fc50f02cee4b1527f315
