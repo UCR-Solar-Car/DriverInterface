@@ -16,7 +16,6 @@ SOURCES += \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
-    range.cpp \
     speed.cpp \
     warnings.cpp
 
@@ -27,7 +26,6 @@ HEADERS += \
     indicators.h \
     lights.h \
     mainwindow.h \
-    range.h \
     speed.h \
     states.h \
     warnings.h
@@ -40,6 +38,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+<<<<<<< HEAD
 DISTFILES += \
     horn.png \
     right.png \
@@ -48,3 +47,8 @@ DISTFILES += \
     day.png \
     battery.png \
     motor.png \
+    horn.png \
+=======
+RESOURCES += \
+    icons.qrc
+>>>>>>> 0d1f134f94eb1de2f0f0fc50f02cee4b1527f315

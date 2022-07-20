@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QScreen>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -10,8 +11,11 @@ MainWindow::MainWindow(QWidget *parent)
   warnings.setup(ui);
   speed.setup(ui);
     distance.setup(ui);
-    range.setup(ui);
+
     horn.setup(ui);
+
+    this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -50,10 +54,10 @@ void MainWindow::on_motorWarningON_clicked() { warnings.motor_on(); }
 
 void MainWindow::on_motorWarningOFF_clicked() { warnings.motor_off(); }
 
-void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); range.decrease_range(1); }
-
-void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); range.increase_range(1); }
+void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
 
 void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
+
+void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }

@@ -8,7 +8,6 @@
 #include "warnings.h"
 #include "speed.h"
 #include "distance.h"
-#include "range.h"
 #include "horn.h"
 
 QT_BEGIN_NAMESPACE
@@ -74,7 +73,6 @@ private:
     Warnings warnings;
     Speed speed;
     Distance distance;
-    Range range;
     Horn horn;
 
 };

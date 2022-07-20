@@ -24,15 +24,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QProgressBar
-{
-    background: black;
-	border: 2px solid #2dcc6b;
-
+     <string notr="true">QProgressBar {
+background: black;
+ 	border: 2px solid #2dcc6b;
 }
-QProgressBar::chunk
-{
-    background-color:  #2dcc6b;
+
+QProgressBar::chunk {
+background-color:  #2dcc6b;
 }</string>
     </property>
     <property name="value">
@@ -117,6 +115,9 @@ QProgressBar::chunk
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
       <widget class="QLabel" name="batteryWarning">
        <property name="text">
@@ -139,6 +140,12 @@ QProgressBar::chunk
      </item>
      <item>
       <widget class="QLabel" name="nightLights">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>nightLights</string>
        </property>

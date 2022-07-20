@@ -1,26 +1,35 @@
 #include "battery.h"
 
-Battery::Battery() : battery(100), range(battery) { return; }
+Battery::Battery() : battery(100), range(100) { return; }
 
 void Battery::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  this->ui->battery->setValue(100);
+  this->ui->battery->setValue(battery);
+  ui->range->display(range);
 }
 
 void Battery::increase_battery(int val) {
   if (battery < 100 && battery > -1) {
     battery += val;
-    range += val;
-    this->ui->battery->setValue(battery);
+    this->ui->battery->setValue(battery); ui->battery->update();
+    this->range += val;
+  ui->range->display(range);
   }
+  
 }
 
 void Battery::decrease_battery(int val) {
   if (battery < 101 && battery > 1) {
     battery -= val;
-    range -= val;
-    this->ui->battery->setValue(battery);
+    this->ui->battery->setValue(battery); ui->battery->update();
+
+    if (range - val > -1) {
+    this->range -= val;
+    ui->range->display(range);
   }
+  }
+
+  
 }
 
 int Battery::get_battery() { return battery; }
