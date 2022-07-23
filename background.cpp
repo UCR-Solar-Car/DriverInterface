@@ -1,5 +1,7 @@
 #include "background.h"
 
+Background::Background() {}
+
 void Background::darkTheme() {
   QFile f( ":qdarkstyle/style.qss" );
 
@@ -9,6 +11,5 @@ void Background::darkTheme() {
     f.open( QFile::ReadOnly | QFile::Text );
     QTextStream ts( &f );
     qApp->setStyleSheet(ts.readAll());
-    // getApp()->setStyleSheet( ts.readAll() );
   }
 }
