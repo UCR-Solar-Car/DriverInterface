@@ -17,7 +17,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     speed.cpp \
-    warnings.cpp
+    warnings.cpp \
+    background.cpp
 
 HEADERS += \
     battery.h \
@@ -28,7 +29,8 @@ HEADERS += \
     mainwindow.h \
     speed.h \
     states.h \
-    warnings.h
+    warnings.h \
+    background.h
 
 FORMS += \
     mainwindow.ui
