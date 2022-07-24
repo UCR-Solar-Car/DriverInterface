@@ -1,11 +1,7 @@
 #include "ui_mainwindow.h"
-#include <QFile>
-#include <QWidget>
-#include <QApplication>
+#include <QStyleFactory>
 
-class Background : public QObject {
-
-  Q_OBJECT
+class Background {
 
   public:
     Background();
