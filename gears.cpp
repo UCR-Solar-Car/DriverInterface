@@ -1,6 +1,6 @@
 #include "gears.h"
 
-Gears::Gears() {}
+Gears::Gears() : gear(OFF) {return;}
 
 void Gears::setup(Ui::MainWindow *ui) {
   this->ui = ui;

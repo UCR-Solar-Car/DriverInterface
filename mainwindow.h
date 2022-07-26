@@ -9,6 +9,7 @@
 #include "speed.h"
 #include "distance.h"
 #include "horn.h"
+#include "gears.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -65,6 +66,12 @@ private slots:
 
     void on_hornSignalOFF_clicked();
 
+    // void on_parkingSignalON_clicked();
+
+    // void on_drivingSignalON_clicked();
+    
+    // void on_reversingSignalON_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
@@ -74,6 +81,7 @@ private:
     Speed speed;
     Distance distance;
     Horn horn;
+    Gears gear;
 
 };
 #endif // MAINWINDOW_H

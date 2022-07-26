@@ -61,3 +61,9 @@ void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+
+// void MainWindow::on_parkingSignalON_clicked() {}
+
+// void MainWindow::on_drivingSignalON_clicked() {}
+
+// void MainWindow::on_reversingSignalON_clicked() {}

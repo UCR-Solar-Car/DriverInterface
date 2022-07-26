@@ -11,9 +11,9 @@ class Gears {
     void parking();
     void driving();
     void reversing();
-    void not_parking();
-    void not_driving();
-    void not_reversing();
+    // void not_parking();
+    // void not_driving();
+    // void not_reversing();
     void updates();
   private:
     Ui::MainWindow *ui;
