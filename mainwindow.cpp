@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     distance.setup(ui);
 
     horn.setup(ui);
+    gear.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -62,8 +63,10 @@ void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
 
-// void MainWindow::on_parkingSignalON_clicked() {}
+void MainWindow::on_parkingSignal_clicked() { gear.switchGears(0); }
 
-// void MainWindow::on_drivingSignalON_clicked() {}
+void MainWindow::on_drivingSignal_clicked() { gear.switchGears(1); }
 
-// void MainWindow::on_reversingSignalON_clicked() {}
+void MainWindow::on_neutralSignal_clicked() { gear.switchGears(2); }
+
+void MainWindow::on_reversingSignal_clicked() { gear.switchGears(3); }

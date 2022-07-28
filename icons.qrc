@@ -10,5 +10,6 @@
         <file>parking.png</file>
         <file>drive.png</file>
         <file>reverse.png</file>
+        <file>neutral.png</file>
     </qresource>
 </RCC>
