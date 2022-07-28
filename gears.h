@@ -13,10 +13,14 @@ class Gears {
   private:
     Ui::MainWindow *ui;
     gears gear;
-    QPixmap parkingSignal;
-    QPixmap drivingSignal;
-    QPixmap reversingSignal;
-    QPixmap neutralSignal;
+    // states park;
+    // states drive;
+    // states neutral;
+    // states reverse;
+    QPixmap parkingIcon;
+    QPixmap drivingIcon;
+    QPixmap reversingIcon;
+    QPixmap neutralIcon;
 };
 
 #endif

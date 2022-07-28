@@ -66,13 +66,13 @@ private slots:
 
     void on_hornSignalOFF_clicked();
 
-    void on_parkingSignal_clicked();
+    void on_parkingSignalON_clicked();
 
-    void on_drivingSignal_clicked();
+    void on_drivingSignalON_clicked();
 
-    void on_neutralSignal_clicked();
+    void on_neutralSignalON_clicked();
 
-    void on_reversingSignal_clicked();
+    void on_reversingSignalON_clicked();
 private:
     Ui::MainWindow *ui;
     Battery battery;

@@ -325,6 +325,43 @@ background-color:  #2dcc6b;
          </item>
         </layout>
        </item>
+
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QPushButton" name="parkingSignalON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QPushButton" name="drivingSignalON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+
+          <item>
+          <widget class="QPushButton" name="neutralSignalON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+
+          <item>
+          <widget class="QPushButton" name="reversingSignalON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
       </layout>
      </item>
     </layout>
