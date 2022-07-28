@@ -174,6 +174,53 @@ background-color:  #2dcc6b;
        </property>
       </widget>
      </item>
+  
+     <item>
+      <widget class="QLabel" name="parkingSignal">
+       <property name="text">
+        <string>parkingSignal</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QLabel" name="drivingSignal">
+       <property name="text">
+        <string>drivingSignalSignal</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QLabel" name="neutralSignal">
+       <property name="text">
+        <string>neutralSignal</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QLabel" name="reversingSignal">
+       <property name="text">
+        <string>reversingSignal</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+
+    
+
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget">

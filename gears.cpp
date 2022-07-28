@@ -13,18 +13,18 @@ void Gears::setup(Ui::MainWindow *ui) {
 void Gears::switchGears(int state) {
   if (state == 0) {
     this->gear = PARK;
-    // this->ui->parkingSignal->setPixmap(parkingSignal);
+    this->ui->parkingSignal->setPixmap(parkingSignal);
   } 
   else if (state == 1) {
     this->gear = DRIVE;
-    // this->ui->drivingSignal->setPixmap(drivingSignal);
+    this->ui->drivingSignal->setPixmap(drivingSignal);
   }
   else if (state == 2) {
     this->gear = NEUTRAL;
-    // this->ui->neutralSignal->setPixmap(neutralSignal);
+    this->ui->neutralSignal->setPixmap(neutralSignal);
   }
   else if (state == 3) {
     this->gear = REVERSE;
-    // this->ui->reversingSignal->setPixmap(reversingSignal);
+    this->ui->reversingSignal->setPixmap(reversingSignal);
   }
 }
