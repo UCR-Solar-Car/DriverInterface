@@ -8,7 +8,7 @@ class Gears {
   public:
     Gears();
     void setup(Ui::MainWindow *);
-    void switchGears(int);
+    void switchGears(gears);
     
   private:
     Ui::MainWindow *ui;

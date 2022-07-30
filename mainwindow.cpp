@@ -63,10 +63,10 @@ void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
 
-void MainWindow::on_parkingSignalON_clicked() { gear.switchGears(0); }
+void MainWindow::on_parkingSignalON_clicked() { gear.switchGears(PARK); }
 
-void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(1); }
+void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(DRIVE); }
 
-void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(2); }
+void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(NEUTRAL); }
 
-void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(3); }
+void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }

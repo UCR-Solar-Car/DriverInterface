@@ -15,9 +15,9 @@ void Gears::setup(Ui::MainWindow *ui) {
   this->ui->reversingSignal->setText("OFF");
 }
 
-void Gears::switchGears(int state) {
-  if (state == 0) {
-    gear = PARK;
+void Gears::switchGears(gears state) {
+  if (state == PARK) {
+    gear = state;
 
     this->ui->drivingSignal->setText("OFF");
     this->ui->neutralSignal->setText("OFF");
@@ -25,8 +25,8 @@ void Gears::switchGears(int state) {
 
     this->ui->parkingSignal->setPixmap(parkingIcon);
   } 
-  else if (state == 1) {
-    gear = DRIVE;
+  else if (state == DRIVE) {
+    gear = state;
 
     this->ui->parkingSignal->setText("OFF");
     this->ui->neutralSignal->setText("OFF");
@@ -34,8 +34,8 @@ void Gears::switchGears(int state) {
 
     this->ui->drivingSignal->setPixmap(drivingIcon);
   }
-  else if (state == 2) {
-    gear = NEUTRAL;
+  else if (state == NEUTRAL) {
+    gear = state;
 
     this->ui->parkingSignal->setText("OFF");
     this->ui->drivingSignal->setText("OFF");
@@ -43,8 +43,8 @@ void Gears::switchGears(int state) {
 
     this->ui->neutralSignal->setPixmap(neutralIcon);
   }
-  else if (state == 3) {
-    gear = REVERSE;
+  else if (state == REVERSE) {
+    gear = state;
 
     this->ui->parkingSignal->setText("OFF");
     this->ui->drivingSignal->setText("OFF");
