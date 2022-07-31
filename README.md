@@ -33,6 +33,16 @@ After you have gotten your reviews, you may merge your code and the branch will 
 ## References 
 
 ### Git Commands
+Use the following command to create a new branch and checkout to said branch. 
+```
+git checkout -b <branch_name> 
+```
+OR
+```
+git branch <branch_name>
+git checkout <branch_name>
+```
+
 Use the following command to track all files for git to keep track of. 
 ```
 git add .
