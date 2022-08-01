@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     horn.setup(ui);
     gear.setup(ui);
+    cruise.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -70,3 +71,7 @@ void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(DRIVE); }
 void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(NEUTRAL); }
 
 void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }
+
+void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
+
+void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
