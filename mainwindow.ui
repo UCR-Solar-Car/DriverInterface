@@ -240,7 +240,7 @@ background-color:  #2dcc6b;
       <x>500</x>
       <y>530</y> 
       <width>500</width>
-      <height>80</height>
+      <height>100</height>
     </rect>
   </property>
 
@@ -403,6 +403,35 @@ background-color:  #2dcc6b;
           <widget class="QPushButton" name="reversingSignalON">
             <property name="text">
               <string>ON</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+
+    <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+        <rect>
+          <x>690</x>
+          <y>620</y>
+          <width>130</width>
+          <height>80</height>
+        </rect>
+      </property>
+
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QPushButton" name="cruiseControlON">
+            <property name="text">
+              <string>ON</string>
+            </property>
+          </widget>
+        </item>
+
+        <item>
+          <widget class="QPushButton" name="cruiseControlOFF">
+            <property name="text">
+              <string>OFF</string>
             </property>
           </widget>
         </item>
