@@ -11,5 +11,6 @@
         <file>drive.png</file>
         <file>reverse.png</file>
         <file>neutral.png</file>
+        <file>cruise.png</file>
     </qresource>
 </RCC>

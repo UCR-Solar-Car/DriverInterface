@@ -234,6 +234,30 @@ background-color:  #2dcc6b;
   </layout>
 </widget>
 
+<widget class="QWidget" name="horizontalLayoutWidget">
+  <property name="geometry">
+    <rect>
+      <x>703</x>
+      <y>520</y> 
+      <width>50</width>
+      <height>50</height>
+    </rect>
+  </property>
+
+  <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+      <widget class="QLabel" name="cruiseControlSignal">
+        <property name="text">
+          <string>cruiseControlSignal</string>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignCenter</set>
+        </property>
+      </widget>
+    </item>
+  </layout>
+</widget>
+
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
@@ -379,6 +403,35 @@ background-color:  #2dcc6b;
           <widget class="QPushButton" name="reversingSignalON">
             <property name="text">
               <string>ON</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+
+    <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+        <rect>
+          <x>665</x>
+          <y>581</y>
+          <width>130</width>
+          <height>80</height>
+        </rect>
+      </property>
+
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QPushButton" name="cruiseControlON">
+            <property name="text">
+              <string>ON</string>
+            </property>
+          </widget>
+        </item>
+
+        <item>
+          <widget class="QPushButton" name="cruiseControlOFF">
+            <property name="text">
+              <string>OFF</string>
             </property>
           </widget>
         </item>
