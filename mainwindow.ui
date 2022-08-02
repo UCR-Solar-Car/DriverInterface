@@ -237,10 +237,10 @@ background-color:  #2dcc6b;
 <widget class="QWidget" name="horizontalLayoutWidget">
   <property name="geometry">
     <rect>
-      <x>500</x>
-      <y>530</y> 
-      <width>500</width>
-      <height>100</height>
+      <x>703</x>
+      <y>520</y> 
+      <width>50</width>
+      <height>50</height>
     </rect>
   </property>
 
@@ -412,8 +412,8 @@ background-color:  #2dcc6b;
     <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
         <rect>
-          <x>690</x>
-          <y>620</y>
+          <x>665</x>
+          <y>581</y>
           <width>130</width>
           <height>80</height>
         </rect>
