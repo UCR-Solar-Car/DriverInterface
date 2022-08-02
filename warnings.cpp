@@ -12,6 +12,7 @@ void Warnings::setup(Ui::MainWindow *ui) {
 
 void Warnings::battery_on() {
   this->battery = ON;
+
   this->ui->batteryWarning->setPixmap(batteryLabel);
 }
 
@@ -22,6 +23,7 @@ void Warnings::battery_off() {
 
 void Warnings::motor_on() {
   this->motor = ON;
+
   this->ui->motorWarning->setPixmap(motorLabel);
 }
 
@@ -29,3 +31,4 @@ void Warnings::motor_off() {
   this->motor = OFF;
   this->ui->motorWarning->setText("OFF");
 }
+

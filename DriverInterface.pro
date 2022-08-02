@@ -11,22 +11,30 @@ CONFIG += c++17
 SOURCES += \
     battery.cpp \
     distance.cpp \
+    horn.cpp \
     indicators.cpp \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
     speed.cpp \
-    warnings.cpp
+    warnings.cpp \
+    background.cpp \
+    gears.cpp \
+    cruise.cpp
 
 HEADERS += \
     battery.h \
     distance.h \
+    horn.h \
     indicators.h \
     lights.h \
     mainwindow.h \
     speed.h \
     states.h \
-    warnings.h
+    warnings.h \
+    background.h \
+    gears.h \
+    cruise.h
 
 FORMS += \
     mainwindow.ui
@@ -38,3 +46,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     icons.qrc
+

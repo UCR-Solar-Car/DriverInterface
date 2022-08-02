@@ -11,7 +11,13 @@ MainWindow::MainWindow(QWidget *parent)
   warnings.setup(ui);
   speed.setup(ui);
     distance.setup(ui);
+
+    horn.setup(ui);
+    gear.setup(ui);
+    cruise.setup(ui);
+
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -52,4 +58,20 @@ void MainWindow::on_motorWarningOFF_clicked() { warnings.motor_off(); }
 
 void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
 
+void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
+
+void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
+
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+
+void MainWindow::on_parkingSignalON_clicked() { gear.switchGears(PARK); }
+
+void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(DRIVE); }
+
+void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(NEUTRAL); }
+
+void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }
+
+void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
+
+void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }

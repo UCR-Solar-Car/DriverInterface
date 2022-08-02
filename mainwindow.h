@@ -8,6 +8,9 @@
 #include "warnings.h"
 #include "speed.h"
 #include "distance.h"
+#include "horn.h"
+#include "gears.h"
+#include "cruise.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -60,6 +63,21 @@ private slots:
 
     void on_decreaseMPH_clicked();
 
+    void on_hornSignalON_clicked();
+
+    void on_hornSignalOFF_clicked();
+
+    void on_parkingSignalON_clicked();
+
+    void on_drivingSignalON_clicked();
+
+    void on_neutralSignalON_clicked();
+
+    void on_reversingSignalON_clicked();
+
+    void on_cruiseControlON_clicked();
+
+    void on_cruiseControlOFF_clicked();
 private:
     Ui::MainWindow *ui;
     Battery battery;
@@ -68,6 +86,9 @@ private:
     Warnings warnings;
     Speed speed;
     Distance distance;
+    Horn horn;
+    Gears gear;
+    CruiseControl cruise;
 
 };
 #endif // MAINWINDOW_H
