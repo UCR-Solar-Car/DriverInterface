@@ -4,6 +4,13 @@
 #include "ui_mainwindow.h"
 #include "states.h"
 
+struct WarningLabel{
+    WarningLabel(states state, QPixmap image, QLabel* label) : state(state), image(image), label(label){}
+    states state;
+    QPixmap image;
+    QLabel* label;
+};
+
 class Warnings
 {
 public:
@@ -13,9 +20,7 @@ public:
     void off(QLabel* inputLabel);
     ~Warnings() {};
 private:
-    std::vector<states> warningState;
-    std::vector<QPixmap> warningPixmap;
-    std::vector<QLabel*> warningLabels;
+    std::vector<WarningLabel> warningLabels;
     Ui::MainWindow *ui;
 };
 
