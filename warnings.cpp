@@ -1,34 +1,45 @@
 #include "warnings.h"
 
-Warnings::Warnings() : battery(OFF), motor(OFF) { return; }
+Warnings::Warnings(){ return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  batteryLabel = QPixmap(":/icons/battery.png");
-  motorLabel = QPixmap(":/icons/motor.png");
-  this->ui->batteryWarning->setText("OFF");
-  this->ui->motorWarning->setText("OFF");
+  // Battery Warning
+  warningPixmap.push_back(QPixmap(":/icons/battery.png"));
+  warningLabels.push_back(ui->batteryWarning);
+
+  // Motor Warning
+  warningPixmap.push_back(QPixmap(":/icons/motor.png"));
+  warningLabels.push_back(ui->motorWarning);
+
+  for(unsigned i = 0; i < warningPixmap.size(); ++i){
+      warningState.push_back(OFF);
+      warningLabels.at(i)->setText("OFF");
+  }
 }
 
-void Warnings::battery_on() {
-  this->battery = ON;
+void Warnings::on(QLabel* inputLabel){
+    int index = 0;
+    for(QLabel* checkLabel: warningLabels){
+        if(checkLabel == inputLabel){
+            break;
+        }
+        index++;
+    }
 
-  this->ui->batteryWarning->setPixmap(batteryLabel);
+    warningState.at(index) = ON;
+    inputLabel->setPixmap(warningPixmap.at(index));
 }
 
-void Warnings::battery_off() {
-  this->battery = OFF;
-  this->ui->batteryWarning->setText("OFF");
+void Warnings::off(QLabel* inputLabel){
+    int index = 0;
+    for(QLabel* checkLabel: warningLabels){
+        if(checkLabel == inputLabel){
+            break;
+        }
+        index++;
+    }
+
+    warningState.at(index) = OFF;
+    inputLabel->setText("OFF");
 }
-
-void Warnings::motor_on() {
-  this->motor = ON;
-
-  this->ui->motorWarning->setPixmap(motorLabel);
-}
-
-void Warnings::motor_off() {
-  this->motor = OFF;
-  this->ui->motorWarning->setText("OFF");
-}
-

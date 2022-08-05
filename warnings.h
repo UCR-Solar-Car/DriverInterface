@@ -9,16 +9,13 @@ class Warnings
 public:
     Warnings();
     void setup(Ui::MainWindow*);
-    void battery_on();
-    void battery_off();
-    void motor_on();
-    void motor_off();
+    void on(QLabel* inputLabel);
+    void off(QLabel* inputLabel);
     ~Warnings() {};
 private:
-    states battery;
-    states motor;
-    QPixmap batteryLabel;
-    QPixmap motorLabel;
+    std::vector<states> warningState;
+    std::vector<QPixmap> warningPixmap;
+    std::vector<QLabel*> warningLabels;
     Ui::MainWindow *ui;
 };
 
