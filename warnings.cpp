@@ -7,9 +7,6 @@ void Warnings::setup(Ui::MainWindow *ui) {
     WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png"),ui->batteryWarning);
     WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png"),ui->motorWarning);
 
-//    std::make_pair<warnings,WarningLabel> BATTERY_WARNING(BATTERY,battery);
-//    std::make_pair<warnings,WarningLabel> MOTOR_WARNING(MOTOR,motor);
-
     warning_labels.insert({BATTERY, battery});
     warning_labels.insert({MOTOR, motor});
 }
