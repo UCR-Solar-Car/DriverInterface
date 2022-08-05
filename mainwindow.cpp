@@ -48,13 +48,13 @@ void MainWindow::on_nightLightsOFF_clicked() { lights.night_off(); }
 
 void MainWindow::on_lightsOFF_clicked() { lights.off(); }
 
-void MainWindow::on_batteryWarningON_clicked() { warnings.on(ui->batteryWarning); }
+void MainWindow::on_batteryWarningON_clicked() { warnings.on(BATTERY); }
 
-void MainWindow::on_batteryWarningOFF_clicked() { warnings.off(ui->batteryWarning); }
+void MainWindow::on_batteryWarningOFF_clicked() { warnings.off(BATTERY); }
 
-void MainWindow::on_motorWarningON_clicked() { warnings.on(ui->motorWarning); }
+void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
 
-void MainWindow::on_motorWarningOFF_clicked() { warnings.off(ui->motorWarning); }
+void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
 
 void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
 

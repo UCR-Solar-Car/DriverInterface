@@ -3,6 +3,8 @@
 
 #include "ui_mainwindow.h"
 #include "states.h"
+#include <unordered_map>
+#include <iostream>
 
 struct WarningLabel{
     WarningLabel(states state, QPixmap image, QLabel* label) : state(state), image(image), label(label){}
@@ -16,11 +18,11 @@ class Warnings
 public:
     Warnings();
     void setup(Ui::MainWindow*);
-    void on(QLabel* inputLabel);
-    void off(QLabel* inputLabel);
+    void on(warnings warning);
+    void off(warnings warning);
     ~Warnings() {};
 private:
-    std::vector<WarningLabel> warningLabels;
+    std::unordered_map<warnings, WarningLabel> warning_labels;
     Ui::MainWindow *ui;
 };
 
