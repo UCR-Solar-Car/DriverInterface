@@ -1,34 +1,25 @@
 #include "warnings.h"
 
-Warnings::Warnings() : battery(OFF), motor(OFF) { return; }
+Warnings::Warnings(){ return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  batteryLabel = QPixmap(":/icons/battery.png");
-  motorLabel = QPixmap(":/icons/motor.png");
-  this->ui->batteryWarning->setText("OFF");
-  this->ui->motorWarning->setText("OFF");
+    WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png"),ui->batteryWarning);
+    WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png"),ui->motorWarning);
+
+//    std::make_pair<warnings,WarningLabel> BATTERY_WARNING(BATTERY,battery);
+//    std::make_pair<warnings,WarningLabel> MOTOR_WARNING(MOTOR,motor);
+
+    warning_labels.insert({BATTERY, battery});
+    warning_labels.insert({MOTOR, motor});
 }
 
-void Warnings::battery_on() {
-  this->battery = ON;
-
-  this->ui->batteryWarning->setPixmap(batteryLabel);
+void Warnings::on(warnings warning){
+    warning_labels[warning]->state = ON;
+    warning_labels[warning]->label->setPixmap(warning_labels[warning]->image);
 }
 
-void Warnings::battery_off() {
-  this->battery = OFF;
-  this->ui->batteryWarning->setText("OFF");
+void Warnings::off(warnings warning){
+    warning_labels[warning]->state = OFF;
+    warning_labels[warning]->label->setText("OFF");
 }
-
-void Warnings::motor_on() {
-  this->motor = ON;
-
-  this->ui->motorWarning->setPixmap(motorLabel);
-}
-
-void Warnings::motor_off() {
-  this->motor = OFF;
-  this->ui->motorWarning->setText("OFF");
-}
-
