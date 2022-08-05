@@ -22,7 +22,7 @@ public:
     void off(warnings warning);
     ~Warnings() {};
 private:
-    std::unordered_map<warnings, WarningLabel> warning_labels;
+    std::unordered_map<warnings, WarningLabel*> warning_labels;
     Ui::MainWindow *ui;
 };
 
