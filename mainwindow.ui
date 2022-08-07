@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1333</width>
-    <height>765</height>
+    <width>863</width>
+    <height>738</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,6 +129,16 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="motorWarning">
+       <property name="text">
+        <string>motorWarning</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="dayLights">
        <property name="text">
         <string>dayLights</string>
@@ -155,9 +165,9 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="motorWarning">
+      <widget class="QLabel" name="cruiseControlSignal">
        <property name="text">
-        <string>motorWarning</string>
+        <string>cruiseControlSignal</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -225,6 +235,7 @@ background-color:  #2dcc6b;
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
+<<<<<<< HEAD
      </item>
     </layout>
    </widget>
@@ -250,6 +261,40 @@ background-color:  #2dcc6b;
      </item>
     </layout>
    </widget>
+||||||| e7e0bf2
+    </item>
+  </layout>
+</widget>
+
+<widget class="QWidget" name="horizontalLayoutWidget_2">
+  <property name="geometry">
+    <rect>
+      <x>703</x>
+      <y>520</y> 
+      <width>50</width>
+      <height>50</height>
+    </rect>
+  </property>
+
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+      <widget class="QLabel" name="cruiseControlSignal">
+        <property name="text">
+          <string>cruiseControlSignal</string>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignCenter</set>
+        </property>
+      </widget>
+    </item>
+  </layout>
+</widget>
+
+=======
+     </item>
+    </layout>
+   </widget>
+>>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
@@ -273,6 +318,24 @@ background-color:  #2dcc6b;
          </item>
          <item>
           <widget class="QPushButton" name="batteryWarningOFF">
+           <property name="text">
+            <string>OFF</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="motorWarningON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="motorWarningOFF">
            <property name="text">
             <string>OFF</string>
            </property>
@@ -317,16 +380,16 @@ background-color:  #2dcc6b;
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QPushButton" name="motorWarningON">
+          <widget class="QPushButton" name="cruiseControlON">
            <property name="text">
             <string>ON</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="motorWarningOFF">
+          <widget class="QPushButton" name="cruiseControlOFF">
            <property name="text">
             <string>OFF</string>
            </property>
@@ -352,6 +415,7 @@ background-color:  #2dcc6b;
          </item>
         </layout>
        </item>
+<<<<<<< HEAD
       </layout>
      </item>
     </layout>
@@ -420,6 +484,53 @@ background-color:  #2dcc6b;
        </property>
       </widget>
      </item>
+||||||| e7e0bf2
+    </layout>
+    </item>
+=======
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>600</y>
+      <width>500</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="parkingSignalON">
+       <property name="text">
+        <string>ON</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="drivingSignalON">
+       <property name="text">
+        <string>ON</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="neutralSignalON">
+       <property name="text">
+        <string>ON</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="reversingSignalON">
+       <property name="text">
+        <string>ON</string>
+       </property>
+      </widget>
+     </item>
+>>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
     </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -688,6 +799,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QPushButton" name="frontLeftON">
     <property name="geometry">
      <rect>
@@ -878,6 +990,29 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+||||||| e7e0bf2
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>831</width>
+     <height>21</height>
+    </rect>
+   </property>
+=======
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>863</width>
+     <height>22</height>
+    </rect>
+   </property>
+>>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

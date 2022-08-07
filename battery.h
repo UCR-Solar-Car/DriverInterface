@@ -16,7 +16,9 @@ public:
 
 private:
     int battery;
-    int range;
+    double range;
+    /* Efficency is (Miles traveled) per (Unit of Battery)*/
+    const double efficiencyConstant = .85;
     Ui::MainWindow *ui;
 };
 
