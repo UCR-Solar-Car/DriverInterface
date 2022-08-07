@@ -13,6 +13,6 @@
         <file>neutral.png</file>
         <file>cruise.png</file>
         <file>warning.png</file>
-        <file>car.png</file>
+		<file>tire.png</file>
     </qresource>
 </RCC>

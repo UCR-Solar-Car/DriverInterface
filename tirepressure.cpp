@@ -1,38 +1,48 @@
 #include "tirepressure.h"
 
-TirePressure::TirePressure() : front_left(GOOD), front_right(GOOD), back_left(GOOD), back_right(GOOD) { return; }
+TirePressure::TirePressure() : frontLeftVal(36), frontRightVal(36), backLeftVal(36), backRightVal(36), threshold(34) { return; }
 
 void TirePressure::setup(Ui::MainWindow *ui){
     this->ui = ui;
     warning_label = QPixmap(":/icons/warning.png");
-    car_label = QPixmap(":/icons/car.png");
-//    this->ui->carLabel->setPixmap(car_label);
-
+    tire_label = QPixmap(":/icons/tire.png");
+    (frontLeftVal < threshold) ? front_left_bad() : front_left_good();
+    (frontRightVal < threshold) ? front_right_bad() : front_right_good();
+    (backLeftVal < threshold) ? back_left_bad() : back_left_good();
+    (backRightVal < threshold) ? back_right_bad() : back_right_good();
 }
 
 void TirePressure::front_left_bad(){
+    front_left = BAD;
     this->ui->frontLeft->setPixmap(warning_label);
 }
 void TirePressure::front_right_bad(){
+    front_right = BAD;
     this->ui->frontRight->setPixmap(warning_label);
 };
 void TirePressure::back_left_bad(){
+    back_left = BAD;
     this->ui->backLeft->setPixmap(warning_label);
 };
 void TirePressure::back_right_bad(){
+    back_right = BAD;
     this->ui->backRight->setPixmap(warning_label);
 };
 void TirePressure::front_left_good(){
-    this->ui->frontLeft->setText("");
+    front_left = GOOD;
+    this->ui->frontLeft->setPixmap(tire_label);
 };
 void TirePressure::front_right_good(){
-    this->ui->frontRight->setText("");
+    front_right = GOOD;
+    this->ui->frontRight->setPixmap(tire_label);
 };
 void TirePressure::back_left_good(){
-    this->ui->backLeft->setText("");
+    back_left = GOOD;
+    this->ui->backLeft->setPixmap(tire_label);
 };
 void TirePressure::back_right_good(){
-    this->ui->backRight->setText("");
+    back_right = GOOD;
+    this->ui->backRight->setPixmap(tire_label);
 };
 
 

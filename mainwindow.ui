@@ -704,7 +704,7 @@ background-color:  #2dcc6b;
    <widget class="QLabel" name="carLabel">
     <property name="geometry">
      <rect>
-      <x>1000</x>
+      <x>970</x>
       <y>150</y>
       <width>191</width>
       <height>391</height>
@@ -730,7 +730,7 @@ background-color:  #2dcc6b;
    <widget class="QPushButton" name="frontRightON">
     <property name="geometry">
      <rect>
-      <x>1200</x>
+      <x>1140</x>
       <y>110</y>
       <width>89</width>
       <height>25</height>
@@ -743,7 +743,7 @@ background-color:  #2dcc6b;
    <widget class="QPushButton" name="frontRightOFF">
     <property name="geometry">
      <rect>
-      <x>1200</x>
+      <x>1140</x>
       <y>140</y>
       <width>89</width>
       <height>25</height>
@@ -782,7 +782,7 @@ background-color:  #2dcc6b;
    <widget class="QPushButton" name="backRightOFF">
     <property name="geometry">
      <rect>
-      <x>1200</x>
+      <x>1140</x>
       <y>560</y>
       <width>89</width>
       <height>25</height>
@@ -795,7 +795,7 @@ background-color:  #2dcc6b;
    <widget class="QPushButton" name="backRightON">
     <property name="geometry">
      <rect>
-      <x>1200</x>
+      <x>1140</x>
       <y>530</y>
       <width>89</width>
       <height>25</height>
@@ -808,8 +808,8 @@ background-color:  #2dcc6b;
    <widget class="QLabel" name="frontLeft">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>180</y>
+      <x>905</x>
+      <y>160</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -820,15 +820,21 @@ background-color:  #2dcc6b;
       <height>50</height>
      </size>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="text">
      <string>frontLeft</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="backLeft">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>420</y>
+      <x>905</x>
+      <y>430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -836,12 +842,15 @@ background-color:  #2dcc6b;
     <property name="text">
      <string>backLeft</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="backRight">
     <property name="geometry">
      <rect>
-      <x>1130</x>
-      <y>420</y>
+      <x>1135</x>
+      <y>430</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -849,18 +858,24 @@ background-color:  #2dcc6b;
     <property name="text">
      <string>backRight</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="frontRight">
     <property name="geometry">
      <rect>
-      <x>1130</x>
-      <y>180</y>
+      <x>1135</x>
+      <y>160</y>
       <width>100</width>
       <height>100</height>
      </rect>
     </property>
     <property name="text">
      <string>frontRight</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>

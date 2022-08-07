@@ -26,11 +26,13 @@ private:
     condition front_right;
     condition back_left;
     condition back_right;
-//    QPixmap front_left_bad_label;
-//    QPixmap front_right_bad_label;
-//    QPixmap back_left_bad_label;
-//    QPixmap back_right_bad_label;
+    int frontLeftVal;
+    int frontRightVal;
+    int backLeftVal;
+    int backRightVal;
+    int threshold;
     QPixmap warning_label;
+    QPixmap tire_label;
     QPixmap car_label;
     Ui::MainWindow *ui;
 };
