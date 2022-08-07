@@ -235,7 +235,6 @@ background-color:  #2dcc6b;
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-<<<<<<< HEAD
      </item>
     </layout>
    </widget>
@@ -261,7 +260,6 @@ background-color:  #2dcc6b;
      </item>
     </layout>
    </widget>
-||||||| e7e0bf2
     </item>
   </layout>
 </widget>
@@ -289,12 +287,6 @@ background-color:  #2dcc6b;
     </item>
   </layout>
 </widget>
-
-=======
-     </item>
-    </layout>
-   </widget>
->>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
@@ -415,122 +407,45 @@ background-color:  #2dcc6b;
          </item>
         </layout>
        </item>
-<<<<<<< HEAD
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>600</y>
-      <width>500</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QPushButton" name="parkingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="drivingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="neutralSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="reversingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>665</x>
-      <y>581</y>
-      <width>130</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <widget class="QPushButton" name="cruiseControlON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="cruiseControlOFF">
-       <property name="text">
-        <string>OFF</string>
-       </property>
-      </widget>
-     </item>
-||||||| e7e0bf2
-    </layout>
-    </item>
-=======
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>600</y>
-      <width>500</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QPushButton" name="parkingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="drivingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="neutralSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="reversingSignalON">
-       <property name="text">
-        <string>ON</string>
-       </property>
-      </widget>
-     </item>
->>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>600</y>
+       <width>500</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="parkingSignalON">
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="drivingSignalON">
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="neutralSignalON">
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="reversingSignalON">
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </widget>
+      </item>
     </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -799,7 +714,6 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-<<<<<<< HEAD
    <widget class="QPushButton" name="frontLeftON">
     <property name="geometry">
      <rect>
@@ -990,29 +904,16 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-||||||| e7e0bf2
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>831</width>
-     <height>21</height>
-    </rect>
-   </property>
-=======
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>863</width>
-     <height>22</height>
-    </rect>
-   </property>
->>>>>>> 5a39b97963d2a4da78a1957b0df06787fd9676bd
+</widget>
+<widget class="QMenuBar" name="menubar">
+ <property name="geometry">
+  <rect>
+   <x>0</x>
+   <y>0</y>
+   <width>863</width>
+   <height>22</height>
+  </rect>
+ </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

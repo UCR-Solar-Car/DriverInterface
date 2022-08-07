@@ -1,7 +1,7 @@
 #ifndef WARNINGS_H
 #define WARNINGS_H
 
-#include "ui_mainwindow.h"
+#include "mainwindow.h"
 #include "states.h"
 #include <unordered_map>
 #include <iostream>
