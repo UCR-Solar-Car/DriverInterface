@@ -12,5 +12,6 @@
         <file>reverse.png</file>
         <file>neutral.png</file>
         <file>cruise.png</file>
+        <file>low-battery.png</file>
     </qresource>
 </RCC>
