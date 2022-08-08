@@ -56,6 +56,10 @@ void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
 
 void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
 
+void MainWindow::on_lowBatteryWarningON_clicked() { warnings.on(LOW_BATTERY); }
+
+void MainWindow::on_lowBatteryWarningOFF_clicked() { warnings.off(LOW_BATTERY); }
+
 void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
 
 void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}

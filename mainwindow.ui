@@ -138,6 +138,18 @@ background-color:  #2dcc6b;
        </property>
       </widget>
      </item>
+
+    <item>
+      <widget class="QLabel" name="lowBatteryWarning">
+        <property name="text">
+          <string>lowBatteryWarning</string>
+        </property>
+        <property name="alignment">
+          <set>Qt::AlignCenter</set>
+        </property>
+      </widget>
+    </item>
+
      <item>
       <widget class="QLabel" name="dayLights">
        <property name="text">
@@ -286,6 +298,26 @@ background-color:  #2dcc6b;
          </item>
         </layout>
        </item>
+
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QPushButton" name="lowBatteryWarningON">
+           <property name="text">
+            <string>ON</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="lowBatteryWarningOFF">
+           <property name="text">
+            <string>OFF</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_1">
          <item>
