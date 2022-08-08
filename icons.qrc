@@ -14,5 +14,6 @@
         <file>cruise.png</file>
         <file>warning.png</file>
 		<file>tire.png</file>
+		<file>car.png</file>
     </qresource>
 </RCC>

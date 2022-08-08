@@ -3,12 +3,14 @@
 Warnings::Warnings(){ return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
-  this->ui = ui;
+    this->ui = ui;
     WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png"),ui->batteryWarning);
     WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png"),ui->motorWarning);
 
     warning_labels.insert({BATTERY, battery});
     warning_labels.insert({MOTOR, motor});
+    off(BATTERY);
+    off(MOTOR);
 }
 
 void Warnings::on(warnings warning){
