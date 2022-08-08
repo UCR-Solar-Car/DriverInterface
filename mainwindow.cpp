@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     horn.setup(ui);
     gear.setup(ui);
     cruise.setup(ui);
+    tire.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -75,3 +76,20 @@ void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }
 void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
 
 void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
+
+void MainWindow::on_frontLeftON_clicked() {tire.lowPressure(FRONT_LEFT); }
+
+void MainWindow::on_frontLeftOFF_clicked() {tire.normalPressure(FRONT_LEFT); }
+
+void MainWindow::on_frontRightON_clicked() {tire.lowPressure(FRONT_RIGHT); }
+
+void MainWindow::on_frontRightOFF_clicked() {tire.normalPressure(FRONT_RIGHT); }
+
+void MainWindow::on_backLeftON_clicked() {tire.lowPressure(BACK_LEFT); }
+
+void MainWindow::on_backLeftOFF_clicked() {tire.normalPressure(BACK_LEFT); }
+
+void MainWindow::on_backRightON_clicked() {tire.lowPressure(BACK_RIGHT); }
+
+void MainWindow::on_backRightOFF_clicked() {tire.normalPressure(BACK_RIGHT); }
+
