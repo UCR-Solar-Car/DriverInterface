@@ -7,4 +7,6 @@ enum gears {PARK, DRIVE, NEUTRAL, REVERSE};
 
 enum warnings {BATTERY, MOTOR};
 
+enum tires{FRONTLEFT, FRONTRIGHT, BACKLEFT, BACKRIGHT};
+
 #endif // STATES_H
