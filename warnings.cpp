@@ -13,12 +13,30 @@ void Warnings::setup(Ui::MainWindow *ui) {
   warning_labels.insert({LOW_BATTERY, lowBattery});
 }
 
-void Warnings::on(warnings warning){
+void Warnings::on(warnings warning) {
   warning_labels[warning]->state = ON;
   warning_labels[warning]->label->setPixmap(warning_labels[warning]->image);
 }
 
-void Warnings::off(warnings warning){
+void Warnings::off(warnings warning) {
   warning_labels[warning]->state = OFF;
   warning_labels[warning]->label->setText("OFF");
+}
+
+void Warnings::CheckRange() {
+  std::cout << "check range" << std::endl;
+  bool isLow = false;
+  std::cout << "range: " << batteryObj.get_range() << std::endl;
+
+  if (batteryObj.get_range() <= 30) {
+    isLow = true;
+  }
+
+  if (isLow) {
+    on(LOW_BATTERY);
+  }
+  else {
+    off(LOW_BATTERY);
+  }
+
 }

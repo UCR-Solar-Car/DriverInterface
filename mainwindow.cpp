@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() { delete ui; }
 
-void MainWindow::on_increaseBattery_clicked() { battery.increase_battery(1); }
+void MainWindow::on_increaseBattery_clicked() { battery.increase_battery(1); warnings.CheckRange(); }
 
-void MainWindow::on_decreaseBattery_clicked() { battery.decrease_battery(1); }
+void MainWindow::on_decreaseBattery_clicked() { battery.decrease_battery(1); warnings.CheckRange(); }
 
 void MainWindow::on_leftIndicatorON_clicked() { indicators.left_on(); }
 
@@ -56,7 +56,7 @@ void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
 
 void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
 
-void MainWindow::on_lowBatteryWarningON_clicked() { warnings.on(LOW_BATTERY); }
+void MainWindow::on_lowBatteryWarningON_clicked() { warnings.CheckRange(); }
 
 void MainWindow::on_lowBatteryWarningOFF_clicked() { warnings.off(LOW_BATTERY); }
 
