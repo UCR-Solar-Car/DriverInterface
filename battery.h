@@ -13,9 +13,9 @@ public:
     void increase_battery(int);
     int get_battery();
     int get_range();
-    void CheckRange();
-    void on();
-    void off();
+    void check_range(warnings warning);
+    void on(warnings warning);
+    void off(warnings warning);
     ~Battery() {};
 
 private:

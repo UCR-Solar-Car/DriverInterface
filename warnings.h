@@ -20,7 +20,6 @@ public:
     void setup(Ui::MainWindow*);
     void on(warnings warning);
     void off(warnings warning);
-    void CheckRange();
     ~Warnings() {};
 private:
     std::unordered_map<warnings, WarningLabel*> warning_labels;

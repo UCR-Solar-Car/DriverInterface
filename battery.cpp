@@ -36,26 +36,16 @@ int Battery::get_battery() { return battery; }
 
 int Battery::get_range() { return range; }
 
-void Battery::on() {
+void Battery::on(warnings warning) {
   this->ui->lowBatteryWarning->setPixmap(lowBatteryIcon);
 }
 
-void Battery::off() {
+void Battery::off(warnings warning) {
   this->ui->lowBatteryWarning->setText("OFF");
 }
 
-void Battery::CheckRange() {
-  bool isLow = false;
-
+void Battery::check_range(warnings warning) {
   if (get_range() <= 30) {
-    isLow = true;
+    on(warning);
   }
-
-  if (isLow) {
-    on();
-  }
-  else {
-    off();
-  }
-
 }
