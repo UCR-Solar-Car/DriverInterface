@@ -18,6 +18,8 @@ void Battery::increase_battery(int val) {
     this->ui->battery->setValue(battery); ui->battery->update();
     this->range += efficiencyConstant;
     ui->range->display(int(range));
+
+    check_range(LOW_BATTERY);
   }
   
 }
@@ -28,6 +30,8 @@ void Battery::decrease_battery(int val) {
     this->ui->battery->setValue(battery); ui->battery->update();
     this->range -= efficiencyConstant;
     ui->range->display(int(range));
+
+    check_range(LOW_BATTERY);
   }
 
 }
@@ -51,5 +55,8 @@ void Battery::off(warnings warning) {
 void Battery::check_range(warnings warning) {
   if (get_range() <= 30) {
     on(warning);
+  }
+  else {
+    off(warning);
   }
 }
