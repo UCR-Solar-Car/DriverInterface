@@ -1,3 +1,6 @@
+#ifndef BACKGROUND_H
+#define BACKGROUND_H
+
 #include "ui_mainwindow.h"
 #include <QStyleFactory>
 
@@ -5,5 +8,7 @@ class Background {
 
   public:
     Background();
-    void darkTheme();
+    void dark_theme();
 };
+
+#endif

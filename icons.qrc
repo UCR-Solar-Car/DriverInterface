@@ -7,5 +7,14 @@
         <file>right.png</file>
         <file>left.png</file>
         <file>horn.png</file>
+        <file>parking.png</file>
+        <file>drive.png</file>
+        <file>reverse.png</file>
+        <file>neutral.png</file>
+        <file>cruise.png</file>
+        <file>low-battery.png</file>
+        <file>lowpressure.png</file>
+        <file>normalpressure.png</file>
+        <file>car.png</file>
     </qresource>
 </RCC>

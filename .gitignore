@@ -35,3 +35,10 @@
 .vscode
 DriverInterface.pro.user
 DriverInterface.pro.user.*
+
+.qmake.stash
+Makefile
+moc_mainwindow.cpp
+moc_predefs.h
+qrc_icons.cpp
+ui_mainwindow.h

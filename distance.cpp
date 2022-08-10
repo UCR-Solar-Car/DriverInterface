@@ -1,9 +1,6 @@
 #include "distance.h"
 
-Distance::Distance() : distance(0)
-{
-
-}
+Distance::Distance() : distance(0) {}
 
 void Distance::setup(Ui::MainWindow* ui) {
     this->ui = ui;

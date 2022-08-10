@@ -5,17 +5,17 @@ Horn::Horn() : horn(OFF) {return;}
 
 void Horn::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  hornSignal = QPixmap(":/icons/horn.png");
-  this->ui->hornSignal->setText("OFF");
+  horn_icon = QPixmap(":/icons/horn.png");
+  this->ui->horn_label->setText("OFF");
 }
 
 void Horn::horn_on()
 {
     this->horn = ON;
-    this->ui->hornSignal->setPixmap(hornSignal);
+    this->ui->horn_label->setPixmap(horn_icon);
 }
 
 void Horn::horn_off() {
   this->horn = OFF;
-  this->ui->hornSignal->setText("OFF");
+  this->ui->horn_label->setText("OFF");
 }

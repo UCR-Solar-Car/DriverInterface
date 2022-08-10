@@ -9,6 +9,9 @@
 #include "speed.h"
 #include "distance.h"
 #include "horn.h"
+#include "gears.h"
+#include "cruise.h"
+#include "tirepressure.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -67,6 +70,34 @@ private slots:
 
     void timeout();
 
+    void on_parkingSignalON_clicked();
+
+    void on_drivingSignalON_clicked();
+
+    void on_neutralSignalON_clicked();
+
+    void on_reversingSignalON_clicked();
+
+    void on_cruiseControlON_clicked();
+
+    void on_cruiseControlOFF_clicked();
+
+    void on_frontLeftOFF_clicked();
+
+    void on_frontLeftON_clicked();
+
+    void on_frontRightOFF_clicked();
+
+    void on_frontRightON_clicked();
+
+    void on_backLeftOFF_clicked();
+
+    void on_backLeftON_clicked();
+
+    void on_backRightOFF_clicked();
+
+    void on_backRightON_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
@@ -79,6 +110,9 @@ private:
     QTimer *timer;
     QLabel *label;
     int counter;
+    Gears gear;
+    CruiseControl cruise;
+    TirePressure tire;
 
 };
 #endif // MAINWINDOW_H
