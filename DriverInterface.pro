@@ -16,6 +16,7 @@ SOURCES += \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
+    scaler.cpp \
     speed.cpp \
     warnings.cpp \
     background.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     indicators.h \
     lights.h \
     mainwindow.h \
+    scaler.h \
     speed.h \
     states.h \
     warnings.h \

@@ -1,10 +1,11 @@
 #include "cruise.h"
+#include "scaler.h"
 
 CruiseControl::CruiseControl() : cruise(OFF) {return;}
 
 void CruiseControl::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  cruiseControlIcon = QPixmap(":/icons/cruise.png");
+  cruiseControlIcon = QPixmap(":/icons/cruise.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
   this->ui->cruiseControlSignal->setText("OFF");
 }
 
