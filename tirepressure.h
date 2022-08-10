@@ -9,23 +9,15 @@ class TirePressure
 public:
     TirePressure();
     void setup(Ui::MainWindow*);
-//    void front_left_bad();
-//    void front_right_bad();
-//    void back_left_bad();
-//    void back_right_bad();
-//    void front_left_good();
-//    void front_right_good();
-//    void back_left_good();
-//    void back_right_good();
-    void lowPressure(tires tire);
-    void normalPressure(tires tire);
+    void low_pressure(tires tire);
+    void normal_pressure(tires tire);
     ~TirePressure() {};
 
 private:
     int lowpressure;
-    QPixmap lowpressure_label;
-    QPixmap normalpressure_label;
-    QPixmap car_label;
+    QPixmap low_pressure_icon;
+    QPixmap normal_pressure_icon;
+    QPixmap car_icon;
     Ui::MainWindow *ui;
 };
 

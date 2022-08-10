@@ -8,15 +8,15 @@ class Gears {
   public:
     Gears();
     void setup(Ui::MainWindow *);
-    void switchGears(gears);
+    void switch_gears(gears);
     
   private:
     Ui::MainWindow *ui;
     gears gear;
-    QPixmap parkingIcon;
-    QPixmap drivingIcon;
-    QPixmap reversingIcon;
-    QPixmap neutralIcon;
+    QPixmap park;
+    QPixmap drive;
+    QPixmap reverse;
+    QPixmap neutral;
 };
 
 #endif
