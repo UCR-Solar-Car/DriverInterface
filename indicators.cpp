@@ -48,4 +48,3 @@ void Indicators::hazard_off() {
   this->ui->leftIndicator->setText("OFF");
   this->ui->rightIndicator->setText("OFF");
 }
-

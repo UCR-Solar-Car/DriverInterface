@@ -3,9 +3,11 @@
 
 #include "ui_mainwindow.h"
 #include "states.h"
+#include <QTimer>
 
-class Indicators
+class Indicators: public QObject
 {
+    Q_OBJECT
 public:
     Indicators();
     void setup(Ui::MainWindow *);
@@ -14,8 +16,7 @@ public:
     void right_on();
     void right_off();
     void hazard_on();
-    void hazard_off();
-    ~Indicators() {}
+    void hazard_off();;
 private:
     states right;
     states left;

@@ -10,11 +10,18 @@ MainWindow::MainWindow(QWidget *parent)
   lights.setup(ui);
   warnings.setup(ui);
   speed.setup(ui);
-    distance.setup(ui);
+  distance.setup(ui);
+  timer = new QTimer();
+  label = new QLabel();
+  counter = 0;
+  connect(timer, SIGNAL(timeout()), this, SLOT(timeout()));
+  timer->start(1000);
+
 
     horn.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+
 
 }
 
@@ -24,13 +31,13 @@ void MainWindow::on_increaseBattery_clicked() { battery.increase_battery(1); }
 
 void MainWindow::on_decreaseBattery_clicked() { battery.decrease_battery(1); }
 
-void MainWindow::on_leftIndicatorON_clicked() { indicators.left_on(); }
+void MainWindow::on_leftIndicatorON_clicked() { indicators.left_on(); ui->leftIndicatorON->setCheckable(true); ui->leftIndicatorOFF->setCheckable(false);}
 
-void MainWindow::on_leftIndicatorOFF_clicked() { indicators.left_off(); }
+void MainWindow::on_leftIndicatorOFF_clicked() { indicators.left_off(); ui->leftIndicatorON->setCheckable(false); ui->leftIndicatorOFF->setCheckable(true);}
 
-void MainWindow::on_rightIndicatorON_clicked() { indicators.right_on(); }
+void MainWindow::on_rightIndicatorON_clicked() { indicators.right_on(); ui->rightIndicatorON->setCheckable(true); ui->rightIndicatorOFF->setCheckable(false);}
 
-void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); }
+void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); ui->rightIndicatorON->setCheckable(false); ui->leftIndicatorOFF->setCheckable(true);}
 
 void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); }
 
@@ -61,3 +68,41 @@ void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+
+void MainWindow::timeout()
+{
+        if(this->ui->leftIndicatorON->isCheckable() && counter%2)
+        {
+            indicators.left_on();
+
+        }
+        else
+        {
+            indicators.left_off();
+        }
+
+
+        if(!this->ui->leftIndicatorON->isCheckable())
+        {
+            indicators.left_off();
+        }
+
+        if(this->ui->rightIndicatorON->isCheckable() && counter%2)
+        {
+            indicators.right_on();
+
+        }
+        else
+        {
+            indicators.right_off();
+        }
+
+
+        if(!this->ui->rightIndicatorON->isCheckable())
+        {
+            indicators.right_off();
+        }
+
+
+        counter++;
+}

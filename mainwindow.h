@@ -65,6 +65,8 @@ private slots:
 
     void on_hornSignalOFF_clicked();
 
+    void timeout();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
@@ -74,6 +76,9 @@ private:
     Speed speed;
     Distance distance;
     Horn horn;
+    QTimer *timer;
+    QLabel *label;
+    int counter;
 
 };
 #endif // MAINWINDOW_H
