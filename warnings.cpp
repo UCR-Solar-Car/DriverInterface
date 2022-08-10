@@ -9,6 +9,9 @@ void Warnings::setup(Ui::MainWindow *ui) {
 
   warning_labels.insert({BATTERY, battery});
   warning_labels.insert({MOTOR, motor});
+
+  off(BATTERY);
+  off(MOTOR);
 }
 
 void Warnings::on(warnings warning) {

@@ -1,6 +1,7 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4):
+QT += widgets
 
 CONFIG += c++17
 
@@ -17,6 +18,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     speed.cpp \
+    tirepressure.cpp \
     warnings.cpp \
     background.cpp \
     gears.cpp \
@@ -31,6 +33,7 @@ HEADERS += \
     mainwindow.h \
     speed.h \
     states.h \
+    tirepressure.h \
     warnings.h \
     background.h \
     gears.h \
