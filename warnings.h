@@ -3,7 +3,6 @@
 
 #include "ui_mainwindow.h"
 #include "states.h"
-#include "battery.h"
 #include <unordered_map>
 #include <iostream>
 
@@ -26,7 +25,6 @@ public:
 private:
     std::unordered_map<warnings, WarningLabel*> warning_labels;
     Ui::MainWindow *ui;
-    Battery batteryObj;
 };
 
 #endif // WARNINGS_H

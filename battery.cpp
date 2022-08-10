@@ -7,6 +7,9 @@ void Battery::setup(Ui::MainWindow *ui) {
   this->ui->battery->setValue(battery);
   range = battery*efficiencyConstant;
   ui->range->display(int(range));
+
+  lowBatteryIcon = QPixmap(":/icons/low-battery.png");
+  this->ui->lowBatteryWarning->setText("OFF");
 }
 
 void Battery::increase_battery(int val) {
@@ -32,3 +35,27 @@ void Battery::decrease_battery(int val) {
 int Battery::get_battery() { return battery; }
 
 int Battery::get_range() { return range; }
+
+void Battery::on() {
+  this->ui->lowBatteryWarning->setPixmap(lowBatteryIcon);
+}
+
+void Battery::off() {
+  this->ui->lowBatteryWarning->setText("OFF");
+}
+
+void Battery::CheckRange() {
+  bool isLow = false;
+
+  if (get_range() <= 30) {
+    isLow = true;
+  }
+
+  if (isLow) {
+    on();
+  }
+  else {
+    off();
+  }
+
+}

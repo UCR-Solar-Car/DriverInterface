@@ -59,10 +59,6 @@ private slots:
 
     void on_motorWarningOFF_clicked();
 
-    void on_lowBatteryWarningON_clicked();
-
-    void on_lowBatteryWarningOFF_clicked();
-
     void on_increaseMPH_clicked();
 
     void on_decreaseMPH_clicked();
