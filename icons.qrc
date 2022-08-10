@@ -12,6 +12,7 @@
         <file>reverse.png</file>
         <file>neutral.png</file>
         <file>cruise.png</file>
+        <file>low-battery.png</file>
         <file>lowpressure.png</file>
         <file>normalpressure.png</file>
         <file>car.png</file>

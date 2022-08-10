@@ -118,6 +118,18 @@ background-color:  #2dcc6b;
      <property name="sizeConstraint">
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
+
+     <item>
+        <widget class="QLabel" name="lowBatteryWarning">
+          <property name="text">
+            <string>lowBatteryWarning</string>
+          </property>
+          <property name="alignment">
+            <set>Qt::AlignCenter</set>
+          </property>
+        </widget>
+      </item>
+
      <item>
       <widget class="QLabel" name="batteryWarning">
        <property name="text">
@@ -138,6 +150,7 @@ background-color:  #2dcc6b;
        </property>
       </widget>
      </item>
+
      <item>
       <widget class="QLabel" name="dayLights">
        <property name="text">
@@ -241,9 +254,9 @@ background-color:  #2dcc6b;
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>115</x>
       <y>90</y>
-      <width>781</width>
+      <width>690</width>
       <height>90</height>
      </rect>
     </property>
@@ -428,7 +441,7 @@ background-color:  #2dcc6b;
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget_1">
     <property name="geometry">
      <rect>
       <x>650</x>

@@ -2,6 +2,7 @@
 #define BATTERY_H
 
 #include "ui_mainwindow.h"
+#include "states.h"
 
 class Battery
 {
@@ -12,6 +13,9 @@ public:
     void increase_battery(int);
     int get_battery();
     int get_range();
+    void check_range(warnings warning);
+    void on(warnings warning);
+    void off(warnings warning);
     ~Battery() {};
 
 private:
@@ -19,6 +23,7 @@ private:
     double range;
     /* Efficency is (Miles traveled) per (Unit of Battery)*/
     const double efficiencyConstant = .85;
+    QPixmap lowBatteryIcon;
     Ui::MainWindow *ui;
 };
 
