@@ -8,14 +8,14 @@ void Speed::setup(Ui::MainWindow *ui) {
   this->ui->speed->display(speed);
 }
 
-void Speed::increaseSpeed(int value) {
+void Speed::increase_speed(int value) {
   if (speed + value < 100) {
     this->speed += value;
     this->ui->speed->display(speed);
   }
 }
 
-void Speed::decreaseSpeed(int value) {
+void Speed::decrease_speed(int value) {
   if (speed - value > -1) {
     this->speed -= value;
     this->ui->speed->display(speed);

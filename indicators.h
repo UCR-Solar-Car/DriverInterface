@@ -19,8 +19,8 @@ public:
 private:
     states right;
     states left;
-    QPixmap leftSignal;
-    QPixmap rightSignal;
+    QPixmap left_icon;
+    QPixmap right_icon;
     Ui::MainWindow * ui;
 };
 

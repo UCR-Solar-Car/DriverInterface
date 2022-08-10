@@ -4,52 +4,52 @@ Gears::Gears() : gear(PARK) {return;}
 
 void Gears::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  parkingIcon = QPixmap(":/icons/parking.png");
-  drivingIcon = QPixmap(":/icons/drive.png");
-  neutralIcon = QPixmap(":/icons/neutral.png");
-  reversingIcon = QPixmap(":/icons/reverse.png");
+  park = QPixmap(":/icons/parking.png");
+  drive = QPixmap(":/icons/drive.png");
+  neutral = QPixmap(":/icons/neutral.png");
+  reverse = QPixmap(":/icons/reverse.png");
 
-  this->ui->parkingSignal->setPixmap(parkingIcon);
-  this->ui->drivingSignal->setText("OFF");
-  this->ui->neutralSignal->setText("OFF");
-  this->ui->reversingSignal->setText("OFF");
+  this->ui->park_label->setPixmap(park);
+  this->ui->drive_label->setText("OFF");
+  this->ui->neutral_label->setText("OFF");
+  this->ui->reverse_label->setText("OFF");
 }
 
-void Gears::switchGears(gears state) {
+void Gears::switch_gears(gears state) {
   if (state == PARK) {
     gear = state;
 
-    this->ui->drivingSignal->setText("OFF");
-    this->ui->neutralSignal->setText("OFF");
-    this->ui->reversingSignal->setText("OFF");
+    this->ui->drive_label->setText("OFF");
+    this->ui->neutral_label->setText("OFF");
+    this->ui->reverse_label->setText("OFF");
 
-    this->ui->parkingSignal->setPixmap(parkingIcon);
+    this->ui->park_label->setPixmap(park);
   } 
   else if (state == DRIVE) {
     gear = state;
 
-    this->ui->parkingSignal->setText("OFF");
-    this->ui->neutralSignal->setText("OFF");
-    this->ui->reversingSignal->setText("OFF");
+    this->ui->park_label->setText("OFF");
+    this->ui->neutral_label->setText("OFF");
+    this->ui->reverse_label->setText("OFF");
 
-    this->ui->drivingSignal->setPixmap(drivingIcon);
+    this->ui->drive_label->setPixmap(drive);
   }
   else if (state == NEUTRAL) {
     gear = state;
 
-    this->ui->parkingSignal->setText("OFF");
-    this->ui->drivingSignal->setText("OFF");
-    this->ui->reversingSignal->setText("OFF");
+    this->ui->park_label->setText("OFF");
+    this->ui->drive_label->setText("OFF");
+    this->ui->reverse_label->setText("OFF");
 
-    this->ui->neutralSignal->setPixmap(neutralIcon);
+    this->ui->neutral_label->setPixmap(neutral);
   }
   else if (state == REVERSE) {
     gear = state;
 
-    this->ui->parkingSignal->setText("OFF");
-    this->ui->drivingSignal->setText("OFF");
-    this->ui->neutralSignal->setText("OFF");
+    this->ui->park_label->setText("OFF");
+    this->ui->drive_label->setText("OFF");
+    this->ui->neutral_label->setText("OFF");
 
-    this->ui->reversingSignal->setPixmap(reversingIcon);
+    this->ui->reverse_label->setPixmap(reverse);
   }
 }

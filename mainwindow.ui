@@ -118,20 +118,8 @@ background-color:  #2dcc6b;
      <property name="sizeConstraint">
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
-
      <item>
-        <widget class="QLabel" name="lowBatteryWarning">
-          <property name="text">
-            <string>lowBatteryWarning</string>
-          </property>
-          <property name="alignment">
-            <set>Qt::AlignCenter</set>
-          </property>
-        </widget>
-      </item>
-
-     <item>
-      <widget class="QLabel" name="batteryWarning">
+      <widget class="QLabel" name="battery_label">
        <property name="text">
         <string>batteryWarning</string>
        </property>
@@ -141,7 +129,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="motorWarning">
+      <widget class="QLabel" name="motor_label">
        <property name="text">
         <string>motorWarning</string>
        </property>
@@ -150,9 +138,18 @@ background-color:  #2dcc6b;
        </property>
       </widget>
      </item>
-
      <item>
-      <widget class="QLabel" name="dayLights">
+      <widget class="QLabel" name="low_battery_label">
+       <property name="text">
+        <string>lowBatteryWarning</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="day_lights">
        <property name="text">
         <string>dayLights</string>
        </property>
@@ -162,7 +159,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="nightLights">
+      <widget class="QLabel" name="night_lights">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -178,7 +175,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="cruiseControlSignal">
+      <widget class="QLabel" name="cruise_control">
        <property name="text">
         <string>cruiseControlSignal</string>
        </property>
@@ -188,7 +185,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="hornSignal">
+      <widget class="QLabel" name="horn_label">
        <property name="text">
         <string>hornSignal</string>
        </property>
@@ -210,7 +207,7 @@ background-color:  #2dcc6b;
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_1">
      <item>
-      <widget class="QLabel" name="parkingSignal">
+      <widget class="QLabel" name="park_label">
        <property name="text">
         <string>parkingSignal</string>
        </property>
@@ -220,7 +217,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="drivingSignal">
+      <widget class="QLabel" name="drive_label">
        <property name="text">
         <string>drivingSignalSignal</string>
        </property>
@@ -230,7 +227,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="neutralSignal">
+      <widget class="QLabel" name="neutral_label">
        <property name="text">
         <string>neutralSignal</string>
        </property>
@@ -240,7 +237,7 @@ background-color:  #2dcc6b;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="reversingSignal">
+      <widget class="QLabel" name="reverse_label">
        <property name="text">
         <string>reversingSignal</string>
        </property>
@@ -489,7 +486,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="leftIndicator">
+   <widget class="QLabel" name="left_indicator">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -535,7 +532,7 @@ background-color:  #2dcc6b;
      <number>125</number>
     </property>
    </widget>
-   <widget class="QLabel" name="rightIndicator">
+   <widget class="QLabel" name="right_indicator">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -637,7 +634,7 @@ background-color:  #2dcc6b;
      <number>125</number>
     </property>
    </widget>
-   <widget class="QLabel" name="rangeLabel">
+   <widget class="QLabel" name="range_label">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -659,7 +656,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="distanceLabel">
+   <widget class="QLabel" name="distance_label">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -681,7 +678,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="frontLeft">
+   <widget class="QLabel" name="front_left">
     <property name="geometry">
      <rect>
       <x>950</x>
@@ -703,7 +700,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="backRight">
+   <widget class="QLabel" name="back_right">
     <property name="geometry">
      <rect>
       <x>1100</x>
@@ -725,7 +722,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="backLeft">
+   <widget class="QLabel" name="back_left">
     <property name="geometry">
      <rect>
       <x>950</x>
@@ -747,7 +744,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="frontRight">
+   <widget class="QLabel" name="front_right">
     <property name="geometry">
      <rect>
       <x>1100</x>
@@ -769,7 +766,7 @@ background-color:  #2dcc6b;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="carLabel">
+   <widget class="QLabel" name="car_label">
     <property name="geometry">
      <rect>
       <x>990</x>
@@ -896,7 +893,7 @@ background-color:  #2dcc6b;
      <x>0</x>
      <y>0</y>
      <width>1306</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

@@ -22,8 +22,8 @@ private:
     int battery;
     double range;
     /* Efficency is (Miles traveled) per (Unit of Battery)*/
-    const double efficiencyConstant = .85;
-    QPixmap lowBatteryIcon;
+    const double efficiency_constant = .85;
+    QPixmap low_battery;
     Ui::MainWindow *ui;
 };
 
