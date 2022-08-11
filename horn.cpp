@@ -6,9 +6,9 @@ Horn::Horn() : horn(OFF) {return;}
 
 void Horn::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  int topIconWH = .07 * screenWidth;
+  int topIconWH = topIconScaler * screenWidth;
   horn_icon = QPixmap(":/icons/horn.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  ui->horn_label->move(5*screenWidth/6+hOff,vOff+5);
+  ui->horn_label->move(screenWidth/2+topIconWH*2.5+hOff*4,vOff+2);
   this->ui->horn_label->setText("OFF");
 }
 

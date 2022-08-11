@@ -43,8 +43,8 @@ background-color:  #2dcc6b;
    <widget class="QPushButton" name="increaseBattery">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>330</y>
+      <x>170</x>
+      <y>400</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -57,7 +57,7 @@ background-color:  #2dcc6b;
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>330</y>
+      <y>400</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -105,156 +105,13 @@ background-color:  #2dcc6b;
      <string>OFF</string>
     </property>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>781</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetDefaultConstraint</enum>
-     </property>
-     <item>
-      <widget class="QLabel" name="battery_label">
-       <property name="text">
-        <string>batteryWarning</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="motor_label">
-       <property name="text">
-        <string>motorWarning</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="low_battery_label">
-       <property name="text">
-        <string>lowBatteryWarning</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="day_lights">
-       <property name="text">
-        <string>dayLights</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="night_lights">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>nightLights</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="cruise_control">
-       <property name="text">
-        <string>cruiseControlSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="horn_label">
-       <property name="text">
-        <string>hornSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_1">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>530</y>
-      <width>500</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_1">
-     <item>
-      <widget class="QLabel" name="park_label">
-       <property name="text">
-        <string>parkingSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="drive_label">
-       <property name="text">
-        <string>drivingSignalSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="neutral_label">
-       <property name="text">
-        <string>neutralSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="reverse_label">
-       <property name="text">
-        <string>reversingSignal</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
       <x>115</x>
       <y>90</y>
       <width>690</width>
-      <height>90</height>
+      <height>93</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -875,6 +732,188 @@ background-color:  #2dcc6b;
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="battery_label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>batteryWarning</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="motor_label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>0</y>
+      <width>123</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>motorWarning</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="low_battery_label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>0</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lowBatteryWarning</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="day_lights">
+    <property name="geometry">
+     <rect>
+      <x>367</x>
+      <y>0</y>
+      <width>121</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>dayLights</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="night_lights">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>0</y>
+      <width>151</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>nightLights</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="cruise_control">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>0</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>cruiseControlSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="horn_label">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>0</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>hornSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="park_label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>500</y>
+      <width>119</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>parkingSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="drive_label">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>510</y>
+      <width>161</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>drivingSignalSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="neutral_label">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>510</y>
+      <width>171</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>neutralSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="reverse_label">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>510</y>
+      <width>221</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>reversingSignal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

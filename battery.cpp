@@ -1,7 +1,7 @@
 #include "battery.h"
 #include "scaler.h"
 
-Battery::Battery() : battery(100){ return; }
+Battery::Battery() : battery(20){ return; }
 
 void Battery::setup(Ui::MainWindow *ui) {
   this->ui = ui;
@@ -10,16 +10,19 @@ void Battery::setup(Ui::MainWindow *ui) {
   ui->range->display(int(range));
   int rangeSize = screenWidth*.05;
 
-  ui->rangeLabel->resize(rangeSize, rangeSize);
-  ui->rangeLabel->move(screenWidth/5, screenHeight/4);
+  ui->range_label->resize(rangeSize, rangeSize);
+  ui->range_label->move(screenWidth/5, screenHeight/4);
   ui->range->resize(screenWidth/6,rangeSize*1.2);
   ui->range->move(screenWidth/5, screenHeight/4);
   ui->battery->resize(screenWidth/4, screenHeight*.05);
   ui->battery->move(screenWidth/5,screenHeight*.35);
 
-
-  low_battery = QPixmap(":/icons/low-battery.png");
+  double topIconWH = topIconScaler * screenWidth;
+  low_battery = QPixmap(":/icons/low-battery.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
   this->ui->low_battery_label->setText("OFF");
+  ui->low_battery_label->move(screenWidth/2-topIconWH*1.5 - hOff*3,vOff+4);
+
+
 }
 
 void Battery::increase_battery(int val) {

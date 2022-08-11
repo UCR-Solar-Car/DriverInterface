@@ -5,12 +5,12 @@ Warnings::Warnings(){ return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  int topIconWH = .07 * screenWidth;
+  int topIconWH = topIconScaler * screenWidth;
   WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation),ui->battery_label);
   WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation),ui->motor_label);
 
-  ui->batery_label->move(hOff,vOff);
-  ui->motor_label->move(screenWidth/6 + hOff, vOff);
+  ui->battery_label->move(screenWidth/2-topIconWH*3.5-hOff*4,vOff);
+  ui->motor_label->move(screenWidth/2-topIconWH*2.5-hOff*3, vOff);
 
   warning_labels.insert({BATTERY, battery});
   warning_labels.insert({MOTOR, motor});

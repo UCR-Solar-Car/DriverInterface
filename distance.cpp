@@ -8,8 +8,8 @@ void Distance::setup(Ui::MainWindow* ui) {
     ui->distance->display(distance);
     int distanceSize = screenWidth*.05;
 
-    ui->distanceLabel->resize(distanceSize, distanceSize);
-    ui->distanceLabel->move(screenWidth/5, screenHeight*.45);
+    ui->distance_label->resize(distanceSize, distanceSize);
+    ui->distance_label->move(screenWidth/5, screenHeight*.45);
     ui->distance->resize(screenWidth/6,distanceSize*1.2);
     ui->distance->move(screenWidth/5, screenHeight*.45);
 }

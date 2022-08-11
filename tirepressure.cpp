@@ -1,11 +1,13 @@
 #include "tirepressure.h"
+#include "scaler.h"
 
 TirePressure::TirePressure() : lowpressure(34) {return;}
 
 void TirePressure::setup(Ui::MainWindow *ui){
     this->ui = ui;
-    low_pressure_icon = QPixmap(":/icons/lowpressure.png");
-    normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
+    int topIconWH = .03 * screenWidth;
+    low_pressure_icon = QPixmap(":/icons/lowpressure.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    normal_pressure_icon = QPixmap(":/icons/normalpressure.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     car_icon = QPixmap(":/icons/car.png");
     this->ui->car_label->setPixmap(car_icon);
     normal_pressure(FRONT_LEFT);

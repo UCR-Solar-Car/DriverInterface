@@ -5,9 +5,9 @@ CruiseControl::CruiseControl() : cruise(OFF) {return;}
 
 void CruiseControl::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  int topIconWH = .07 * screenWidth;
+  int topIconWH = topIconScaler * screenWidth;
   cruise_control = QPixmap(":/icons/cruise.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  ui->cruise_control->move(4 * screenWidth/6 + hOff,vOff+5);
+  ui->cruise_control->move(screenWidth/2+topIconWH*1.5+hOff*2,vOff-3);
   this->ui->cruise_control->setText("OFF");
 
 }
