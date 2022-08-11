@@ -11,11 +11,11 @@ void Battery::setup(Ui::MainWindow *ui) {
   int rangeSize = screenWidth*.05;
 
   ui->range_label->resize(rangeSize, rangeSize);
-  ui->range_label->move(screenWidth/5, screenHeight/4);
+  ui->range_label->move(screenWidth/5, screenHeight*.15);
   ui->range->resize(screenWidth/6,rangeSize*1.2);
-  ui->range->move(screenWidth/5, screenHeight/4);
+  ui->range->move(screenWidth/5, screenHeight*.15);
   ui->battery->resize(screenWidth/4, screenHeight*.05);
-  ui->battery->move(screenWidth/5,screenHeight*.35);
+  ui->battery->move(screenWidth/5,screenHeight*.25);
 
   double topIconWH = topIconScaler * screenWidth;
   low_battery = QPixmap(":/icons/low-battery.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
