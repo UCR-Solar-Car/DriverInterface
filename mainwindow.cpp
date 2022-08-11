@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
   indicators.setup(ui);
   battery.setup(ui);
   lights.setup(ui);
-  warnings.setup(ui);
+  motors.setup(ui);
   speed.setup(ui);
     distance.setup(ui);
 
@@ -49,13 +49,13 @@ void MainWindow::on_nightLightsOFF_clicked() { lights.night_off(); }
 
 void MainWindow::on_lightsOFF_clicked() { lights.off(); }
 
-void MainWindow::on_batteryWarningON_clicked() { warnings.on(BATTERY); }
+void MainWindow::on_batteryWarningON_clicked() { battery.on(BATTERY_FAULT); }
 
-void MainWindow::on_batteryWarningOFF_clicked() { warnings.off(BATTERY); }
+void MainWindow::on_batteryWarningOFF_clicked() { battery.off(BATTERY_FAULT); }
 
-void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
+void MainWindow::on_motorWarningON_clicked() { motors.on(MOTOR_FAULT); }
 
-void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
+void MainWindow::on_motorWarningOFF_clicked() { motors.off(MOTOR_FAULT); }
 
 void MainWindow::on_increaseMPH_clicked() { speed.increase_speed(1); distance.increase_distance(1); }
 

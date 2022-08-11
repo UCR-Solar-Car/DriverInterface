@@ -42,3 +42,4 @@ moc_mainwindow.cpp
 moc_predefs.h
 qrc_icons.cpp
 ui_mainwindow.h
+moc*

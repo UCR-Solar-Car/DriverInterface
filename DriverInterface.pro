@@ -20,7 +20,7 @@ SOURCES += \
     scaler.cpp \
     speed.cpp \
     tirepressure.cpp \
-    warnings.cpp \
+    motor.cpp \
     background.cpp \
     gears.cpp \
     cruise.cpp
@@ -36,7 +36,7 @@ HEADERS += \
     speed.h \
     states.h \
     tirepressure.h \
-    warnings.h \
+    motor.h \
     background.h \
     gears.h \
     cruise.h
