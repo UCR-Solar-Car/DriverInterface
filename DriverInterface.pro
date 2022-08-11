@@ -17,6 +17,7 @@ SOURCES += \
     lights.cpp \
     main.cpp \
     mainwindow.cpp \
+    scaler.cpp \
     speed.cpp \
     tirepressure.cpp \
     warnings.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     indicators.h \
     lights.h \
     mainwindow.h \
+    scaler.h \
     speed.h \
     states.h \
     tirepressure.h \

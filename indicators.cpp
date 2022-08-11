@@ -1,4 +1,5 @@
 #include "indicators.h"
+#include "scaler.h"
 #include <QMainWindow>
 
 Indicators::Indicators() : right(OFF), left(OFF) { return; }
@@ -7,8 +8,12 @@ void Indicators::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   this->ui->left_indicator->setText("OFF");
   this->ui->right_indicator->setText("OFF");
-  left_icon = QPixmap(":/icons/left.png");
-  right_icon = QPixmap(":/icons/right.png");
+  int blinkerIconWH = .13 * screenWidth;
+  left_icon = QPixmap(":/icons/left.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  right_icon = QPixmap(":/icons/right.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  ui->left_indicator->move(0,screenHeight/2 - blinkerIconWH/2);
+  ui->right_indicator->move(screenWidth - blinkerIconWH,screenHeight/2 - blinkerIconWH/2);
+
 }
 
 void Indicators::left_on() {
