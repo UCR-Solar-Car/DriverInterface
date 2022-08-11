@@ -14,7 +14,7 @@ public:
     ~Horn() {};
 private:
     states horn;
-    QPixmap hornSignal;
+    QPixmap horn_icon;
     Ui::MainWindow *ui;
 };
 

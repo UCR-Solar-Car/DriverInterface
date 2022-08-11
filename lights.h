@@ -20,8 +20,8 @@ private:
     states day;
     states night;
      Ui::MainWindow *ui;
-     QPixmap dayLights;
-     QPixmap nightLights;
+     QPixmap day_icon;
+     QPixmap night_icon;
 };
 
 #endif // LIGHTS_H

@@ -8,8 +8,8 @@ class Speed
 public:
     Speed();
     void setup(Ui::MainWindow *);
-    void increaseSpeed(int value);
-    void decreaseSpeed(int value);
+    void increase_speed(int value);
+    void decrease_speed(int value);
     ~Speed() {};
    private:
     int speed;

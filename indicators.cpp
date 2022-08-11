@@ -6,50 +6,51 @@ Indicators::Indicators() : right(OFF), left(OFF) { return; }
 
 void Indicators::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  this->ui->leftIndicator->setText("OFF");
-  this->ui->rightIndicator->setText("OFF");
+  this->ui->left_indicator->setText("OFF");
+  this->ui->right_indicator->setText("OFF");
   int blinkerIconWH = .13 * screenWidth;
-  leftSignal = QPixmap(":/icons/left.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  rightSignal = QPixmap(":/icons/right.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  ui->leftIndicator->move(0,screenHeight/2 - blinkerIconWH/2);
-  ui->rightIndicator->move(screenWidth - blinkerIconWH,screenHeight/2 - blinkerIconWH/2);
+  left_icon = QPixmap(":/icons/left.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  right_icon = QPixmap(":/icons/right.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  ui->left_indicator->move(0,screenHeight/2 - blinkerIconWH/2);
+  ui->right_indicator->move(screenWidth - blinkerIconWH,screenHeight/2 - blinkerIconWH/2);
+
 }
 
 void Indicators::left_on() {
   left = ON;
   right = OFF;
-  this->ui->leftIndicator->setPixmap(leftSignal);
-  this->ui->rightIndicator->setText("OFF");
+  this->ui->left_indicator->setPixmap(left_icon);
+  this->ui->right_indicator->setText("OFF");
 }
 
 void Indicators::left_off() {
   left = OFF;
-  this->ui->leftIndicator->setText("OFF");
+  this->ui->left_indicator->setText("OFF");
 }
 
 void Indicators::right_on() {
   right = ON;
   left = OFF;
-  this->ui->rightIndicator->setPixmap(rightSignal);
-  this->ui->leftIndicator->setText("OFF");
+  this->ui->right_indicator->setPixmap(right_icon);
+  this->ui->left_indicator->setText("OFF");
 }
 
 void Indicators::right_off() {
   right = OFF;
-  this->ui->rightIndicator->setText("OFF");
+  this->ui->right_indicator->setText("OFF");
 }
 
 void Indicators::hazard_on() {
   left = ON;
   right = ON;
-  this->ui->leftIndicator->setPixmap(leftSignal);
-  this->ui->rightIndicator->setPixmap(rightSignal);
+  this->ui->left_indicator->setPixmap(left_icon);
+  this->ui->right_indicator->setPixmap(right_icon);
 }
 
 void Indicators::hazard_off() {
   left = OFF;
   right = OFF;
-  this->ui->leftIndicator->setText("OFF");
-  this->ui->rightIndicator->setText("OFF");
+  this->ui->left_indicator->setText("OFF");
+  this->ui->right_indicator->setText("OFF");
 }
 

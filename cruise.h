@@ -15,7 +15,7 @@ class CruiseControl {
   private:
     Ui::MainWindow *ui;
     states cruise;
-    QPixmap cruiseControlIcon;
+    QPixmap cruise_control;
 };
 
 #endif

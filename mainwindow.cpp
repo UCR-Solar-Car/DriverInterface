@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     horn.setup(ui);
     gear.setup(ui);
     cruise.setup(ui);
+    tire.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -56,22 +57,39 @@ void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
 
 void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
 
-void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
+void MainWindow::on_increaseMPH_clicked() { speed.increase_speed(1); distance.increase_distance(1); }
 
 void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
-void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.decrease_distance(1); }
 
-void MainWindow::on_parkingSignalON_clicked() { gear.switchGears(PARK); }
+void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
 
-void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(DRIVE); }
+void MainWindow::on_drivingSignalON_clicked() { gear.switch_gears(DRIVE); }
 
-void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(NEUTRAL); }
+void MainWindow::on_neutralSignalON_clicked() { gear.switch_gears(NEUTRAL); }
 
-void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }
+void MainWindow::on_reversingSignalON_clicked() { gear.switch_gears(REVERSE); }
 
 void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
 
 void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
+
+void MainWindow::on_frontLeftON_clicked() {tire.low_pressure(FRONT_LEFT); }
+
+void MainWindow::on_frontLeftOFF_clicked() {tire.normal_pressure(FRONT_LEFT); }
+
+void MainWindow::on_frontRightON_clicked() {tire.low_pressure(FRONT_RIGHT); }
+
+void MainWindow::on_frontRightOFF_clicked() {tire.normal_pressure(FRONT_RIGHT); }
+
+void MainWindow::on_backLeftON_clicked() {tire.low_pressure(BACK_LEFT); }
+
+void MainWindow::on_backLeftOFF_clicked() {tire.normal_pressure(BACK_LEFT); }
+
+void MainWindow::on_backRightON_clicked() {tire.low_pressure(BACK_RIGHT); }
+
+void MainWindow::on_backRightOFF_clicked() {tire.normal_pressure(BACK_RIGHT); }
+

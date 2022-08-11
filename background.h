@@ -8,7 +8,7 @@ class Background {
 
   public:
     Background();
-    void darkTheme();
+    void dark_theme();
 };
 
 #endif
