@@ -1,7 +1,7 @@
 #include "battery.h"
 #include "scaler.h"
 
-Battery::Battery() : battery(20){ return; }
+Battery::Battery() : battery(100){ return; }
 
 void Battery::setup(Ui::MainWindow *ui) {
   this->ui = ui;
