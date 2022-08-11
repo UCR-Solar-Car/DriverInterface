@@ -1,4 +1,5 @@
 #include "speed.h"
+#include "scaler.h"
 
 Speed::Speed() : speed(25) {}
 
@@ -6,6 +7,10 @@ void Speed::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   this->speed = 25;
   this->ui->speed->display(speed);
+  int speedSize = screenWidth*.20;
+  ui->speed->resize(speedSize,speedSize);
+  ui->speed->move(screenWidth/2,screenHeight/4);
+  ui->mph->move(screenWidth/2,screenHeight/4+speedSize);
 }
 
 void Speed::increase_speed(int value) {

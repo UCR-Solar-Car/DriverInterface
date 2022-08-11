@@ -1,11 +1,14 @@
 #include "horn.h"
+#include "scaler.h"
 
 Horn::Horn() : horn(OFF) {return;}
 
 
 void Horn::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  horn_icon = QPixmap(":/icons/horn.png");
+  int topIconWH = .07 * screenWidth;
+  horn_icon = QPixmap(":/icons/horn.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  ui->horn_label->move(5*screenWidth/6+hOff,vOff+5);
   this->ui->horn_label->setText("OFF");
 }
 

@@ -1,11 +1,16 @@
 #include "warnings.h"
+#include "scaler.h"
 
 Warnings::Warnings(){ return; }
 
 void Warnings::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-  WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png"),ui->battery_label);
-  WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png"),ui->motor_label);
+  int topIconWH = .07 * screenWidth;
+  WarningLabel* battery = new WarningLabel(OFF,QPixmap(":/icons/battery.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation),ui->battery_label);
+  WarningLabel* motor= new WarningLabel(OFF,QPixmap(":/icons/motor.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation),ui->motor_label);
+
+  ui->batery_label->move(hOff,vOff);
+  ui->motor_label->move(screenWidth/6 + hOff, vOff);
 
   warning_labels.insert({BATTERY, battery});
   warning_labels.insert({MOTOR, motor});

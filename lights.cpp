@@ -1,4 +1,5 @@
 #include "lights.h"
+#include "scaler.h"
 
 Lights::Lights() : day(OFF), night(OFF) { return; }
 
@@ -6,8 +7,12 @@ void Lights::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   ui->night_lights->setText("OFF");
   ui->day_lights->setText("OFF");
-  day_icon = QPixmap(":/icons/day.png");
-  night_icon = QPixmap(":/icons/night.png");
+  int topIconWH = .07 * screenWidth;
+  day_icon = QPixmap(":/icons/day.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  night_icon = QPixmap(":/icons/night.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  ui->day_lights->move(2*screenWidth/6 + hOff,vOff+5);
+  ui->night_lights->move(3*screenWidth/6 + hOff,vOff+1);
+
 }
 
 void Lights::day_on() {
