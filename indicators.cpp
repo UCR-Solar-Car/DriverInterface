@@ -8,8 +8,9 @@ void Indicators::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   this->ui->leftIndicator->setText("OFF");
   this->ui->rightIndicator->setText("OFF");
-  leftSignal = QPixmap(":/icons/left.png").scaled(blinkerIconWH,blinkerIconWH+1, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  rightSignal = QPixmap(":/icons/right.png").scaled(blinkerIconWH,blinkerIconWH+1, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  int blinkerIconWH = .13 * screenWidth;
+  leftSignal = QPixmap(":/icons/left.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  rightSignal = QPixmap(":/icons/right.png").scaled(blinkerIconWH,blinkerIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
   ui->leftIndicator->move(0,screenHeight/2 - blinkerIconWH/2);
   ui->rightIndicator->move(screenWidth - blinkerIconWH,screenHeight/2 - blinkerIconWH/2);
 }

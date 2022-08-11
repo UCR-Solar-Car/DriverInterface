@@ -7,8 +7,11 @@ void Lights::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   ui->nightLights->setText("OFF");
   ui->dayLights->setText("OFF");
+  int topIconWH = .07 * screenWidth;
   dayLights = QPixmap(":/icons/day.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
   nightLights = QPixmap(":/icons/night.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  ui->dayLights->move(2*screenWidth/6 + hOff,vOff+5);
+  ui->nightLights->move(3*screenWidth/6 + hOff,vOff+1);
 }
 
 void Lights::day_on() {
