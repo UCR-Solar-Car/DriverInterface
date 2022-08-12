@@ -73,7 +73,7 @@ void MainWindow::on_neutralSignalON_clicked() { gear.switch_gears(NEUTRAL); }
 
 void MainWindow::on_reversingSignalON_clicked() { gear.switch_gears(REVERSE); }
 
-void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
+void MainWindow::on_cruiseControlON_clicked() { gear.cruise_on(); }
 
 void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
 
