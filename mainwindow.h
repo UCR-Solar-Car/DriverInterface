@@ -5,7 +5,7 @@
 #include "battery.h"
 #include "indicators.h"
 #include "lights.h"
-#include "warnings.h"
+#include "motor.h"
 #include "speed.h"
 #include "distance.h"
 #include "horn.h"
@@ -101,7 +101,7 @@ private:
     Battery battery;
     Indicators indicators;
     Lights lights;
-    Warnings warnings;
+    Motor motors;
     Speed speed;
     Distance distance;
     Horn horn;

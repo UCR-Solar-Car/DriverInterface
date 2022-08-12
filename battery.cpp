@@ -22,6 +22,10 @@ void Battery::setup(Ui::MainWindow *ui) {
   this->ui->low_battery_label->setText("OFF");
   ui->low_battery_label->move(screenWidth/2-topIconWH*1.5 - hOff*3,vOff+4);
 
+double topIconWH_2 = topIconScaler * screenWidth;
+  battery_fault = QPixmap(":/icons/battery.png").scaled(topIconWH_2,topIconWH_2, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+  this->ui->battery_label->setText("OFF");
+  ui->battery_label->move(screenWidth/2-topIconWH_2*1.5 - hOff*3,vOff+4);
 
 }
 
@@ -32,7 +36,7 @@ void Battery::increase_battery(int val) {
     this->range += efficiency_constant;
     ui->range->display(int(range));
 
-    check_range(LOW_BATTERY);
+    check_range();
   }
   
 }
@@ -44,7 +48,7 @@ void Battery::decrease_battery(int val) {
     this->range -= efficiency_constant;
     ui->range->display(int(range));
 
-    check_range(LOW_BATTERY);
+    check_range();
   }
 
 }
@@ -57,19 +61,25 @@ void Battery::on(warnings warning) {
   if (warning == LOW_BATTERY) {
     this->ui->low_battery_label->setPixmap(low_battery);
   }
+  else if(warning == BATTERY_FAULT){
+    this->ui->battery_label->setPixmap(battery_fault);
+  }
 }
 
 void Battery::off(warnings warning) {
   if (warning == LOW_BATTERY) {
     this->ui->low_battery_label->setText("OFF");
   }
+  if(warning == BATTERY_FAULT){
+    this->ui->battery_label->setText("OFF");
+  }
 }
 
-void Battery::check_range(warnings warning) {
+void Battery::check_range() {
   if (get_range() <= 30) {
-    on(warning);
+    on(LOW_BATTERY);
   }
   else {
-    off(warning);
+    off(LOW_BATTERY);
   }
 }
