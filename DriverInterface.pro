@@ -23,7 +23,6 @@ SOURCES += \
     motor.cpp \
     background.cpp \
     gears.cpp \
-    cruise.cpp
 
 HEADERS += \
     battery.h \
@@ -39,7 +38,6 @@ HEADERS += \
     motor.h \
     background.h \
     gears.h \
-    cruise.h
 
 FORMS += \
     mainwindow.ui

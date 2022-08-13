@@ -10,7 +10,6 @@
 #include "distance.h"
 #include "horn.h"
 #include "gears.h"
-#include "cruise.h"
 #include "tirepressure.h"
 
 QT_BEGIN_NAMESPACE
@@ -106,7 +105,6 @@ private:
     Distance distance;
     Horn horn;
     Gears gear;
-    CruiseControl cruise;
     TirePressure tire;
 
 };
