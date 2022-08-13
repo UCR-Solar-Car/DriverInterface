@@ -13,7 +13,7 @@ public:
     void increase_battery(int);
     int get_battery();
     int get_range();
-    void check_range(warnings warning);
+    void check_range();
     void on(warnings warning);
     void off(warnings warning);
     ~Battery() {};
@@ -24,6 +24,7 @@ private:
     /* Efficency is (Miles traveled) per (Unit of Battery)*/
     const double efficiency_constant = .85;
     QPixmap low_battery;
+    QPixmap battery_fault;
     Ui::MainWindow *ui;
 };
 
