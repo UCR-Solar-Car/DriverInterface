@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
   label = new QLabel();
   counter = 0;
   connect(timer, SIGNAL(timeout()), this, SLOT(timeout()));
-  timer->start(1000);
+  timer->start(700);
 
 
     horn.setup(ui);
@@ -42,9 +42,9 @@ void MainWindow::on_rightIndicatorON_clicked() { indicators.right_on(); ui->righ
 
 void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); ui->rightIndicatorON->setCheckable(false); ui->leftIndicatorOFF->setCheckable(true);}
 
-void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); }
+void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); ui->hazardIndicatorON->setCheckable(true); ui->hazardIndicatorOFF->setCheckable(false);}
 
-void MainWindow::on_hazardIndicatorOFF_clicked() { indicators.hazard_off(); }
+void MainWindow::on_hazardIndicatorOFF_clicked() { indicators.hazard_off(); ui->hazardIndicatorON->setCheckable(false); ui->hazardIndicatorOFF->setCheckable(true);}
 
 void MainWindow::on_dayLightsON_clicked() { lights.day_on(); }
 
@@ -70,11 +70,11 @@ void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
-void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.decrease_distance(1); }
 
 void MainWindow::timeout()
 {
-        if(this->ui->leftIndicatorON->isCheckable() && counter%2)
+        if(this->ui->leftIndicatorON->isCheckable() && counter == true)
         {
             indicators.left_on();
 
@@ -82,6 +82,7 @@ void MainWindow::timeout()
         else
         {
             indicators.left_off();
+
         }
 
 
@@ -90,7 +91,7 @@ void MainWindow::timeout()
             indicators.left_off();
         }
 
-        if(this->ui->rightIndicatorON->isCheckable() && counter%2)
+        if(this->ui->rightIndicatorON->isCheckable() && counter == true)
         {
             indicators.right_on();
 
@@ -104,10 +105,31 @@ void MainWindow::timeout()
         if(!this->ui->rightIndicatorON->isCheckable())
         {
             indicators.right_off();
+
         }
 
+        if(this->ui->hazardIndicatorON->isCheckable() && counter == true )
+        {
+            indicators.hazard_on();
+        }
+        else if(this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
+        {
+            indicators.hazard_off();
+        }
 
-        counter++;
+        if(!this->ui->hazardIndicatorON->isCheckable() && this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
+        {
+            indicators.hazard_off();
+        }
+
+        if(counter)
+        {
+            counter = false;
+        }
+        else
+        {
+            counter = true;
+        }
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
