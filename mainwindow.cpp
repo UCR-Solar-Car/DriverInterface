@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     horn.setup(ui);
     gear.setup(ui);
-    cruise.setup(ui);
     tire.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
@@ -142,7 +141,7 @@ void MainWindow::on_reversingSignalON_clicked() { gear.switch_gears(REVERSE); }
 
 void MainWindow::on_cruiseControlON_clicked() { gear.cruise_on(); }
 
-void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
+void MainWindow::on_cruiseControlOFF_clicked() { gear.cruise_off(); }
 
 void MainWindow::on_frontLeftON_clicked() {tire.low_pressure(FRONT_LEFT); }
 

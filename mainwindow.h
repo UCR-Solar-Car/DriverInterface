@@ -10,7 +10,6 @@
 #include "distance.h"
 #include "horn.h"
 #include "gears.h"
-#include "cruise.h"
 #include "tirepressure.h"
 
 QT_BEGIN_NAMESPACE
@@ -111,7 +110,6 @@ private:
     QLabel *label;
     bool counter;
     Gears gear;
-    CruiseControl cruise;
     TirePressure tire;
 
 };
