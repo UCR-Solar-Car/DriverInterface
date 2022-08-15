@@ -68,7 +68,7 @@ private slots:
 
     void on_hornSignalOFF_clicked();
 
-    void timeout();
+    void flash();
 
     void on_parkingSignalON_clicked();
 
