@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QScreen>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -76,11 +77,15 @@ void MainWindow::timeout()
         if(this->ui->leftIndicatorON->isCheckable() && counter == true)
         {
             indicators.left_on();
+//            indicators.right_off();
+//            indicators.hazard_off();
+            qDebug() << "left on - blink";
 
         }
         else
         {
             indicators.left_off();
+            qDebug() << "left off - blink";
 
         }
 
@@ -88,37 +93,48 @@ void MainWindow::timeout()
         if(!this->ui->leftIndicatorON->isCheckable())
         {
             indicators.left_off();
+            qDebug() << "left off";
         }
 
         if(this->ui->rightIndicatorON->isCheckable() && counter == true)
         {
             indicators.right_on();
+//            indicators.left_off();
+//            indicators.hazard_off();
+            qDebug() << "right on - blink";
 
         }
         else
         {
             indicators.right_off();
+            qDebug() << "right off - blink";
         }
 
 
         if(!this->ui->rightIndicatorON->isCheckable())
         {
             indicators.right_off();
+            qDebug() << "right off";
 
         }
 
         if(this->ui->hazardIndicatorON->isCheckable() && counter == true )
         {
             indicators.hazard_on();
+//            indicators.right_off();
+//            indicators.left_off();
+            qDebug() << "hazard on - blink";
         }
         else if(this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
         {
             indicators.hazard_off();
+            qDebug() << "hazard off - blink";
         }
 
         if(!this->ui->hazardIndicatorON->isCheckable() && this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
         {
             indicators.hazard_off();
+            qDebug() << "hazard off";
         }
 
         if(counter)
