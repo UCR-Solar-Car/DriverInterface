@@ -1,9 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QScreen>
-#include <QDebug>
-
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -16,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
   distance.setup(ui);
   timer = new QTimer();
   label = new QLabel();
-  counter = true;
+  blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
 
@@ -77,24 +74,24 @@ void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.de
 void MainWindow::flash()
 {
 
-            if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && counter){
+            if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink){
                 indicators.left_on();
 
             }
 
-            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && counter){
+            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink){
                 indicators.right_on();
             }
 
-            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && counter){
+            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink){
                 indicators.hazard_on();
             }
 
-            if(!counter) {
+            if(!blink) {
                 indicators.off();
             }
 
-        counter = !counter;
+        blink = !blink;
 
 }
 

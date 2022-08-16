@@ -108,7 +108,7 @@ private:
     Horn horn;
     QTimer *timer;
     QLabel *label;
-    bool counter;
+    bool blink;
     Gears gear;
     TirePressure tire;
 
