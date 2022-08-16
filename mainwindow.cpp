@@ -3,6 +3,8 @@
 #include <QScreen>
 #include <QDebug>
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
@@ -14,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
   distance.setup(ui);
   timer = new QTimer();
   label = new QLabel();
-  counter = 0;
-  connect(timer, SIGNAL(timeout()), this, SLOT(timeout()));
-  timer->start(700);
+  counter = true;
+  connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
+  timer->start(500);
 
 
     horn.setup(ui);
@@ -72,79 +74,28 @@ void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.decrease_distance(1); }
 
-void MainWindow::timeout()
+void MainWindow::flash()
 {
-        if(this->ui->leftIndicatorON->isCheckable() && counter == true)
-        {
-            indicators.left_on();
-//            indicators.right_off();
-//            indicators.hazard_off();
-            qDebug() << "left on - blink";
 
-        }
-        else
-        {
-            indicators.left_off();
-            qDebug() << "left off - blink";
+            if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && counter){
+                indicators.left_on();
 
-        }
+            }
 
+            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && counter){
+                indicators.right_on();
+            }
 
-        if(!this->ui->leftIndicatorON->isCheckable())
-        {
-            indicators.left_off();
-            qDebug() << "left off";
-        }
+            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && counter){
+                indicators.hazard_on();
+            }
 
-        if(this->ui->rightIndicatorON->isCheckable() && counter == true)
-        {
-            indicators.right_on();
-//            indicators.left_off();
-//            indicators.hazard_off();
-            qDebug() << "right on - blink";
+            if(!counter) {
+                indicators.off();
+            }
 
-        }
-        else
-        {
-            indicators.right_off();
-            qDebug() << "right off - blink";
-        }
+        counter = !counter;
 
-
-        if(!this->ui->rightIndicatorON->isCheckable())
-        {
-            indicators.right_off();
-            qDebug() << "right off";
-
-        }
-
-        if(this->ui->hazardIndicatorON->isCheckable() && counter == true )
-        {
-            indicators.hazard_on();
-//            indicators.right_off();
-//            indicators.left_off();
-            qDebug() << "hazard on - blink";
-        }
-        else if(this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
-        {
-            indicators.hazard_off();
-            qDebug() << "hazard off - blink";
-        }
-
-        if(!this->ui->hazardIndicatorON->isCheckable() && this->ui->leftIndicatorOFF->isCheckable() && this->ui->rightIndicatorOFF->isCheckable())
-        {
-            indicators.hazard_off();
-            qDebug() << "hazard off";
-        }
-
-        if(counter)
-        {
-            counter = false;
-        }
-        else
-        {
-            counter = true;
-        }
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }

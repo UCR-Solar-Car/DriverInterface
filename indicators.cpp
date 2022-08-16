@@ -53,3 +53,16 @@ void Indicators::hazard_off() {
   this->ui->left_indicator->setText("OFF");
   this->ui->right_indicator->setText("OFF");
 }
+
+states Indicators::get_left_indicator_state(){
+    return left;
+}
+
+states Indicators::get_right_indicator_state(){
+    return right;
+}
+
+void Indicators::off() {
+    this->ui->left_indicator->setText("OFF");
+    this->ui->right_indicator->setText("OFF");
+}
