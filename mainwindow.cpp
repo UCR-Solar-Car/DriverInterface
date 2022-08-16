@@ -71,28 +71,20 @@ void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.decrease_distance(1); }
 
-void MainWindow::flash()
-{
+void MainWindow::flash() {
+    if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
+        indicators.left_on();
 
-            if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink){
-                indicators.left_on();
+    if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
+        indicators.right_on();
 
-            }
+    if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
+        indicators.hazard_on();
 
-            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink){
-                indicators.right_on();
-            }
+    if(!blink)
+        indicators.off();
 
-            if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink){
-                indicators.hazard_on();
-            }
-
-            if(!blink) {
-                indicators.off();
-            }
-
-        blink = !blink;
-
+    blink = !blink;
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
