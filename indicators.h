@@ -3,11 +3,12 @@
 
 #include "ui_mainwindow.h"
 #include "states.h"
-#include <QTimer>
 
-class Indicators: public QObject
+
+
+class Indicators
 {
-    Q_OBJECT
+
 public:
     Indicators();
     void setup(Ui::MainWindow *);

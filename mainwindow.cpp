@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QScreen>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -12,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
   speed.setup(ui);
   distance.setup(ui);
   timer = new QTimer();
-  label = new QLabel();
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
@@ -33,15 +33,15 @@ void MainWindow::on_increaseBattery_clicked() { battery.increase_battery(1); }
 
 void MainWindow::on_decreaseBattery_clicked() { battery.decrease_battery(1); }
 
-void MainWindow::on_leftIndicatorON_clicked() { indicators.left_on(); ui->leftIndicatorON->setCheckable(true); ui->leftIndicatorOFF->setCheckable(false);}
+void MainWindow::on_leftIndicatorON_clicked() { indicators.left_on(); }
 
-void MainWindow::on_leftIndicatorOFF_clicked() { indicators.left_off(); ui->leftIndicatorON->setCheckable(false); ui->leftIndicatorOFF->setCheckable(true);}
+void MainWindow::on_leftIndicatorOFF_clicked() { indicators.left_off(); }
 
-void MainWindow::on_rightIndicatorON_clicked() { indicators.right_on(); ui->rightIndicatorON->setCheckable(true); ui->rightIndicatorOFF->setCheckable(false);}
+void MainWindow::on_rightIndicatorON_clicked() { indicators.right_on(); }
 
-void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); ui->rightIndicatorON->setCheckable(false); ui->leftIndicatorOFF->setCheckable(true);}
+void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); }
 
-void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); ui->hazardIndicatorON->setCheckable(true); ui->hazardIndicatorOFF->setCheckable(false);}
+void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); }
 
 void MainWindow::on_hazardIndicatorOFF_clicked() { indicators.hazard_off(); ui->hazardIndicatorON->setCheckable(false); ui->hazardIndicatorOFF->setCheckable(true);}
 
