@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QScreen>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -10,13 +11,19 @@ MainWindow::MainWindow(QWidget *parent)
   lights.setup(ui);
   motors.setup(ui);
   speed.setup(ui);
-    distance.setup(ui);
+  distance.setup(ui);
+  timer = new QTimer();
+  blink = true;
+  connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
+  timer->start(500);
+
 
     horn.setup(ui);
     gear.setup(ui);
     tire.setup(ui);
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+
 
 }
 
@@ -36,7 +43,7 @@ void MainWindow::on_rightIndicatorOFF_clicked() { indicators.right_off(); }
 
 void MainWindow::on_hazardIndicatorON_clicked() { indicators.hazard_on(); }
 
-void MainWindow::on_hazardIndicatorOFF_clicked() { indicators.hazard_off(); }
+void MainWindow::on_hazardIndicatorOFF_clicked() { indicators.hazard_off(); ui->hazardIndicatorON->setCheckable(false); ui->hazardIndicatorOFF->setCheckable(true);}
 
 void MainWindow::on_dayLightsON_clicked() { lights.day_on(); }
 
@@ -63,6 +70,22 @@ void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
 void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
 
 void MainWindow::on_decreaseMPH_clicked() { speed.decrease_speed(1); distance.decrease_distance(1); }
+
+void MainWindow::flash() {
+    if(indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
+        indicators.left_on();
+
+    if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
+        indicators.right_on();
+
+    if(indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
+        indicators.hazard_on();
+
+    if(!blink)
+        indicators.off();
+
+    blink = !blink;
+}
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
 
