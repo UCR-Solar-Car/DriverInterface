@@ -107,7 +107,6 @@ private:
     Distance distance;
     Horn horn;
     QTimer *timer;
-    QLabel *label;
     bool blink;
     Gears gear;
     TirePressure tire;
