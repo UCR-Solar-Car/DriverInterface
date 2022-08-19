@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
+    ui->stackedWidget->setCurrentIndex(2);
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
