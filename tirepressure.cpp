@@ -52,6 +52,7 @@ void TirePressure::normal_pressure(tires tire){
         this->ui->back_right->setPixmap(normal_pressure_icon);
     }
 }
+//test
 
 
 
