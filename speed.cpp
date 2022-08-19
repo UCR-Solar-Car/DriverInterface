@@ -3,7 +3,7 @@
 
 Speed::Speed() : speed(25) {}
 
-void Speed::setup(Ui::MainWindow *ui) {
+void Speed::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   this->speed = 25;
   this->ui->speed->display(speed);

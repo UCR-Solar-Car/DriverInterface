@@ -3,7 +3,7 @@
 
 Distance::Distance() : distance(0) {}
 
-void Distance::setup(Ui::MainWindow *ui) {
+void Distance::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   ui->distance->display(distance);
   int distanceSize = screenWidth * .05;

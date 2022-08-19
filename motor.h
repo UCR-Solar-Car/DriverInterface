@@ -9,7 +9,7 @@
 class Motor {
 public:
   Motor();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void on(warnings warning);
   void off(warnings warning);
   ~Motor(){};

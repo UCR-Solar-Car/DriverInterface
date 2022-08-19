@@ -3,7 +3,7 @@
 
 Gears::Gears() : gear(PARK), cruise(OFF) { return; }
 
-void Gears::setup(Ui::MainWindow *ui) {
+void Gears::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
 
   int driveModeIconWH = .09 * screenHeight;

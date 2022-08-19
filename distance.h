@@ -6,7 +6,7 @@
 class Distance {
 public:
   Distance();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void decrease_distance(int);
   void increase_distance(int);
   ~Distance() {}

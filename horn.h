@@ -7,7 +7,7 @@
 class Horn {
 public:
   Horn();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void horn_on();
   void horn_off();
   ~Horn(){};

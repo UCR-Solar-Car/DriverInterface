@@ -3,7 +3,7 @@
 
 Motor::Motor() { return; }
 
-void Motor::setup(Ui::MainWindow *ui) {
+void Motor::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   int topIconWH = topIconScaler * screenWidth;
   motor_fault = QPixmap(":/icons/motor.png")

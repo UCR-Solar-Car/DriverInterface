@@ -14,20 +14,20 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>1441</width>
-      <height>721</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#bootup {
-background: white;
-
-}</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>1</number>
@@ -638,7 +638,7 @@ background-color:  #2dcc6b;
        <string>OFF</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -903,13 +903,18 @@ background-color:  #2dcc6b;
      <property name="enabled">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+	background: white;
+}</string>
+     </property>
      <widget class="QLabel" name="ucr_solar_car_logo">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>200</y>
-        <width>921</width>
-        <height>241</height>
+        <x>10</x>
+        <y>130</y>
+        <width>1271</width>
+        <height>341</height>
        </rect>
       </property>
       <property name="autoFillBackground">

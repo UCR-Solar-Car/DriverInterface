@@ -3,7 +3,7 @@
 
 Lights::Lights() : day(OFF), night(OFF) { return; }
 
-void Lights::setup(Ui::MainWindow *ui) {
+void Lights::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   ui->night_lights->setText("OFF");
   ui->day_lights->setText("OFF");

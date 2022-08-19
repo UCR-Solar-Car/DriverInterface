@@ -4,7 +4,7 @@
 
 Indicators::Indicators() : right(OFF), left(OFF) { return; }
 
-void Indicators::setup(Ui::MainWindow *ui) {
+void Indicators::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   this->ui->left_indicator->setText("OFF");
   this->ui->right_indicator->setText("OFF");

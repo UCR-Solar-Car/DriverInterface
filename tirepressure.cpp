@@ -3,7 +3,7 @@
 
 TirePressure::TirePressure() : lowpressure(34) { return; }
 
-void TirePressure::setup(Ui::MainWindow *ui) {
+void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   int tireIconWH = .03 * screenWidth;
   int tireIconWH2 = tireIconWH / 2;

@@ -6,7 +6,7 @@
 class Speed {
 public:
   Speed();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void increase_speed(int value);
   void decrease_speed(int value);
   ~Speed(){};

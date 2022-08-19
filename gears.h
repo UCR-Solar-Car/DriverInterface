@@ -7,7 +7,7 @@
 class Gears {
 public:
   Gears();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void switch_gears(gears);
   void cruise_on();
   void cruise_off();

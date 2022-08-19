@@ -7,7 +7,7 @@
 class TirePressure {
 public:
   TirePressure();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void low_pressure(tires tire);
   void normal_pressure(tires tire);
   ~TirePressure(){};

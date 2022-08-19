@@ -3,7 +3,7 @@
 
 Battery::Battery() : battery(100) { return; }
 
-void Battery::setup(Ui::MainWindow *ui) {
+void Battery::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   this->ui->battery->setValue(battery);
   range = battery * efficiency_constant;

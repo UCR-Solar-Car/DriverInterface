@@ -7,7 +7,7 @@
 class Battery {
 public:
   Battery();
-  void setup(Ui::MainWindow *);
+  void setup(Ui::MainWindow *, int, int);
   void decrease_battery(int);
   void increase_battery(int);
   int get_battery();

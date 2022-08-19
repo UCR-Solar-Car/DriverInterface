@@ -3,28 +3,42 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
+#include <QScreen>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 
   ui->setupUi(this);
+
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
+  QScreen* screen = QGuiApplication::primaryScreen();
+
+  ui->stackedWidget->resize(screen->geometry().width(), screen->geometry().height());
+  ui->stackedWidget->move(0,0);
+
+  int center_width= screen->geometry().width()/2 - ui->ucr_solar_car_logo->width()/2;
+  int center_height= screen->geometry().height()/2 - ui->ucr_solar_car_logo->height()/2;
+  ui->ucr_solar_car_logo->move(center_width, center_height);
+
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
-  indicators.setup(ui);
-  battery.setup(ui);
-  lights.setup(ui);
-  motors.setup(ui);
-  speed.setup(ui);
-  distance.setup(ui);
+
+
+  indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
+  battery.setup(ui, screen->geometry().height(), screen->geometry().width());
+  lights.setup(ui, screen->geometry().height(), screen->geometry().width());
+  motors.setup(ui, screen->geometry().height(), screen->geometry().width());
+  speed.setup(ui, screen->geometry().height(), screen->geometry().width());
+  distance.setup(ui, screen->geometry().height(), screen->geometry().width());
   timer = new QTimer();
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
 
-  horn.setup(ui);
-  gear.setup(ui);
-  tire.setup(ui);
+  horn.setup(ui, screen->geometry().height(), screen->geometry().width());
+  gear.setup(ui, screen->geometry().height(), screen->geometry().width());
+  tire.setup(ui, screen->geometry().height(), screen->geometry().width());
 
   this->move(QGuiApplication::screens().at(0)->geometry().center() -
              frameGeometry().center());
