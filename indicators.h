@@ -4,8 +4,11 @@
 #include "ui_mainwindow.h"
 #include "states.h"
 
+
+
 class Indicators
 {
+
 public:
     Indicators();
     void setup(Ui::MainWindow *);
@@ -15,7 +18,9 @@ public:
     void right_off();
     void hazard_on();
     void hazard_off();
-    ~Indicators() {}
+    states get_right_indicator_state();
+    states get_left_indicator_state();
+    void off();
 private:
     states right;
     states left;

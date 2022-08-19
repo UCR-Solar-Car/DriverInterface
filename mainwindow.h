@@ -67,6 +67,8 @@ private slots:
 
     void on_hornSignalOFF_clicked();
 
+    void flash();
+
     void on_parkingSignalON_clicked();
 
     void on_drivingSignalON_clicked();
@@ -104,6 +106,8 @@ private:
     Speed speed;
     Distance distance;
     Horn horn;
+    QTimer *timer;
+    bool blink;
     Gears gear;
     TirePressure tire;
 
