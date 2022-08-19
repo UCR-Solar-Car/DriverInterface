@@ -6,9 +6,9 @@
 
 class Background {
 
-  public:
-    Background();
-    void dark_theme();
+public:
+  Background();
+  void dark_theme();
 };
 
 #endif

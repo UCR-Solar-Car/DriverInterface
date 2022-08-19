@@ -23,10 +23,16 @@
       <height>721</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <property name="styleSheet">
+     <string notr="true">#bootup {
+background: white;
+
+}</string>
     </property>
-    <widget class="QWidget" name="page">
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="driver_interface">
      <widget class="QWidget" name="horizontalLayoutWidget">
       <property name="geometry">
        <rect>
@@ -893,18 +899,35 @@ background-color:  #2dcc6b;
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_2">
+    <widget class="QWidget" name="bootup">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <widget class="QLabel" name="ucr_solar_car_logo">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>150</y>
-        <width>851</width>
-        <height>421</height>
+        <x>120</x>
+        <y>200</y>
+        <width>921</width>
+        <height>241</height>
        </rect>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	background: white;
+}</string>
+      </property>
       <property name="text">
-       <string>SOLAR CAR LOGO</string>
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

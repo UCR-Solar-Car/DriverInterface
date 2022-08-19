@@ -7,10 +7,10 @@ void Speed::setup(Ui::MainWindow *ui) {
   this->ui = ui;
   this->speed = 25;
   this->ui->speed->display(speed);
-  int speedSize = screenWidth*.20;
-  ui->speed->resize(speedSize,speedSize);
-  ui->speed->move(3*screenWidth/5,screenHeight/4);
-  ui->mph->move(3*screenWidth/5,screenHeight/4+speedSize);
+  int speedSize = screenWidth * .20;
+  ui->speed->resize(speedSize, speedSize);
+  ui->speed->move(3 * screenWidth / 5, screenHeight / 4);
+  ui->mph->move(3 * screenWidth / 5, screenHeight / 4 + speedSize);
 }
 
 void Speed::increase_speed(int value) {
