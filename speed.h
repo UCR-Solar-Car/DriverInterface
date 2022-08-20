@@ -3,17 +3,17 @@
 
 #include "ui_mainwindow.h"
 
-class Speed
-{
+class Speed {
 public:
-    Speed();
-    void setup(Ui::MainWindow *);
-    void increase_speed(int value);
-    void decrease_speed(int value);
-    ~Speed() {};
-   private:
-    int speed;
-    Ui::MainWindow * ui;
+  Speed();
+  void setup(Ui::MainWindow *, int, int);
+  void increase_speed(int value);
+  void decrease_speed(int value);
+  ~Speed(){};
+
+private:
+  int speed;
+  Ui::MainWindow *ui;
 };
 
 #endif // SPEED_H
