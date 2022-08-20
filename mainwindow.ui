@@ -316,9 +316,9 @@
      <widget class="QLCDNumber" name="distance">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>440</x>
         <y>450</y>
-        <width>201</width>
+        <width>131</width>
         <height>61</height>
        </rect>
       </property>
@@ -346,10 +346,10 @@
      <widget class="QLabel" name="distance_label">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>140</x>
         <y>460</y>
-        <width>61</width>
-        <height>41</height>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -359,7 +359,7 @@
        </font>
       </property>
       <property name="text">
-       <string>A:</string>
+       <string>Distance:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -394,9 +394,9 @@ background-color:  #2dcc6b;
      <widget class="QLCDNumber" name="range">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>420</x>
         <y>340</y>
-        <width>201</width>
+        <width>141</width>
         <height>61</height>
        </rect>
       </property>
@@ -426,8 +426,8 @@ background-color:  #2dcc6b;
        <rect>
         <x>240</x>
         <y>340</y>
-        <width>61</width>
-        <height>41</height>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -437,7 +437,7 @@ background-color:  #2dcc6b;
        </font>
       </property>
       <property name="text">
-       <string>R:</string>
+       <string>Range:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
