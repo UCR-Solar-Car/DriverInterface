@@ -907,7 +907,7 @@ background-color:  #2dcc6b;
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>450</y>
+      <y>440</y>
       <width>81</width>
       <height>81</height>
      </rect>
@@ -925,6 +925,168 @@ background-color:  #2dcc6b;
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
+   <widget class="QLCDNumber" name="frontLeftTirePressure">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>390</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="frontRightTirePressure">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>390</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="digitCount">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="backLeftTirePressure">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>570</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="backRightTirePressure">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>570</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="increaseFrontLeftButton">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>500</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>increaseFrontLeft</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decreaseFrontLeftButton">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>540</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>decreaseFrontLeft</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="increaseFrontRightButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>500</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>increaseFrontRight</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decreaseFrontRightButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>540</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>decreaseFrontRight</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="increaseBackLeftButton">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>590</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>increaseBackLeft</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decreaseBackLeftButton">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>630</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>decreaseBackLeft</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="increaseBackRightButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>590</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>increaseBackRight</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decreaseBackRightButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>630</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>decreaseBackRightButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -932,7 +1094,7 @@ background-color:  #2dcc6b;
      <x>0</x>
      <y>0</y>
      <width>1320</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

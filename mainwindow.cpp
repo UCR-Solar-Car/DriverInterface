@@ -115,3 +115,18 @@ void MainWindow::on_backRightON_clicked() {tire.low_pressure(BACK_RIGHT); }
 
 void MainWindow::on_backRightOFF_clicked() {tire.normal_pressure(BACK_RIGHT); }
 
+void MainWindow::on_increaseFrontLeftButton_clicked() {tire.increasePressure(FRONT_LEFT); }
+
+void MainWindow::on_increaseFrontRightButton_clicked() {tire.increasePressure(FRONT_RIGHT); }
+
+void MainWindow::on_increaseBackLeftButton_clicked() {tire.increasePressure(BACK_LEFT); }
+
+void MainWindow::on_increaseBackRightButton_clicked() {tire.increasePressure(BACK_RIGHT); }
+
+void MainWindow::on_decreaseFrontLeftButton_clicked() {tire.decreasePressure(FRONT_LEFT); }
+
+void MainWindow::on_decreaseFrontRightButton_clicked() {tire.decreasePressure(FRONT_RIGHT); }
+
+void MainWindow::on_decreaseBackLeftButton_clicked() {tire.decreasePressure(BACK_LEFT); }
+
+void MainWindow::on_decreaseBackRightButton_clicked() {tire.decreasePressure(BACK_RIGHT); }

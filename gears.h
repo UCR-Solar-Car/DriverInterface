@@ -12,7 +12,14 @@ class Gears {
     void cruise_on();
     void cruise_off();
     
-  private:
+private slots:
+    void on_increaseFrontLeftButton_clicked();
+
+    void on_decreaseFrontLeftButton_clicked();
+
+    void on_increaseFrontLeftButton_clicked(bool checked);
+
+private:
     Ui::MainWindow *ui;
     gears gear;
     states cruise;

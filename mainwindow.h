@@ -97,6 +97,22 @@ private slots:
 
     void on_backRightON_clicked();
 
+    void on_increaseFrontLeftButton_clicked();
+
+    void on_increaseFrontRightButton_clicked();
+
+    void on_increaseBackLeftButton_clicked();
+
+    void on_increaseBackRightButton_clicked();
+
+    void on_decreaseFrontLeftButton_clicked();
+
+    void on_decreaseFrontRightButton_clicked();
+
+    void on_decreaseBackLeftButton_clicked();
+
+    void on_decreaseBackRightButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     Battery battery;
