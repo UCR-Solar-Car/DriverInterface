@@ -33,63 +33,11 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="driver_interface">
-     <widget class="QWidget" name="horizontalLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>540</y>
-        <width>392</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="park_label">
-         <property name="text">
-          <string>parkingSignal</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="reverse_label">
-         <property name="text">
-          <string>reversingSignal</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="neutral_label">
-         <property name="text">
-          <string>neutralSignal</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="drive_label">
-         <property name="text">
-          <string>drivingSignalSignal</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QWidget" name="horizontalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>630</y>
+        <x>130</x>
+        <y>230</y>
         <width>500</width>
         <height>80</height>
        </rect>
@@ -923,6 +871,22 @@ background-color:  #2dcc6b;
       </property>
       <property name="text">
        <string>hornSignal</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="park_label">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>550</y>
+        <width>82</width>
+        <height>78</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>parkingSignal</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

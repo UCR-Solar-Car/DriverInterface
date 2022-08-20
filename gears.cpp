@@ -17,11 +17,14 @@ void Gears::setup(Ui::MainWindow *ui, int height, int width) {
 
   qDebug() << "CRUISE" << width << ui->cruise_control->width() << ui->cruise_control->x() << ui->cruise_control->y();
 
+  ui->park_label->resize(100, 100);
+  ui->park_label->move(width / 2 - ui->park_label->width() / 2, height - ui->park_label->height() - 100);
+
+  qDebug() << "PARK LABEL" << ui->park_label->x() << ui->park_label->y();
+
   this->ui->park_label->setPixmap(park);
-  this->ui->drive_label->setText("OFF");
-  this->ui->neutral_label->setText("OFF");
-  this->ui->reverse_label->setText("OFF");
-  this->ui->cruise_control->setText("OFF");
+
+
 }
 
 void Gears::switch_gears(gears state) {
@@ -29,37 +32,22 @@ void Gears::switch_gears(gears state) {
     gear = state;
     cruise_off();
 
-    this->ui->drive_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
-
     this->ui->park_label->setPixmap(park);
+
   } else if (state == DRIVE) {
     gear = state;
 
-    this->ui->park_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
-
-    this->ui->drive_label->setPixmap(drive);
+    this->ui->park_label->setPixmap(drive);
   } else if (state == NEUTRAL) {
     gear = state;
     cruise_off();
 
-    this->ui->park_label->setText("OFF");
-    this->ui->drive_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
-
-    this->ui->neutral_label->setPixmap(neutral);
+    this->ui->park_label->setPixmap(neutral);
   } else if (state == REVERSE) {
     gear = state;
     cruise_off();
 
-    this->ui->park_label->setText("OFF");
-    this->ui->drive_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-
-    this->ui->reverse_label->setPixmap(reverse);
+    this->ui->park_label->setPixmap(reverse);
   }
 }
 
