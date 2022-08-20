@@ -16,5 +16,6 @@
         <file>lowpressure.png</file>
         <file>normalpressure.png</file>
         <file>car.png</file>
+        <file>logo.png</file>
     </qresource>
 </RCC>

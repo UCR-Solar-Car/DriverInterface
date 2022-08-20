@@ -1,22 +1,22 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#include "ui_mainwindow.h"
 #include "states.h"
-#include <unordered_map>
+#include "ui_mainwindow.h"
 #include <iostream>
+#include <unordered_map>
 
-class Motor
-{
+class Motor {
 public:
-    Motor();
-    void setup(Ui::MainWindow*);
-    void on(warnings warning);
-    void off(warnings warning);
-    ~Motor() {};
+  Motor();
+  void setup(Ui::MainWindow *, int, int);
+  void on(warnings warning);
+  void off(warnings warning);
+  ~Motor(){};
+
 private:
-    QPixmap motor_fault;
-    Ui::MainWindow *ui;
+  QPixmap motor_fault;
+  Ui::MainWindow *ui;
 };
 
 #endif // WARNINGS_H
