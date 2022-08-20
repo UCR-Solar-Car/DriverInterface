@@ -5,7 +5,6 @@ Gears::Gears() : gear(PARK) {return;}
 
 void Gears::setup(Ui::MainWindow *ui) {
   this->ui = ui;
-
   int driveModeIconWH = .09 * screenHeight;
   
   park = QPixmap(":/icons/parking.png").scaled(driveModeIconWH,driveModeIconWH+1, Qt::KeepAspectRatio, Qt::SmoothTransformation);
@@ -22,9 +21,6 @@ void Gears::setup(Ui::MainWindow *ui) {
   this->ui->drive_label->setText("OFF");
   this->ui->neutral_label->setText("OFF");
   this->ui->reverse_label->setText("OFF");
-
-
-
 }
 
 void Gears::switch_gears(gears state) {
@@ -34,7 +30,6 @@ void Gears::switch_gears(gears state) {
     this->ui->drive_label->setText("OFF");
     this->ui->neutral_label->setText("OFF");
     this->ui->reverse_label->setText("OFF");
-
     this->ui->park_label->setPixmap(park);
   } 
   else if (state == DRIVE) {
@@ -43,7 +38,6 @@ void Gears::switch_gears(gears state) {
     this->ui->park_label->setText("OFF");
     this->ui->neutral_label->setText("OFF");
     this->ui->reverse_label->setText("OFF");
-
     this->ui->drive_label->setPixmap(drive);
   }
   else if (state == NEUTRAL) {
@@ -52,7 +46,6 @@ void Gears::switch_gears(gears state) {
     this->ui->park_label->setText("OFF");
     this->ui->drive_label->setText("OFF");
     this->ui->reverse_label->setText("OFF");
-
     this->ui->neutral_label->setPixmap(neutral);
   }
   else if (state == REVERSE) {
@@ -61,7 +54,6 @@ void Gears::switch_gears(gears state) {
     this->ui->park_label->setText("OFF");
     this->ui->drive_label->setText("OFF");
     this->ui->neutral_label->setText("OFF");
-
     this->ui->reverse_label->setPixmap(reverse);
   }
 }
