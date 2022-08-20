@@ -6,8 +6,7 @@
 #include <unordered_map>
 #include <iostream>
 
-class Motor
-{
+class Motor {
 public:
     Motor();
     void setup(Ui::MainWindow*);
