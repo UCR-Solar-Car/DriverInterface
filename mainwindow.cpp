@@ -112,7 +112,7 @@ void MainWindow::flash() {
   if (!blink)
     indicators.off();
 
-  if (seconds == 10)
+  if (seconds == 2)
     ui->stackedWidget->setCurrentIndex(0);
 
   blink = !blink;
