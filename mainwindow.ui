@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="driver_interface">
      <widget class="QWidget" name="horizontalLayoutWidget">
@@ -761,13 +761,13 @@ background-color:  #2dcc6b;
      <widget class="QWidget" name="horizontalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>90</x>
         <y>40</y>
-        <width>761</width>
+        <width>1101</width>
         <height>80</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="warning_icons">
        <item>
         <widget class="QLabel" name="motor_label">
          <property name="text">

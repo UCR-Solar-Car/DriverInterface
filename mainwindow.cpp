@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
 
+    ui->warnings_icons->move(0,0);
 
   indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());
