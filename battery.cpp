@@ -8,30 +8,22 @@ void Battery::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui->battery->setValue(battery);
   range = battery * efficiency_constant;
   ui->range->display(int(range));
-  int rangeSize = screenWidth * .05;
 
-  ui->range_label->resize(rangeSize, rangeSize);
-  ui->range_label->move(screenWidth / 5, screenHeight * .15);
-  ui->range->resize(screenWidth / 6, rangeSize * 1.2);
-  ui->range->move(screenWidth / 5, screenHeight * .15);
-  ui->battery->resize(screenWidth / 4, screenHeight * .05);
-  ui->battery->move(screenWidth / 5, screenHeight * .25);
+  ui->low_battery_label->resize(width * 10 / 100, width * 10 / 100);
+  ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + ( ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
 
-  double topIconWH = topIconScaler * screenWidth;
-  low_battery = QPixmap(":/icons/low-battery.png")
-                    .scaled(topIconWH, topIconWH, Qt::KeepAspectRatio,
-                            Qt::SmoothTransformation);
+  low_battery = QPixmap(":/icons/low-battery.png");
   this->ui->low_battery_label->setText("OFF");
-  ui->low_battery_label->move(screenWidth / 2 - topIconWH * 1.5 - hOff * 3,
-                              vOff + 4);
 
-  double topIconWH_2 = topIconScaler * screenWidth;
-  battery_fault = QPixmap(":/icons/battery.png")
-                      .scaled(topIconWH_2, topIconWH_2, Qt::KeepAspectRatio,
-                              Qt::SmoothTransformation);
+  qDebug() << "LOW BATTERY" << width << ui->low_battery_label->width() << ui->low_battery_label->x() << ui->low_battery_label->y();
+
+  ui->battery_label->resize(width * 10 / 100, width * 10 / 100);
+  ui->battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + (ui->battery_label->width() * BATTERY_WARNING_ICON), 0);
+
+  battery_fault = QPixmap(":/icons/battery.png");
   this->ui->battery_label->setText("OFF");
-  ui->battery_label->move(screenWidth / 2 - topIconWH_2 * 1.5 - hOff * 3,
-                          vOff + 4);
+
+ qDebug() << "BATTERY" << width << ui->battery_label->width() << ui->battery_label->x() << ui->battery_label->y();
 }
 
 void Battery::increase_battery(int val) {
