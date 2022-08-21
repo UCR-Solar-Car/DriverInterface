@@ -23,10 +23,35 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
                  .scaled(carIconWH, carIconWH, Qt::KeepAspectRatio,
                          Qt::SmoothTransformation);
   this->ui->car_label->setPixmap(car_icon);
-  ui->front_left->setPixmap(normal_pressure_icon);
-  ui->front_right->setPixmap(normal_pressure_icon);
-  ui->back_left->setPixmap(normal_pressure_icon);
-  ui->back_right->setPixmap(normal_pressure_icon);
+  if(frontLeftPressure >= 31){
+      ui->front_left->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->front_left->setPixmap(low_pressure_icon);
+  }
+
+  if(frontRightPressure >= 31){
+      ui->front_right->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->front_right->setPixmap(low_pressure_icon);
+  }
+
+  if(backLeftPressure >= 31){
+      ui->back_left->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->back_left->setPixmap(low_pressure_icon);
+  }
+
+  if(backRightPressure >= 31){
+      ui->back_right->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->back_right->setPixmap(low_pressure_icon);
+  }
+
+
   ui->front_left->move(screenWidth / 6 - tireIconWH2,
                        screenHeight * .55 - tireIconWH2);
   ui->front_right->move(screenWidth / 6 + carIconWH + tireIconWH2,
