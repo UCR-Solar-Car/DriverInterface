@@ -13,7 +13,6 @@ public:
   ~TirePressure(){};
 
 private:
-  int lowpressure;
   int front_left_pressure;
   int front_right_pressure;
   int back_left_pressure;
