@@ -1,7 +1,7 @@
 #ifndef TIREPRESSURE_H
 #define TIREPRESSURE_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 
 class TirePressure {
@@ -21,7 +21,6 @@ private:
   int pressure_threshold;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
-  QPixmap car_icon;
   Ui::MainWindow *ui;
 };
 
