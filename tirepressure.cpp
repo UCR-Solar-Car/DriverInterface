@@ -1,7 +1,7 @@
 #include "tirepressure.h"
 #include "scaler.h"
 
-TirePressure::TirePressure(){ return; }
+TirePressure::TirePressure(){}
 
 void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;

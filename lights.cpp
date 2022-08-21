@@ -1,7 +1,7 @@
 #include "lights.h"
 #include "scaler.h"
 
-Lights::Lights() : day(OFF), night(OFF) { return; }
+Lights::Lights() : day(OFF), night(OFF) {}
 
 void Lights::setup(Ui::MainWindow *ui, int height, int width) {
   ui = ui;
