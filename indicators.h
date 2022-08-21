@@ -1,7 +1,7 @@
 #ifndef INDICATORS_H
 #define INDICATORS_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 
 class Indicators {

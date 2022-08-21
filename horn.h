@@ -1,7 +1,7 @@
 #ifndef HORN_H
 #define HORN_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 
 class Horn {
