@@ -131,20 +131,20 @@ void MainWindow::on_cruiseControlON_clicked() { gear.cruise_on(); }
 
 void MainWindow::on_cruiseControlOFF_clicked() { gear.cruise_off(); }
 
-void MainWindow::on_frontLeftON_clicked() { tire.low_pressure(FRONT_LEFT); }
+void MainWindow::on_frontLeftON_clicked() { tire.increasePressure(FRONT_LEFT); }
 
-void MainWindow::on_frontLeftOFF_clicked() { tire.normal_pressure(FRONT_LEFT); }
+void MainWindow::on_frontLeftOFF_clicked() { tire.decreasePressure(FRONT_LEFT); }
 
-void MainWindow::on_frontRightON_clicked() { tire.low_pressure(FRONT_RIGHT); }
+void MainWindow::on_frontRightON_clicked() { tire.increasePressure(FRONT_RIGHT); }
 
 void MainWindow::on_frontRightOFF_clicked() {
-  tire.normal_pressure(FRONT_RIGHT);
+  tire.decreasePressure(FRONT_RIGHT);
 }
 
-void MainWindow::on_backLeftON_clicked() { tire.low_pressure(BACK_LEFT); }
+void MainWindow::on_backLeftON_clicked() { tire.increasePressure(BACK_LEFT); }
 
-void MainWindow::on_backLeftOFF_clicked() { tire.normal_pressure(BACK_LEFT); }
+void MainWindow::on_backLeftOFF_clicked() { tire.decreasePressure(BACK_LEFT); }
 
-void MainWindow::on_backRightON_clicked() { tire.low_pressure(BACK_RIGHT); }
+void MainWindow::on_backRightON_clicked() { tire.increasePressure(BACK_RIGHT); }
 
-void MainWindow::on_backRightOFF_clicked() { tire.normal_pressure(BACK_RIGHT); }
+void MainWindow::on_backRightOFF_clicked() { tire.decreasePressure(BACK_RIGHT); }

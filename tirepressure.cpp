@@ -6,8 +6,37 @@ TirePressure::TirePressure() : lowpressure(34) { return; }
 void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
 
+  front_left_pressure = 35;
+  front_right_pressure = 35;
+  back_left_pressure = 35;
+  back_right_pressure = 35;
+  pressure_threshold = 30;
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
+  if(front_left_pressure >= pressure_threshold){
+      ui->front_left->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->front_left->setPixmap(low_pressure_icon);
+  }
+  if(front_right_pressure >= pressure_threshold){
+      ui->front_right->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->front_right->setPixmap(low_pressure_icon);
+  }
+  if(back_left_pressure >= pressure_threshold){
+      ui->back_left->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->back_left->setPixmap(low_pressure_icon);
+  }
+  if(back_right_pressure >= pressure_threshold){
+      ui->back_right->setPixmap(normal_pressure_icon);
+  }
+  else{
+     this->ui->back_right->setPixmap(low_pressure_icon);
+  }
 
   ui->back_left->resize(100, 100);
   ui->back_right->resize(100, 100);
@@ -21,33 +50,53 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
                        ui->back_left->y());
   ui->front_right->move(ui->front_left->x() + width * 20 / 100,
                         ui->front_left->y());
-
-  normal_pressure(FRONT_LEFT);
-  normal_pressure(FRONT_RIGHT);
-  normal_pressure(BACK_LEFT);
-  normal_pressure(BACK_RIGHT);
 }
 
-void TirePressure::low_pressure(tires tire) {
+void TirePressure::increasePressure(tires tire) {
+
   if (tire == FRONT_LEFT) {
-    this->ui->front_left->setPixmap(low_pressure_icon);
+      front_left_pressure++;
+      if(front_left_pressure > pressure_threshold){
+        this->ui->front_left->setPixmap(normal_pressure_icon);
+      }
   } else if (tire == FRONT_RIGHT) {
-    this->ui->front_right->setPixmap(low_pressure_icon);
+      front_right_pressure++;
+      if(front_right_pressure > pressure_threshold){
+        this->ui->front_right->setPixmap(normal_pressure_icon);
+      }
   } else if (tire == BACK_LEFT) {
-    this->ui->back_left->setPixmap(low_pressure_icon);
+      back_left_pressure++;
+      if(back_left_pressure > pressure_threshold){
+        this->ui->back_left->setPixmap(normal_pressure_icon);
+      }
   } else if (tire == BACK_RIGHT) {
-    this->ui->back_right->setPixmap(low_pressure_icon);
+      back_right_pressure++;
+      if(back_right_pressure > pressure_threshold){
+        this->ui->back_right->setPixmap(normal_pressure_icon);
+      }
   }
 }
 
-void TirePressure::normal_pressure(tires tire) {
+void TirePressure::decreasePressure(tires tire) {
   if (tire == FRONT_LEFT) {
-    this->ui->front_left->setPixmap(normal_pressure_icon);
+      front_left_pressure--;
+      if(front_left_pressure <= pressure_threshold){
+         this->ui->front_left->setPixmap(low_pressure_icon);
+      }
   } else if (tire == FRONT_RIGHT) {
-    this->ui->front_right->setPixmap(normal_pressure_icon);
+      front_right_pressure--;
+      if(front_right_pressure <= pressure_threshold){
+         this->ui->front_right->setPixmap(low_pressure_icon);
+      }
   } else if (tire == BACK_LEFT) {
-    this->ui->back_left->setPixmap(normal_pressure_icon);
+      back_left_pressure--;
+      if(back_left_pressure <= pressure_threshold){
+         this->ui->back_left->setPixmap(low_pressure_icon);
+      }
   } else if (tire == BACK_RIGHT) {
-    this->ui->back_right->setPixmap(normal_pressure_icon);
+      back_right_pressure--;
+      if(back_right_pressure <= pressure_threshold){
+         this->ui->back_right->setPixmap(low_pressure_icon);
+      }
   }
 }

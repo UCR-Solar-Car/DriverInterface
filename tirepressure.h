@@ -8,12 +8,16 @@ class TirePressure {
 public:
   TirePressure();
   void setup(Ui::MainWindow *, int, int);
-  void low_pressure(tires tire);
-  void normal_pressure(tires tire);
+  void increasePressure(tires tire);
+  void decreasePressure(tires tire);
   ~TirePressure(){};
 
 private:
-  int lowpressure;
+  int front_left_pressure;
+  int front_right_pressure;
+  int back_left_pressure;
+  int back_right_pressure;
+  int pressure_threshold;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
   Ui::MainWindow *ui;
