@@ -1,7 +1,7 @@
 #include "motor.h"
 #include "scaler.h"
 
-Motor::Motor() { return; }
+Motor::Motor() {}
 
 void Motor::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
