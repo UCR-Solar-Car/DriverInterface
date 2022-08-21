@@ -14,10 +14,11 @@ public:
 
 private:
   int lowpressure;
-  int frontLeftPressure;
-  int frontRightPressure;
-  int backLeftPressure;
-  int backRightPressure;
+  int front_left_pressure;
+  int front_right_pressure;
+  int back_left_pressure;
+  int back_right_pressure;
+  int pressure_threshold;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
   QPixmap car_icon;

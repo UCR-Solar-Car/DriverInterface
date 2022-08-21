@@ -8,10 +8,11 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   int tireIconWH = .03 * screenWidth;
   int tireIconWH2 = tireIconWH / 2;
   int carIconWH = .1 * screenWidth;
-  frontLeftPressure = 35;
-  frontRightPressure = 35;
-  backLeftPressure = 35;
-  backRightPressure = 35;
+  front_left_pressure = 35;
+  front_right_pressure = 35;
+  back_left_pressure = 35;
+  back_right_pressure = 35;
+  pressure_threshold = 30;
   low_pressure_icon = QPixmap(":/icons/lowpressure.png")
                           .scaled(tireIconWH, tireIconWH, Qt::KeepAspectRatio,
                                   Qt::SmoothTransformation);
@@ -23,35 +24,30 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
                  .scaled(carIconWH, carIconWH, Qt::KeepAspectRatio,
                          Qt::SmoothTransformation);
   this->ui->car_label->setPixmap(car_icon);
-  if(frontLeftPressure >= 31){
+  if(front_left_pressure >= pressure_threshold){
       ui->front_left->setPixmap(normal_pressure_icon);
   }
   else{
      this->ui->front_left->setPixmap(low_pressure_icon);
   }
-
-  if(frontRightPressure >= 31){
+  if(front_right_pressure >= pressure_threshold){
       ui->front_right->setPixmap(normal_pressure_icon);
   }
   else{
      this->ui->front_right->setPixmap(low_pressure_icon);
   }
-
-  if(backLeftPressure >= 31){
+  if(back_left_pressure >= pressure_threshold){
       ui->back_left->setPixmap(normal_pressure_icon);
   }
   else{
      this->ui->back_left->setPixmap(low_pressure_icon);
   }
-
-  if(backRightPressure >= 31){
+  if(back_right_pressure >= pressure_threshold){
       ui->back_right->setPixmap(normal_pressure_icon);
   }
   else{
      this->ui->back_right->setPixmap(low_pressure_icon);
   }
-
-
   ui->front_left->move(screenWidth / 6 - tireIconWH2,
                        screenHeight * .55 - tireIconWH2);
   ui->front_right->move(screenWidth / 6 + carIconWH + tireIconWH2,
@@ -67,23 +63,23 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
 void TirePressure::increasePressure(tires tire) {
 
   if (tire == FRONT_LEFT) {
-      frontLeftPressure++;
-      if(frontLeftPressure >= 31){
+      front_left_pressure++;
+      if(front_left_pressure > pressure_threshold){
         this->ui->front_left->setPixmap(normal_pressure_icon);
       }
   } else if (tire == FRONT_RIGHT) {
-      frontRightPressure++;
-      if(frontRightPressure >= 31){
+      front_right_pressure++;
+      if(front_right_pressure > pressure_threshold){
         this->ui->front_right->setPixmap(normal_pressure_icon);
       }
   } else if (tire == BACK_LEFT) {
-      backLeftPressure++;
-      if(backLeftPressure >= 31){
+      back_left_pressure++;
+      if(back_left_pressure > pressure_threshold){
         this->ui->back_left->setPixmap(normal_pressure_icon);
       }
   } else if (tire == BACK_RIGHT) {
-      backRightPressure++;
-      if(backRightPressure >= 31){
+      back_right_pressure++;
+      if(back_right_pressure > pressure_threshold){
         this->ui->back_right->setPixmap(normal_pressure_icon);
       }
   }
@@ -91,23 +87,23 @@ void TirePressure::increasePressure(tires tire) {
 
 void TirePressure::decreasePressure(tires tire) {
   if (tire == FRONT_LEFT) {
-      frontLeftPressure--;
-      if(frontLeftPressure <= 30){
+      front_left_pressure--;
+      if(front_left_pressure <= pressure_threshold){
          this->ui->front_left->setPixmap(low_pressure_icon);
       }
   } else if (tire == FRONT_RIGHT) {
-      frontRightPressure--;
-      if(frontRightPressure <= 30){
+      front_right_pressure--;
+      if(front_right_pressure <= pressure_threshold){
          this->ui->front_right->setPixmap(low_pressure_icon);
       }
   } else if (tire == BACK_LEFT) {
-      backLeftPressure--;
-      if(backLeftPressure <= 30){
+      back_left_pressure--;
+      if(back_left_pressure <= pressure_threshold){
          this->ui->back_left->setPixmap(low_pressure_icon);
       }
   } else if (tire == BACK_RIGHT) {
-      backRightPressure--;
-      if(backRightPressure <= 30){
+      back_right_pressure--;
+      if(back_right_pressure <= pressure_threshold){
          this->ui->back_right->setPixmap(low_pressure_icon);
       }
   }
