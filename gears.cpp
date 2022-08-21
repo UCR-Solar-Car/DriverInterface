@@ -1,7 +1,7 @@
 #include "gears.h"
 #include "scaler.h"
 
-Gears::Gears() : gear(PARK), cruise(OFF) { return; }
+Gears::Gears() : gear(PARK), cruise(OFF) {}
 
 void Gears::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
