@@ -1,7 +1,7 @@
 #ifndef LIGHTS_H
 #define LIGHTS_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 
 class Lights {
