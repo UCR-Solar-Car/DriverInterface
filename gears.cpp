@@ -5,41 +5,22 @@ Gears::Gears() : gear(PARK), cruise(OFF) {}
 
 void Gears::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
-  int driveModeIconWH = .09 * screenHeight;
-  int topIconWH = topIconScaler * screenWidth;
 
-  park = QPixmap(":/icons/parking.png")
-             .scaled(driveModeIconWH, driveModeIconWH + 1, Qt::KeepAspectRatio,
-                     Qt::SmoothTransformation);
-  drive = QPixmap(":/icons/drive.png")
-              .scaled(driveModeIconWH, driveModeIconWH + 1, Qt::KeepAspectRatio,
-                      Qt::SmoothTransformation);
-  neutral = QPixmap(":/icons/neutral.png")
-                .scaled(driveModeIconWH, driveModeIconWH + 1,
-                        Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  reverse = QPixmap(":/icons/reverse.png")
-                .scaled(driveModeIconWH, driveModeIconWH + 1,
-                        Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  cruise_control = QPixmap(":/icons/cruise.png")
-                       .scaled(topIconWH, topIconWH, Qt::KeepAspectRatio,
-                               Qt::SmoothTransformation);
+  park = QPixmap(":/icons/parking.png");
+  drive = QPixmap(":/icons/drive.png");
+  neutral = QPixmap(":/icons/neutral.png");
+  reverse = QPixmap(":/icons/reverse.png");
 
-  this->ui->park_label->move(screenWidth / 2 - driveModeIconWH * 2,
-                             screenHeight - driveModeIconWH - vBottomOff - 5);
-  this->ui->drive_label->move(screenWidth / 2 - driveModeIconWH * 1,
-                              screenHeight - driveModeIconWH - vBottomOff - 5);
-  this->ui->neutral_label->move(screenWidth / 2 - driveModeIconWH * 0,
-                                screenHeight - driveModeIconWH - vBottomOff);
-  this->ui->reverse_label->move(screenWidth / 2 - driveModeIconWH * (-1),
-                                screenHeight - driveModeIconWH - vBottomOff);
-  ui->cruise_control->move(screenWidth / 2 + topIconWH * 1.5 + hOff * 2,
-                           vOff - 3);
+  ui->cruise_control->resize(width * 10 / 100, width * 10 / 100);
+  ui->cruise_control->move((width - (width * ICON_COUNT) / 10) / 2 + (ui->cruise_control->width() * CRUISE_CONTROL_ICON), 0);
+  cruise_control = QPixmap(":/icons/cruise.png");
+
+
+  ui->park_label->resize(100, 100);
+  ui->park_label->move(width / 2 - ui->park_label->width() / 2,
+                       height - ui->park_label->height() - 100);
 
   this->ui->park_label->setPixmap(park);
-  this->ui->drive_label->setText("OFF");
-  this->ui->neutral_label->setText("OFF");
-  this->ui->reverse_label->setText("OFF");
-  this->ui->cruise_control->setText("OFF");
 }
 
 void Gears::switch_gears(gears state) {
@@ -47,33 +28,24 @@ void Gears::switch_gears(gears state) {
     gear = state;
     cruise_off();
 
-    this->ui->drive_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
     this->ui->park_label->setPixmap(park);
+
   } else if (state == DRIVE) {
     gear = state;
 
-    this->ui->park_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
-    this->ui->drive_label->setPixmap(drive);
+    this->ui->park_label->setPixmap(drive);
+
   } else if (state == NEUTRAL) {
     gear = state;
     cruise_off();
 
-    this->ui->park_label->setText("OFF");
-    this->ui->drive_label->setText("OFF");
-    this->ui->reverse_label->setText("OFF");
-    this->ui->neutral_label->setPixmap(neutral);
+    this->ui->park_label->setPixmap(neutral);
+    
   } else if (state == REVERSE) {
     gear = state;
     cruise_off();
-
-    this->ui->park_label->setText("OFF");
-    this->ui->drive_label->setText("OFF");
-    this->ui->neutral_label->setText("OFF");
-    this->ui->reverse_label->setPixmap(reverse);
+    
+    this->ui->park_label->setPixmap(reverse);
   }
 }
 

@@ -27,13 +27,13 @@ SOURCES += \
 HEADERS += \
     battery.h \
     distance.h \
+    global_variables.h \
     horn.h \
     indicators.h \
     lights.h \
     mainwindow.h \
     scaler.h \
     speed.h \
-    states.h \
     tirepressure.h \
     motor.h \
     background.h \
