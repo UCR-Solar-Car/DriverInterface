@@ -3,8 +3,6 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
-#include <QScreen>
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -12,18 +10,20 @@ MainWindow::MainWindow(QWidget *parent)
   ui->setupUi(this);
 
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
-  QScreen* screen = QGuiApplication::primaryScreen();
+  QScreen *screen = QGuiApplication::primaryScreen();
 
-  ui->stackedWidget->resize(screen->geometry().width(), screen->geometry().height());
-  ui->stackedWidget->move(0,0);
+  ui->stackedWidget->resize(screen->geometry().width(),
+                            screen->geometry().height());
+  ui->stackedWidget->move(0, 0);
 
-  int center_width= screen->geometry().width()/2 - ui->ucr_solar_car_logo->width()/2;
-  int center_height= screen->geometry().height()/2 - ui->ucr_solar_car_logo->height()/2;
+  int center_width =
+      screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
+  int center_height =
+      screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
   ui->ucr_solar_car_logo->move(center_width, center_height);
 
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
-
 
   indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());

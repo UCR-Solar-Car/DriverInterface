@@ -15,11 +15,12 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   ui->front_right->resize(100, 100);
 
   ui->front_left->move(width * 65 / 100, height * 35 / 100);
-  ui->back_left->move(ui->front_left->x(), ui->front_left->y() + height * 20 / 100);
-  ui->back_right->move(ui->back_left->x() + width * 20 / 100, ui->back_left->y());
-  ui->front_right->move(ui->front_left->x() + width * 20 / 100, ui->front_left->y());
-
-
+  ui->back_left->move(ui->front_left->x(),
+                      ui->front_left->y() + height * 20 / 100);
+  ui->back_right->move(ui->back_left->x() + width * 20 / 100,
+                       ui->back_left->y());
+  ui->front_right->move(ui->front_left->x() + width * 20 / 100,
+                        ui->front_left->y());
 
   normal_pressure(FRONT_LEFT);
   normal_pressure(FRONT_RIGHT);

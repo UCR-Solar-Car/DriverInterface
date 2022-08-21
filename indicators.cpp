@@ -13,11 +13,11 @@ void Indicators::setup(Ui::MainWindow *ui, int height, int width) {
   ui->right_indicator->resize(100, 100);
 
   ui->left_indicator->move(0, height / 2 - ui->left_indicator->height() / 2);
-  ui->right_indicator->move(width - ui->right_indicator->width(), height / 2 - ui->right_indicator->height() / 2);
+  ui->right_indicator->move(width - ui->right_indicator->width(),
+                            height / 2 - ui->right_indicator->height() / 2);
 
   left_icon = QPixmap(":/icons/left.png");
   right_icon = QPixmap(":/icons/right.png");
-
 }
 
 void Indicators::left_on() {

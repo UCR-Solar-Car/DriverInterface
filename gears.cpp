@@ -12,19 +12,22 @@ void Gears::setup(Ui::MainWindow *ui, int height, int width) {
   reverse = QPixmap(":/icons/reverse.png");
 
   ui->cruise_control->resize(width * 10 / 100, width * 10 / 100);
-  ui->cruise_control->move((width - (width * ICON_COUNT) / 10) / 2 + (ui->cruise_control->width() * CRUISE_CONTROL_ICON), 0);
+  ui->cruise_control->move(
+      (width - (width * ICON_COUNT) / 10) / 2 +
+          (ui->cruise_control->width() * CRUISE_CONTROL_ICON),
+      0);
   cruise_control = QPixmap(":/icons/cruise.png");
 
-  qDebug() << "CRUISE" << width << ui->cruise_control->width() << ui->cruise_control->x() << ui->cruise_control->y();
+  qDebug() << "CRUISE" << width << ui->cruise_control->width()
+           << ui->cruise_control->x() << ui->cruise_control->y();
 
   ui->park_label->resize(100, 100);
-  ui->park_label->move(width / 2 - ui->park_label->width() / 2, height - ui->park_label->height() - 100);
+  ui->park_label->move(width / 2 - ui->park_label->width() / 2,
+                       height - ui->park_label->height() - 100);
 
   qDebug() << "PARK LABEL" << ui->park_label->x() << ui->park_label->y();
 
   this->ui->park_label->setPixmap(park);
-
-
 }
 
 void Gears::switch_gears(gears state) {
