@@ -1,7 +1,7 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <unordered_map>

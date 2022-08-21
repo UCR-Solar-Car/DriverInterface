@@ -1,7 +1,7 @@
 #ifndef BATTERY_H
 #define BATTERY_H
 
-#include "states.h"
+#include "global_variables.h"
 #include "ui_mainwindow.h"
 
 class Battery {
