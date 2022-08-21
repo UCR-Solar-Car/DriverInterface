@@ -3,16 +3,19 @@
 
 Lights::Lights() : day(OFF), night(OFF) { return; }
 
-void Lights::setup(Ui::MainWindow *ui) {
+void Lights::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
   ui->night_lights->setText("OFF");
   ui->day_lights->setText("OFF");
   double topIconWH = topIconScaler * screenWidth;
-  day_icon = QPixmap(":/icons/day.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  night_icon = QPixmap(":/icons/night.png").scaled(topIconWH,topIconWH, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-  ui->day_lights->move(screenWidth/2-topIconWH*.5,vOff+4);
-  ui->night_lights->move(screenWidth/2+topIconWH*.5,vOff-7);
-
+  day_icon = QPixmap(":/icons/day.png")
+                 .scaled(topIconWH, topIconWH, Qt::KeepAspectRatio,
+                         Qt::SmoothTransformation);
+  night_icon = QPixmap(":/icons/night.png")
+                   .scaled(topIconWH, topIconWH, Qt::KeepAspectRatio,
+                           Qt::SmoothTransformation);
+  ui->day_lights->move(screenWidth / 2 - topIconWH * .5, vOff + 4);
+  ui->night_lights->move(screenWidth / 2 + topIconWH * .5, vOff - 7);
 }
 
 void Lights::day_on() {

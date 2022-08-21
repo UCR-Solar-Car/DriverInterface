@@ -3,17 +3,17 @@
 
 #include "ui_mainwindow.h"
 
-class Distance
-{
+class Distance {
 public:
-    Distance();
-    void setup(Ui::MainWindow *);
-    void decrease_distance(int);
-    void increase_distance(int);
-    ~Distance() {}
+  Distance();
+  void setup(Ui::MainWindow *, int, int);
+  void decrease_distance(int);
+  void increase_distance(int);
+  ~Distance() {}
+
 private:
-    int distance;
-    Ui::MainWindow *ui;
+  int distance;
+  Ui::MainWindow *ui;
 };
 
 #endif // DISTANCE_H
