@@ -20,8 +20,8 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>-20</y>
       <width>1920</width>
       <height>1080</height>
      </rect>
@@ -316,10 +316,10 @@
      <widget class="QProgressBar" name="battery">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>410</y>
-        <width>211</width>
-        <height>31</height>
+        <x>260</x>
+        <y>400</y>
+        <width>121</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -337,6 +337,9 @@ background-color:  #2dcc6b;
       </property>
       <property name="textVisible">
        <bool>false</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
      <widget class="QLCDNumber" name="range">
@@ -477,22 +480,6 @@ background-color:  #2dcc6b;
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="car_label">
-      <property name="geometry">
-       <rect>
-        <x>1060</x>
-        <y>210</y>
-        <width>83</width>
-        <height>219</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>carLabel</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="increaseBattery">

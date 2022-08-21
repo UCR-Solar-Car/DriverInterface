@@ -16,7 +16,6 @@ private:
   int lowpressure;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
-  QPixmap car_icon;
   Ui::MainWindow *ui;
 };
 

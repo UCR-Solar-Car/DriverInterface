@@ -9,6 +9,8 @@ void Battery::setup(Ui::MainWindow *ui, int height, int width) {
   range = battery * efficiency_constant;
   ui->range->display(int(range));
 
+    ui->battery->resize(width * 10 / 100, height * 30/100);
+   ui->battery->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2);
 
 
    ui->range_label->resize(width * 15 / 100, height * 8 / 100);
