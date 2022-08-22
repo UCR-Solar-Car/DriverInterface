@@ -9,8 +9,7 @@ void Speed::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui->speed->display(speed);
 
   ui->speed->resize(width / 3, height / 3);
-  ui->speed->move(width / 2 - ui->speed->width() / 2,
-                  height / 2 - ui->speed->height() / 2);
+  ui->speed->move(width / 2 - ui->speed->width() / 2,height / 2 - ui->speed->height() / 2);
 
   ui->mph->resize(width / 3, height / 3);
   ui->mph->move(width / 2 - ui->speed->width() / 2, height / 2);
