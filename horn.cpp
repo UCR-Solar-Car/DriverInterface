@@ -1,16 +1,16 @@
 #include "horn.h"
 #include "scaler.h"
 
-Horn::Horn() : horn(OFF) { return; }
+Horn::Horn() : horn(OFF) {}
 
 void Horn::setup(Ui::MainWindow *ui, int height, int width) {
   this->ui = ui;
-  int topIconWH = topIconScaler * screenWidth;
-  horn_icon = QPixmap(":/icons/horn.png")
-                  .scaled(topIconWH, topIconWH, Qt::KeepAspectRatio,
-                          Qt::SmoothTransformation);
-  ui->horn_label->move(screenWidth / 2 + topIconWH * 2.5 + hOff * 4, vOff + 2);
+
+  horn_icon = QPixmap(":/icons/horn.png");
   this->ui->horn_label->setText("OFF");
+
+  ui->horn_label->resize(width * 10 / 100, width * 10 / 100);
+  ui->horn_label->move((width - (width * ICON_COUNT) / 10) / 2 + (ui->horn_label->width() * HORN_ICON), 0);
 }
 
 void Horn::horn_on() {
