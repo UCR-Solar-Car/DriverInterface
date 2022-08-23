@@ -3,11 +3,11 @@
 
 Battery::Battery() : battery(100) { return; }
 
-void Battery::setup(Ui::MainWindow *ui, int height, int width) {
+void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
   this->ui->battery->setValue(battery);
   range = battery * efficiency_constant;
-  ui->range->display(int(range));
+  ui->range->display(float(range));
 
   ui->battery->resize(width * 10 / 100, height * 30 / 100);
   ui->battery->move(width * 20 / 100,
@@ -52,33 +52,33 @@ void Battery::setup(Ui::MainWindow *ui, int height, int width) {
            << ui->battery_label->x() << ui->battery_label->y();
 }
 
-void Battery::increase_battery(int val) {
+void Battery::increase_battery(uint8_t val) {
   if (battery < 100 && battery > -1) {
     battery += val;
     this->ui->battery->setValue(battery);
     ui->battery->update();
     this->range += efficiency_constant;
-    ui->range->display(int(range));
+    ui->range->display(uint8_t(range));
 
     check_range();
   }
 }
 
-void Battery::decrease_battery(int val) {
+void Battery::decrease_battery(uint8_t val) {
   if (battery < 101 && battery > 1) {
     battery -= val;
     this->ui->battery->setValue(battery);
     ui->battery->update();
     this->range -= efficiency_constant;
-    ui->range->display(int(range));
+    ui->range->display(uint8_t(range));
 
     check_range();
   }
 }
 
-int Battery::get_battery() { return battery; }
+uint8_t Battery::get_battery() { return battery; }
 
-int Battery::get_range() { return range; }
+uint8_t Battery::get_range() { return range; }
 
 void Battery::on(warnings warning) {
   if (warning == LOW_BATTERY) {
