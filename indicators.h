@@ -8,7 +8,7 @@ class Indicators {
 
 public:
   Indicators();
-  void setup(Ui::MainWindow *, int, int);
+  void setup(Ui::MainWindow *, uint16_t, uint16_t);
   void left_on();
   void left_off();
   void right_on();
