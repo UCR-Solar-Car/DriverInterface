@@ -6,13 +6,13 @@
 class Distance {
 public:
   Distance();
-  void setup(Ui::MainWindow *, int, int);
-  void decrease_distance(int);
-  void increase_distance(int);
+  void setup(Ui::MainWindow *, uint16_t, uint16_t);
+  void decrease_distance(uint8_t);
+  void increase_distance(uint8_t);
   ~Distance() {}
 
 private:
-  int distance;
+  uint8_t distance;
   Ui::MainWindow *ui;
 };
 
