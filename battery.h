@@ -7,21 +7,21 @@
 class Battery {
 public:
   Battery();
-  void setup(Ui::MainWindow *, int, int);
-  void decrease_battery(int);
-  void increase_battery(int);
-  int get_battery();
-  int get_range();
+  void setup(Ui::MainWindow *, uint16_t, uint16_t);
+  void decrease_battery(uint8_t);
+  void increase_battery(uint8_t);
+  uint8_t get_battery();
+  uint8_t get_range();
   void check_range();
   void on(warnings warning);
   void off(warnings warning);
   ~Battery(){};
 
 private:
-  int battery;
-  double range;
+  uint8_t battery;
+  float range;
   /* Efficency is (Miles traveled) per (Unit of Battery)*/
-  const double efficiency_constant = .85;
+  const float efficiency_constant = .85f;
   QPixmap low_battery;
   QPixmap battery_fault;
   Ui::MainWindow *ui;
