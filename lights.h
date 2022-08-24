@@ -7,7 +7,7 @@
 class Lights {
 public:
   Lights();
-  void setup(Ui::MainWindow *, uint8_t, uint8_t);
+  void setup(Ui::MainWindow *, uint16_t, uint16_t);
   void day_on();
   void day_off();
   void night_on();
