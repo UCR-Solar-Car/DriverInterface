@@ -4,22 +4,17 @@
 #include <QScreen>
 #include <QTimer>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
-
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
 
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
   QScreen *screen = QGuiApplication::primaryScreen();
 
-  ui->stackedWidget->resize(screen->geometry().width(),
-                            screen->geometry().height());
+  ui->stackedWidget->resize(screen->geometry().width(),screen->geometry().height());
   ui->stackedWidget->move(0, 0);
 
-  int center_width =
-      screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
-  int center_height =
-      screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
+  int center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
+  int center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
   ui->ucr_solar_car_logo->move(center_width, center_height);
 
   ui->ucr_solar_car_logo->setScaledContents(true);
@@ -35,13 +30,11 @@ MainWindow::MainWindow(QWidget *parent)
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
-
   horn.setup(ui, screen->geometry().height(), screen->geometry().width());
   gear.setup(ui, screen->geometry().height(), screen->geometry().width());
   tire.setup(ui, screen->geometry().height(), screen->geometry().width());
 
-  this->move(QGuiApplication::screens().at(0)->geometry().center() -
-             frameGeometry().center());
+  this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
 }
@@ -87,26 +80,23 @@ void MainWindow::on_increaseMPH_clicked() {
   distance.increase_distance(1);
 }
 
-void MainWindow::on_hornSignalON_clicked() { horn.horn_on(); }
-
-void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
-
 void MainWindow::on_decreaseMPH_clicked() {
   speed.decrease_speed(1);
   distance.decrease_distance(1);
 }
 
+void MainWindow::on_hornSignalON_clicked() { horn.horn_on(); }
+
+void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
+
 void MainWindow::flash() {
-  if (indicators.get_right_indicator_state() == OFF &&
-      indicators.get_left_indicator_state() == ON && blink)
+  if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
     indicators.left_on();
 
-  if (indicators.get_right_indicator_state() == ON &&
-      indicators.get_left_indicator_state() == OFF && blink)
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
     indicators.right_on();
 
-  if (indicators.get_right_indicator_state() == ON &&
-      indicators.get_left_indicator_state() == ON && blink)
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
     indicators.hazard_on();
 
   if (!blink)
@@ -137,9 +127,7 @@ void MainWindow::on_frontLeftOFF_clicked() { tire.decreasePressure(FRONT_LEFT); 
 
 void MainWindow::on_frontRightON_clicked() { tire.increasePressure(FRONT_RIGHT); }
 
-void MainWindow::on_frontRightOFF_clicked() {
-  tire.decreasePressure(FRONT_RIGHT);
-}
+void MainWindow::on_frontRightOFF_clicked() { tire.decreasePressure(FRONT_RIGHT); }
 
 void MainWindow::on_backLeftON_clicked() { tire.increasePressure(BACK_LEFT); }
 

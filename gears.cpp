@@ -3,7 +3,7 @@
 
 Gears::Gears() : gear(PARK), cruise(OFF) {}
 
-void Gears::setup(Ui::MainWindow *ui, int height, int width) {
+void Gears::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
 
   park = QPixmap(":/icons/parking.png");
