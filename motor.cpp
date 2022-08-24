@@ -3,7 +3,7 @@
 
 Motor::Motor() {}
 
-void Motor::setup(Ui::MainWindow *ui, int height, int width) {
+void Motor::setup(Ui::MainWindow *ui, uint8_t height, uint8_t width) {
   this->ui = ui;
   
   motor_fault = QPixmap(":/icons/motor.png");
