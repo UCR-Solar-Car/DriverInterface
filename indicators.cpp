@@ -2,9 +2,9 @@
 #include "scaler.h"
 #include <QMainWindow>
 
-Indicators::Indicators() : right(OFF), left(OFF) { return; }
+Indicators::Indicators() : right(OFF), left(OFF) { }
 
-void Indicators::setup(Ui::MainWindow *ui, int height, int width) {
+void Indicators::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
   this->ui->left_indicator->setText("OFF");
   this->ui->right_indicator->setText("OFF");

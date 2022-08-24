@@ -3,7 +3,7 @@
 
 Distance::Distance() : distance(0) {}
 
-void Distance::setup(Ui::MainWindow *ui, int height, int width) {
+void Distance::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
   ui->distance->display(distance);
 
@@ -20,14 +20,14 @@ void Distance::setup(Ui::MainWindow *ui, int height, int width) {
            << ui->distance->x() << ui->distance->y();
 }
 
-void Distance::decrease_distance(int value) {
+void Distance::decrease_distance(uint8_t value) {
   if (distance - value > -1) {
     this->distance -= value;
     ui->distance->display(distance);
   }
 }
 
-void Distance::increase_distance(int value) {
+void Distance::increase_distance(uint8_t value) {
   this->distance += value;
   ui->distance->display(distance);
 }
