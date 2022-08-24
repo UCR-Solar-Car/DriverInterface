@@ -2,7 +2,8 @@
 #include "scaler.h"
 #include <QMainWindow>
 
-Indicators::Indicators() : right(OFF), left(OFF) { }
+Indicators::Indicators() : right(OFF), left(OFF) {}
+
 
 void Indicators::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
@@ -13,8 +14,7 @@ void Indicators::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->right_indicator->resize(100, 100);
 
   ui->left_indicator->move(0, height / 2 - ui->left_indicator->height() / 2);
-  ui->right_indicator->move(width - ui->right_indicator->width(),
-                            height / 2 - ui->right_indicator->height() / 2);
+  ui->right_indicator->move(width - ui->right_indicator->width(), height / 2 - ui->right_indicator->height() / 2);
 
   left_icon = QPixmap(":/icons/left.png");
   right_icon = QPixmap(":/icons/right.png");
@@ -22,9 +22,8 @@ void Indicators::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
 
 void Indicators::left_on() {
   left = ON;
-  right = OFF;
   this->ui->left_indicator->setPixmap(left_icon);
-  this->ui->right_indicator->setText("OFF");
+  right_off();
 }
 
 void Indicators::left_off() {
@@ -34,9 +33,8 @@ void Indicators::left_off() {
 
 void Indicators::right_on() {
   right = ON;
-  left = OFF;
   this->ui->right_indicator->setPixmap(right_icon);
-  this->ui->left_indicator->setText("OFF");
+  left_off();
 }
 
 void Indicators::right_off() {
@@ -52,10 +50,8 @@ void Indicators::hazard_on() {
 }
 
 void Indicators::hazard_off() {
-  left = OFF;
-  right = OFF;
-  this->ui->left_indicator->setText("OFF");
-  this->ui->right_indicator->setText("OFF");
+  right_off();
+  left_off();
 }
 
 states Indicators::get_left_indicator_state() { return left; }
