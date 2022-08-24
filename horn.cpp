@@ -3,7 +3,7 @@
 
 Horn::Horn() : horn(OFF) {}
 
-void Horn::setup(Ui::MainWindow *ui, uint8_t height, uint8_t width) {
+void Horn::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
 
   horn_icon = QPixmap(":/icons/horn.png");
