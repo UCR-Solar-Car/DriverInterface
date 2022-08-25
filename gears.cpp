@@ -20,7 +20,7 @@ void Gears::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->park_label->move(width / 2 - ui->park_label->width() / 2,
                        height - ui->park_label->height() - 100);
 
-  this->ui->park_label->setPixmap(park);
+  ui->park_label->setPixmap(park);
 }
 
 void Gears::switch_gears(gears state) {
@@ -28,12 +28,12 @@ void Gears::switch_gears(gears state) {
     gear = state;
     cruise_off();
 
-    this->ui->park_label->setPixmap(park);
+    ui->park_label->setPixmap(park);
 
   } else if (state == DRIVE) {
     gear = state;
 
-    this->ui->park_label->setPixmap(drive);
+    ui->park_label->setPixmap(drive);
 
   } else if (state == NEUTRAL) {
     gear = state;
@@ -45,20 +45,20 @@ void Gears::switch_gears(gears state) {
     gear = state;
     cruise_off();
     
-    this->ui->park_label->setPixmap(reverse);
+    ui->park_label->setPixmap(reverse);
   }
 }
 
 void Gears::cruise_on() {
   if (gear == DRIVE) {
-    this->cruise = ON;
-    this->ui->cruise_control->setPixmap(cruise_control);
+    cruise = ON;
+    ui->cruise_control->setPixmap(cruise_control);
   } else {
     cruise_off();
   }
 }
 
 void Gears::cruise_off() {
-  this->cruise = OFF;
-  this->ui->cruise_control->setText("OFF");
+  cruise = OFF;
+  ui->cruise_control->setText("OFF");
 }

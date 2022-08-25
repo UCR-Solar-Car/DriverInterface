@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   gear.setup(ui, screen->geometry().height(), screen->geometry().width());
   tire.setup(ui, screen->geometry().height(), screen->geometry().width());
 
-  this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+  move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
 }

@@ -22,12 +22,12 @@ void Distance::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
 
 void Distance::decrease_distance(uint8_t value) {
   if (distance - value > -1) {
-    this->distance -= value;
+    distance -= value;
     ui->distance->display(distance);
   }
 }
 
 void Distance::increase_distance(uint8_t value) {
-  this->distance += value;
+  distance += value;
   ui->distance->display(distance);
 }
