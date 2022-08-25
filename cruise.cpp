@@ -1,5 +1,4 @@
 #include "cruise.h"
-#include "scaler.h"
 
 CruiseControl::CruiseControl() : cruise(OFF) {return;}
 

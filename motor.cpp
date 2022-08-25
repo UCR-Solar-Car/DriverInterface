@@ -1,5 +1,4 @@
 #include "motor.h"
-#include "scaler.h"
 
 Motor::Motor() {}
 

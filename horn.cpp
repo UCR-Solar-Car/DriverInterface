@@ -1,5 +1,4 @@
 #include "horn.h"
-#include "scaler.h"
 
 Horn::Horn() : horn(OFF) {}
 

@@ -1,5 +1,4 @@
 #include "tirepressure.h"
-#include "scaler.h"
 
 TirePressure::TirePressure(){}
 

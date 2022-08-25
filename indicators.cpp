@@ -1,5 +1,4 @@
 #include "indicators.h"
-#include "scaler.h"
 #include <QMainWindow>
 
 Indicators::Indicators() : right(OFF), left(OFF) {}

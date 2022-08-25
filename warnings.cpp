@@ -1,5 +1,4 @@
 #include "warnings.h"
-#include "scaler.h"
 
 Warnings::Warnings(){ return; }
 

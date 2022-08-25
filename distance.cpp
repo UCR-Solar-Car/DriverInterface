@@ -1,5 +1,4 @@
 #include "distance.h"
-#include "scaler.h"
 
 Distance::Distance() : distance(0) {}
 
