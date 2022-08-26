@@ -7,6 +7,7 @@
 class TirePressure {
 public:
   TirePressure();
+
   void setup(QLabel *,QLabel *,QLabel *,QLabel *, uint16_t, uint16_t);
   void increasePressure(tires tire);
   void decreasePressure(tires tire);
