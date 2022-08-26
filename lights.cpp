@@ -1,5 +1,4 @@
 #include "lights.h"
-#include "scaler.h"
 
 Lights::Lights() : day(OFF), night(OFF) {}
 
