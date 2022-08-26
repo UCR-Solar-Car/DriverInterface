@@ -1,5 +1,4 @@
 #include "tirepressure.h"
-#include "scaler.h"
 
 TirePressure::TirePressure(){}
 
@@ -15,6 +14,7 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   back_right_pressure = 35;
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
+
   if(front_left_pressure >= pressure_threshold){
       front_left->setPixmap(normal_pressure_icon);
   }
