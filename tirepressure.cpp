@@ -46,12 +46,9 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   front_right->resize(100, 100);
 
   front_left->move(width * 65 / 100, height * 35 / 100);
-  back_left->move(front_left->x(),
-                      front_left->y() + height * 20 / 100);
-  back_right->move(back_left->x() + width * 20 / 100,
-                       back_left->y());
-  front_right->move(front_left->x() + width * 20 / 100,
-                        front_left->y());
+  back_left->move(front_left->x(), front_left->y() + height * 20 / 100);
+  back_right->move(back_left->x() + width * 20 / 100, back_left->y());
+  front_right->move(front_left->x() + width * 20 / 100, front_left->y());
 }
 
 void TirePressure::increasePressure(tires tire) {
