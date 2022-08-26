@@ -3,7 +3,7 @@
 
 TirePressure::TirePressure(){}
 
-void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right, int height, int width) {
+void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right, uint16_t height, uint16_t width) {
   this->front_left = front_left;
   this->front_right = front_right;
   this->back_left = back_left;
@@ -13,7 +13,6 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   front_right_pressure = 35;
   back_left_pressure = 35;
   back_right_pressure = 35;
-  pressure_threshold = 30;
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
   if(front_left_pressure >= pressure_threshold){
