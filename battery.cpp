@@ -1,5 +1,4 @@
 #include "battery.h"
-#include "scaler.h"
 
 Battery::Battery() : battery(100) { }
 
