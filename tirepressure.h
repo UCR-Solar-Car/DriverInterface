@@ -18,6 +18,10 @@ private:
   int back_left_pressure;
   int back_right_pressure;
   int pressure_threshold;
+  QLabel *front_left;
+  QLabel *front_right;
+  QLabel *back_left;
+  QLabel *back_right;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
   Ui::MainWindow *ui;

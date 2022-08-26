@@ -4,7 +4,10 @@
 TirePressure::TirePressure(){}
 
 void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right, int height, int width) {
-  this->ui = ui;
+  this->front_left = front_left;
+  this->front_right = front_right;
+  this->back_left = back_left;
+  this->back_right = back_right;
 
   front_left_pressure = 35;
   front_right_pressure = 35;
