@@ -2,7 +2,7 @@
 
 TirePressure::TirePressure(){}
 
-void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
+void TirePressure::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
 
   front_left_pressure = 35;
@@ -12,6 +12,7 @@ void TirePressure::setup(Ui::MainWindow *ui, int height, int width) {
   pressure_threshold = 30;
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
+
   if(front_left_pressure >= pressure_threshold){
       ui->front_left->setPixmap(normal_pressure_icon);
   }
