@@ -1,42 +1,44 @@
 #include "lights.h"
 
-Lights::Lights() : day(OFF), night(OFF) { return; }
+Lights::Lights() : day(OFF), night(OFF) {}
 
-void Lights::setup(Ui::MainWindow *ui) {
+void Lights::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
-  ui->nightLights->setText("OFF");
-  ui->dayLights->setText("OFF");
-  dayLights = QPixmap(":/icons/day.png");
-  nightLights = QPixmap(":/icons/night.png");
+  ui->night_lights->setText("OFF");
+  ui->day_lights->setText("OFF");
+
+  ui->day_lights->resize(width * 10 / 100, width * 10 / 100);
+  ui->day_lights->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->day_lights->width() * DAY_LIGHTS_ICON),0);
+  day_icon = QPixmap(":/icons/day.png");
+
+  ui->night_lights->resize(width * 10 / 100, width * 10 / 100);
+  ui->night_lights->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->night_lights->width() * NIGHT_LIGHTS_ICON),0);
+  night_icon = QPixmap(":/icons/night.png");
 }
 
 void Lights::day_on() {
   day = ON;
-  night = OFF;
-  ui->dayLights->setPixmap(dayLights);
-  ui->nightLights->setText("OFF");
+  ui->day_lights->setPixmap(day_icon);
+  night_off();
 }
 
 void Lights::day_off() {
   day = OFF;
-  ui->dayLights->setText("OFF");
+  ui->day_lights->setText("OFF");
 }
 
 void Lights::night_on() {
-  day = OFF;
   night = ON;
-  ui->nightLights->setPixmap(nightLights);
-  ui->dayLights->setText("OFF");
+  ui->night_lights->setPixmap(night_icon);
+  day_off();
 }
 
 void Lights::night_off() {
   night = OFF;
-  ui->nightLights->setText("OFF");
+  ui->night_lights->setText("OFF");
 }
 
 void Lights::off() {
-  day = OFF;
-  night = OFF;
-  ui->nightLights->setText("OFF");
-  ui->dayLights->setText("OFF");
+  day_off();
+  night_off();
 }

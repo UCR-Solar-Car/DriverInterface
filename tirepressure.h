@@ -1,33 +1,30 @@
 #ifndef TIREPRESSURE_H
 #define TIREPRESSURE_H
 
+#include "global_variables.h"
 #include "ui_mainwindow.h"
-#include "states.h"
 
-class TirePressure
-{
+class TirePressure {
 public:
-    TirePressure();
-    void setup(Ui::MainWindow*);
-//    void front_left_bad();
-//    void front_right_bad();
-//    void back_left_bad();
-//    void back_right_bad();
-//    void front_left_good();
-//    void front_right_good();
-//    void back_left_good();
-//    void back_right_good();
-    void lowPressure(tires tire);
-    void normalPressure(tires tire);
-    ~TirePressure() {};
+  TirePressure();
+
+  void setup(QLabel *,QLabel *,QLabel *,QLabel *, uint16_t, uint16_t);
+  void increasePressure(tires tire);
+  void decreasePressure(tires tire);
+  ~TirePressure(){};
 
 private:
-    int lowpressure;
-    QPixmap lowpressure_label;
-    QPixmap normalpressure_label;
-    QPixmap car_label;
-    Ui::MainWindow *ui;
+  uint8_t front_left_pressure;
+  uint8_t front_right_pressure;
+  uint8_t back_left_pressure;
+  uint8_t back_right_pressure;
+  const uint8_t pressure_threshold = 30;
+  QLabel *front_left;
+  QLabel *front_right;
+  QLabel *back_left;
+  QLabel *back_right;
+  QPixmap low_pressure_icon;
+  QPixmap normal_pressure_icon;
 };
-
 
 #endif // TIREPRESSURE_H

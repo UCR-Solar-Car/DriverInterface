@@ -19,25 +19,23 @@ SOURCES += \
     mainwindow.cpp \
     speed.cpp \
     tirepressure.cpp \
-    warnings.cpp \
+    motor.cpp \
     background.cpp \
     gears.cpp \
-    cruise.cpp
 
 HEADERS += \
     battery.h \
     distance.h \
+    global_variables.h \
     horn.h \
     indicators.h \
     lights.h \
     mainwindow.h \
     speed.h \
-    states.h \
     tirepressure.h \
-    warnings.h \
+    motor.h \
     background.h \
     gears.h \
-    cruise.h
 
 FORMS += \
     mainwindow.ui

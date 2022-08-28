@@ -1,24 +1,42 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 #include <QScreen>
+#include <QTimer>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
-  indicators.setup(ui);
-  battery.setup(ui);
-  lights.setup(ui);
-  warnings.setup(ui);
-  speed.setup(ui);
-    distance.setup(ui);
 
-    horn.setup(ui);
-    gear.setup(ui);
-    cruise.setup(ui);
-    tire.setup(ui);
+  ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
+  QScreen *screen = QGuiApplication::primaryScreen();
 
-    this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+  ui->stackedWidget->resize(screen->geometry().width(),screen->geometry().height());
+  ui->stackedWidget->move(0, 0);
 
+  int center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
+  int center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
+  ui->ucr_solar_car_logo->move(center_width, center_height);
+
+  ui->ucr_solar_car_logo->setScaledContents(true);
+  ui->stackedWidget->setCurrentIndex(1);
+
+  indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
+  battery.setup(ui, screen->geometry().height(), screen->geometry().width());
+  lights.setup(ui, screen->geometry().height(), screen->geometry().width());
+  motors.setup(ui, screen->geometry().height(), screen->geometry().width());
+  speed.setup(ui, screen->geometry().height(), screen->geometry().width());
+  distance.setup(ui, screen->geometry().height(), screen->geometry().width());
+  timer = new QTimer();
+  blink = true;
+  connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
+  timer->start(500);
+  horn.setup(ui, screen->geometry().height(), screen->geometry().width());
+  gear.setup(ui, screen->geometry().height(), screen->geometry().width());
+  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen->geometry().height(), screen->geometry().width());
+
+  this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+
+  seconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -49,47 +67,72 @@ void MainWindow::on_nightLightsOFF_clicked() { lights.night_off(); }
 
 void MainWindow::on_lightsOFF_clicked() { lights.off(); }
 
-void MainWindow::on_batteryWarningON_clicked() { warnings.on(BATTERY); }
+void MainWindow::on_batteryWarningON_clicked() { battery.on(BATTERY_FAULT); }
 
-void MainWindow::on_batteryWarningOFF_clicked() { warnings.off(BATTERY); }
+void MainWindow::on_batteryWarningOFF_clicked() { battery.off(BATTERY_FAULT); }
 
-void MainWindow::on_motorWarningON_clicked() { warnings.on(MOTOR); }
+void MainWindow::on_motorWarningON_clicked() { motors.on(MOTOR_FAULT); }
 
-void MainWindow::on_motorWarningOFF_clicked() { warnings.off(MOTOR); }
+void MainWindow::on_motorWarningOFF_clicked() { motors.off(MOTOR_FAULT); }
 
-void MainWindow::on_increaseMPH_clicked() { speed.increaseSpeed(1); distance.increase_distance(1); }
+void MainWindow::on_increaseMPH_clicked() {
+  speed.increase_speed(1);
+  distance.increase_distance(1);
+}
 
-void MainWindow::on_hornSignalON_clicked() {horn.horn_on();}
+void MainWindow::on_decreaseMPH_clicked() {
+  speed.decrease_speed(1);
+  distance.decrease_distance(1);
+}
 
-void MainWindow::on_hornSignalOFF_clicked() {horn.horn_off();}
+void MainWindow::on_hornSignalON_clicked() { horn.horn_on(); }
 
-void MainWindow::on_decreaseMPH_clicked() { speed.decreaseSpeed(1); distance.decrease_distance(1); }
+void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
-void MainWindow::on_parkingSignalON_clicked() { gear.switchGears(PARK); }
+void MainWindow::flash() {
+  if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
+    indicators.left_on();
 
-void MainWindow::on_drivingSignalON_clicked() { gear.switchGears(DRIVE); }
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
+    indicators.right_on();
 
-void MainWindow::on_neutralSignalON_clicked() { gear.switchGears(NEUTRAL); }
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
+    indicators.hazard_on();
 
-void MainWindow::on_reversingSignalON_clicked() { gear.switchGears(REVERSE); }
+  if (!blink)
+    indicators.off();
 
-void MainWindow::on_cruiseControlON_clicked() { cruise.cruise_on(); }
+  if (seconds == 2)
+    ui->stackedWidget->setCurrentIndex(0);
 
-void MainWindow::on_cruiseControlOFF_clicked() { cruise.cruise_off(); }
+  blink = !blink;
+  seconds += 1;
+}
 
-void MainWindow::on_frontLeftON_clicked() {tire.lowPressure(FRONT_LEFT); }
+void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
 
-void MainWindow::on_frontLeftOFF_clicked() {tire.normalPressure(FRONT_LEFT); }
+void MainWindow::on_drivingSignalON_clicked() { gear.switch_gears(DRIVE); }
 
-void MainWindow::on_frontRightON_clicked() {tire.lowPressure(FRONT_RIGHT); }
+void MainWindow::on_neutralSignalON_clicked() { gear.switch_gears(NEUTRAL); }
 
-void MainWindow::on_frontRightOFF_clicked() {tire.normalPressure(FRONT_RIGHT); }
+void MainWindow::on_reversingSignalON_clicked() { gear.switch_gears(REVERSE); }
 
-void MainWindow::on_backLeftON_clicked() {tire.lowPressure(BACK_LEFT); }
+void MainWindow::on_cruiseControlON_clicked() { gear.cruise_on(); }
 
-void MainWindow::on_backLeftOFF_clicked() {tire.normalPressure(BACK_LEFT); }
+void MainWindow::on_cruiseControlOFF_clicked() { gear.cruise_off(); }
 
-void MainWindow::on_backRightON_clicked() {tire.lowPressure(BACK_RIGHT); }
+void MainWindow::on_frontLeftON_clicked() { tire.increasePressure(FRONT_LEFT); }
 
-void MainWindow::on_backRightOFF_clicked() {tire.normalPressure(BACK_RIGHT); }
+void MainWindow::on_frontLeftOFF_clicked() { tire.decreasePressure(FRONT_LEFT); }
 
+void MainWindow::on_frontRightON_clicked() { tire.increasePressure(FRONT_RIGHT); }
+
+void MainWindow::on_frontRightOFF_clicked() { tire.decreasePressure(FRONT_RIGHT); }
+
+void MainWindow::on_backLeftON_clicked() { tire.increasePressure(BACK_LEFT); }
+
+void MainWindow::on_backLeftOFF_clicked() { tire.decreasePressure(BACK_LEFT); }
+
+void MainWindow::on_backRightON_clicked() { tire.increasePressure(BACK_RIGHT); }
+
+void MainWindow::on_backRightOFF_clicked() { tire.decreasePressure(BACK_RIGHT); }
