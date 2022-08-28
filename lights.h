@@ -18,7 +18,6 @@ public:
 private:
   states day;
   states night;
-  Ui::MainWindow *ui;
   QPixmap day_icon;
   QPixmap night_icon;
   QLabel* day_lights;
