@@ -25,7 +25,6 @@ void Gears::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
 void Gears::switch_gears(gears state) {
   if (state == PARK) {
     gear = state;
-    cruise_off();
 
     this->ui->park_label->setPixmap(park);
 
@@ -36,16 +35,15 @@ void Gears::switch_gears(gears state) {
 
   } else if (state == NEUTRAL) {
     gear = state;
-    cruise_off();
 
     this->ui->park_label->setPixmap(neutral);
     
   } else if (state == REVERSE) {
     gear = state;
-    cruise_off();
     
     this->ui->park_label->setPixmap(reverse);
   }
+  cruise_off();
 }
 
 void Gears::cruise_on() {

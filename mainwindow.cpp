@@ -9,30 +9,32 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
   QScreen *screen = QGuiApplication::primaryScreen();
+  uint16_t screen_width = screen->geometry().width();
+  uint16_t screen_height = screen->geometry().height();
 
-  ui->stackedWidget->resize(screen->geometry().width(),screen->geometry().height());
+  ui->stackedWidget->resize(screen_width,screen_height);
   ui->stackedWidget->move(0, 0);
 
-  int center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
-  int center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
+  int center_width = screen_width / 2 - ui->ucr_solar_car_logo->width() / 2;
+  int center_height = screen_height / 2 - ui->ucr_solar_car_logo->height() / 2;
   ui->ucr_solar_car_logo->move(center_width, center_height);
 
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
 
-  indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
-  battery.setup(ui, screen->geometry().height(), screen->geometry().width());
-  lights.setup(ui, screen->geometry().height(), screen->geometry().width());
-  motors.setup(ui, screen->geometry().height(), screen->geometry().width());
-  speed.setup(ui, screen->geometry().height(), screen->geometry().width());
-  distance.setup(ui, screen->geometry().height(), screen->geometry().width());
+  indicators.setup(ui, screen_height, screen_width);
+  battery.setup(ui, screen_height, screen_width);
+  lights.setup(ui, screen_height, screen_width);
+  motors.setup(ui, screen_height, screen_width);
+  speed.setup(ui, screen_height, screen_width);
+  distance.setup(ui, screen_height, screen_width);
   timer = new QTimer();
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
-  horn.setup(ui, screen->geometry().height(), screen->geometry().width());
-  gear.setup(ui, screen->geometry().height(), screen->geometry().width());
-  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen->geometry().height(), screen->geometry().width());
+  horn.setup(ui, screen_height, screen_width);
+  gear.setup(ui, screen_height, screen_width);
+  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen_height, screen_width);
 
   this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
