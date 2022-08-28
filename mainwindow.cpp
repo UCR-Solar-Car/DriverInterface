@@ -13,8 +13,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->resize(screen->geometry().width(),screen->geometry().height());
   ui->stackedWidget->move(0, 0);
 
-  int center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
-  int center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
+  uint16_t center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
+  uint16_t center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
   ui->ucr_solar_car_logo->move(center_width, center_height);
 
   ui->ucr_solar_car_logo->setScaledContents(true);
