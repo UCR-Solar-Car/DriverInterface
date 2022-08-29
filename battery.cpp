@@ -23,7 +23,6 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->battery_line_2->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 100);
   ui->battery_line_3->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 150);
   ui->battery_line_4->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 200);
-
   low_battery = QPixmap(":/icons/low-battery.png");
   this->ui->low_battery_label->setText("OFF");
 

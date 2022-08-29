@@ -9,14 +9,14 @@
 class Motor {
 public:
   Motor();
-  void setup(QLabel *motor_label, uint16_t, uint16_t);
+  void setup(Ui::MainWindow *, uint16_t, uint16_t);
   void on(warnings warning);
   void off(warnings warning);
   ~Motor(){};
 
 private:
   QPixmap motor_fault;
-  QLabel *motor_label;
+  Ui::MainWindow *ui;
 };
 
 #endif // WARNINGS_H
