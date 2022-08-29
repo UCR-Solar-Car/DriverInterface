@@ -2,11 +2,16 @@
 
 Battery::Battery() : battery(100) { }
 
-void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
-  this->ui = ui;
-  this->ui->battery->setValue(battery);
-  range = battery * efficiency_constant;
-  ui->range->display(float(range));
+void Battery::setup(QProgressBar* battery_ptr, QLabel* range_label_ptr, QLabel* low_battery_label_ptr, QLabel* battery_label_ptr, QLCDNumber* range_ptr, uint16_t height, uint16_t width) {
+  battery = battery_ptr;
+  range_label = range_label_ptr;
+  low_battery_label = low_battery_label_ptr;
+  battery_label = battery_label_ptr;
+  range = range_ptr;
+  
+  battery->setValue(battery_val);
+  range_val = battery_val * efficiency_constant;
+  ui->range->display(float(range_val));
 
   ui->battery->resize(width * 10 / 100, height * 30 / 100);
   ui->battery->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2);
@@ -30,30 +35,30 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
 }
 
 void Battery::increase_battery(uint8_t val) {
-  if (battery < 100 && battery > -1) {
-    battery += val;
-    this->ui->battery->setValue(battery);
+  if (battery_val < 100 && battery_val > -1) {
+    battery_val += val;
+    this->ui->battery->setValue(battery_val);
     ui->battery->update();
-    this->range += efficiency_constant;
-    ui->range->display(uint8_t(range));
+    range_val += efficiency_constant;
+    ui->range->display(uint8_t(range_val));
     check_range();
   }
 }
 
 void Battery::decrease_battery(uint8_t val) {
-  if (battery < 101 && battery > 1) {
-    battery -= val;
-    this->ui->battery->setValue(battery);
+  if (battery_val < 101 && battery_val > 1) {
+    battery_val -= val;
+    this->ui->battery->setValue(battery_val);
     ui->battery->update();
-    this->range -= efficiency_constant;
-    ui->range->display(uint8_t(range));
+    range_val -= efficiency_constant;
+    ui->range->display(uint8_t(range_val));
     check_range();
   }
 }
 
 uint8_t Battery::get_battery() { return battery; }
 
-uint8_t Battery::get_range() { return range; }
+uint8_t Battery::get_range() { return range_val; }
 
 void Battery::on(warnings warning) {
   if (warning == LOW_BATTERY)
