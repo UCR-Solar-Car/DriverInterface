@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->setCurrentIndex(1);
 
   indicators.setup(ui->left_indicator, ui->right_indicator, screen->geometry().height(), screen->geometry().width());
-  battery.setup(ui, screen->geometry().height(), screen->geometry().width());
+  battery.setup(ui->battery, ui->range_label, ui->low_battery_label, ui->battery_label, ui->range, screen->geometry().height(), screen->geometry().width());
   lights.setup(ui->day_lights, ui->night_lights, screen->geometry().height(), screen->geometry().width());
   motors.setup(ui, screen->geometry().height(), screen->geometry().width());
   speed.setup(ui, screen->geometry().height(), screen->geometry().width());

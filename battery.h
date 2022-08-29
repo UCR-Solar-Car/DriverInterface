@@ -7,7 +7,7 @@
 class Battery {
 public:
   Battery();
-  void setup(QProgressBar*, QLabel*, QLabel*, QLabel*, QLCD*, uint16_t, uint16_t);
+  void setup(QProgressBar*, QLabel*, QLabel*, QLabel*, QLCDNumber*, uint16_t, uint16_t);
   void decrease_battery(uint8_t);
   void increase_battery(uint8_t);
   uint8_t get_battery();
