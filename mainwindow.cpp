@@ -13,16 +13,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->resize(screen->geometry().width(),screen->geometry().height());
   ui->stackedWidget->move(0, 0);
 
-  int center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
-  int center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
+  uint16_t center_width = screen->geometry().width() / 2 - ui->ucr_solar_car_logo->width() / 2;
+  uint16_t center_height = screen->geometry().height() / 2 - ui->ucr_solar_car_logo->height() / 2;
   ui->ucr_solar_car_logo->move(center_width, center_height);
 
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
 
-  indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
+  indicators.setup(ui->left_indicator, ui->right_indicator, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());
-  lights.setup(ui, screen->geometry().height(), screen->geometry().width());
+  lights.setup(ui->day_lights, ui->night_lights, screen->geometry().height(), screen->geometry().width());
   motors.setup(ui, screen->geometry().height(), screen->geometry().width());
   speed.setup(ui, screen->geometry().height(), screen->geometry().width());
   distance.setup(ui, screen->geometry().height(), screen->geometry().width());
@@ -30,8 +30,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
-  horn.setup(ui, screen->geometry().height(), screen->geometry().width());
+  horn.setup(ui->horn_label, screen->geometry().height(), screen->geometry().width());
   gear.setup(ui->park_label, ui->cruise_control, screen->geometry().height(), screen->geometry().width());
+
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen->geometry().height(), screen->geometry().width());
 
   this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
