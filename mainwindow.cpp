@@ -23,8 +23,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());
   lights.setup(ui, screen->geometry().height(), screen->geometry().width());
-  motors.setup(ui, screen->geometry().height(), screen->geometry().width());
-  speed.setup(ui, screen->geometry().height(), screen->geometry().width());
+  motors.setup(ui->motor_label, screen->geometry().height(), screen->geometry().width());
+  speed.setup(ui->speed, ui->mph, screen->geometry().height(), screen->geometry().width());
   distance.setup(ui, screen->geometry().height(), screen->geometry().width());
   timer = new QTimer();
   blink = true;
