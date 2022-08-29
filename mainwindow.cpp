@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());
-  lights.setup(ui, screen->geometry().height(), screen->geometry().width());
+  lights.setup(ui->day_lights, ui->night_lights, screen->geometry().height(), screen->geometry().width());
   motors.setup(ui, screen->geometry().height(), screen->geometry().width());
   speed.setup(ui, screen->geometry().height(), screen->geometry().width());
   distance.setup(ui, screen->geometry().height(), screen->geometry().width());
