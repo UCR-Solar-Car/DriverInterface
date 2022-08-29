@@ -23,8 +23,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   indicators.setup(ui, screen->geometry().height(), screen->geometry().width());
   battery.setup(ui, screen->geometry().height(), screen->geometry().width());
   lights.setup(ui, screen->geometry().height(), screen->geometry().width());
-  motors.setup(ui, screen->geometry().height(), screen->geometry().width());
-  speed.setup(ui, screen->geometry().height(), screen->geometry().width());
+  motors.setup(ui->motor_label, screen->geometry().height(), screen->geometry().width());
+  speed.setup(ui->speed, ui->mph, screen->geometry().height(), screen->geometry().width());
   distance.setup(ui, screen->geometry().height(), screen->geometry().width());
   timer = new QTimer();
   blink = true;
@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   timer->start(500);
   horn.setup(ui, screen->geometry().height(), screen->geometry().width());
   gear.setup(ui, screen->geometry().height(), screen->geometry().width());
-  tire.setup(ui, screen->geometry().height(), screen->geometry().width());
+  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen->geometry().height(), screen->geometry().width());
 
   this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
