@@ -12,7 +12,7 @@ public:
   ~Distance() {}
 
 private:
-  uint8_t distance;
+  uint8_t distance_val;
   Ui::MainWindow *ui;
 };
 
