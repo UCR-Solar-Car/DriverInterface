@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   lights.setup(ui->day_lights, ui->night_lights, screen->geometry().height(), screen->geometry().width());
   motors.setup(ui, screen->geometry().height(), screen->geometry().width());
   speed.setup(ui, screen->geometry().height(), screen->geometry().width());
-  distance.setup(ui, screen->geometry().height(), screen->geometry().width());
+  distance.setup(ui->distance_label, ui->distance, screen->geometry().height(), screen->geometry().width());
   timer = new QTimer();
   blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
