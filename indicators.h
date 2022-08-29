@@ -8,7 +8,7 @@ class Indicators {
 
 public:
   Indicators();
-  void setup(Ui::MainWindow *, uint16_t, uint16_t);
+  void setup(QLabel*, QLabel*, uint16_t, uint16_t);
   void left_on();
   void left_off();
   void right_on();
@@ -24,7 +24,8 @@ private:
   states left;
   QPixmap left_icon;
   QPixmap right_icon;
-  Ui::MainWindow *ui;
+  QLabel* left_indicator;
+  QLabel* right_indicator;
 };
 
 #endif // INDICATORS_H
