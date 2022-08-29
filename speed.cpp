@@ -1,5 +1,4 @@
 #include "speed.h"
-#include "scaler.h"
 
 Speed::Speed() : speed(25) {}
 
