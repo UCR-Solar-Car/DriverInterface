@@ -6,14 +6,15 @@
 class Distance {
 public:
   Distance();
-  void setup(Ui::MainWindow *, uint16_t, uint16_t);
+  void setup(QLabel*, QLabel*, uint16_t, uint16_t);
   void decrease_distance(uint8_t);
   void increase_distance(uint8_t);
   ~Distance() {}
 
 private:
   uint8_t distance_val;
-  Ui::MainWindow *ui;
+  QLabel* distance_label;
+  QLabel* distance;
 };
 
 #endif // DISTANCE_H
