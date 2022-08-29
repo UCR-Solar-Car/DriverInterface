@@ -35,7 +35,7 @@ void Battery::setup(QProgressBar* battery_ptr, QLabel* range_label_ptr, QLabel* 
 }
 
 void Battery::increase_battery(uint8_t val) {
-  if (battery_val < 100 && battery_val > -1) {
+  if (battery_val < 100) {
     battery_val += val;
     battery->setValue(battery_val);
     battery->update();
