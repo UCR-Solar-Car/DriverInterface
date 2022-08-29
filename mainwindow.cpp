@@ -31,7 +31,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
   timer->start(500);
   horn.setup(ui->horn_label, screen->geometry().height(), screen->geometry().width());
-  gear.setup(ui, screen->geometry().height(), screen->geometry().width());
+  gear.setup(ui->park_label, ui->cruise_control, screen->geometry().height(), screen->geometry().width());
+
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen->geometry().height(), screen->geometry().width());
 
   this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
