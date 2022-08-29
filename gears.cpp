@@ -1,5 +1,4 @@
 #include "gears.h"
-#include "scaler.h"
 
 Gears::Gears() : gear(PARK), cruise(OFF) {}
 

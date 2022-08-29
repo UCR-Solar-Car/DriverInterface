@@ -1,9 +1,8 @@
 #include "horn.h"
-#include "scaler.h"
 
 Horn::Horn() : horn(OFF) {}
 
-void Horn::setup(Ui::MainWindow *ui, int height, int width) {
+void Horn::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   this->ui = ui;
 
   horn_icon = QPixmap(":/icons/horn.png");
