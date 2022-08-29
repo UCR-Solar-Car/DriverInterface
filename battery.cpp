@@ -20,9 +20,15 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
 
   ui->battery_line_1->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 50);
-  ui->battery_line_2->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 100);
-  ui->battery_line_3->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 150);
-  ui->battery_line_4->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2 + 200);
+  ui->battery_line_2->move(ui->battery_line_1->x(), ui->battery_line_1->y() + height * 10 / 120);
+  ui->battery_line_3->move(ui->battery_line_2->x(), ui->battery_line_2->y() + height * 10 / 120);
+  ui->battery_line_4->move(ui->battery_line_3->x(), ui->battery_line_3->y() + height * 10 / 120);
+
+  ui->battery_line_1->resize(width * 10 / 100, 1);
+  ui->battery_line_2->resize(ui->battery_line_1->width(), ui->battery_line_1->height());
+  ui->battery_line_3->resize(ui->battery_line_2->width(), ui->battery_line_2->height());
+  ui->battery_line_4->resize(ui->battery_line_3->width(), ui->battery_line_3->height());
+
   low_battery = QPixmap(":/icons/low-battery.png");
   this->ui->low_battery_label->setText("OFF");
 
