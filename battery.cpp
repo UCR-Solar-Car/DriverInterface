@@ -11,11 +11,9 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->battery->resize(width * 10 / 100, height * 30 / 100);
   ui->battery->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2);
   ui->range_label->resize(width * 15 / 100, height * 8 / 100);
-  ui->range->resize(width * 15 / 100, height * 15 / 100);
-  ui->range_label->move(width - width * 90 / 100, height - height * 20 / 100);
-  ui->range->move(width - width * 90 / 100 + ui->range_label->width(), height - height * 15 / 100 - ui->range_label->height());
-  ui->range->resize(width * 15 / 100, height * 5 / 100);
   ui->range_label->move(ui->range_label->x(), ui->range_label->y() - ui->range->height());
+  ui->range->resize(width * 15 / 100, height * 5 / 100);
+  ui->range->move(width - width * 90 / 100 + ui->range_label->width(), height - height * 15 / 100 - ui->range_label->height());
   ui->low_battery_label->resize(width * 10 / 100, width * 10 / 100);
   ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
 
@@ -40,7 +38,7 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
 }
 
 void Battery::increase_battery(uint8_t val) {
-  if (battery < 100 && battery > -1) {
+  if (battery < 100) {
     battery += val;
     this->ui->battery->setValue(battery);
     ui->battery->update();
@@ -51,7 +49,7 @@ void Battery::increase_battery(uint8_t val) {
 }
 
 void Battery::decrease_battery(uint8_t val) {
-  if (battery < 101 && battery > 1) {
+  if (battery > 1) {
     battery -= val;
     this->ui->battery->setValue(battery);
     ui->battery->update();
