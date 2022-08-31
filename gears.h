@@ -7,13 +7,12 @@
 class Gears {
 public:
   Gears();
-  void setup(Ui::MainWindow *, uint16_t, uint16_t);
+  void setup(QLabel*, QLabel*, uint16_t, uint16_t);
   void switch_gears(gears);
   void cruise_on();
   void cruise_off();
 
 private:
-  Ui::MainWindow *ui;
   gears gear;
   states cruise;
   QPixmap park;
@@ -21,6 +20,8 @@ private:
   QPixmap reverse;
   QPixmap neutral;
   QPixmap cruise_control;
+  QLabel* park_label;
+  QLabel* cruise_control_label;
 };
 
 #endif
