@@ -23,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
 
-
   indicators.setup(ui->left_indicator, ui->right_indicator, screen_height, screen_width);
   battery.setup(ui, screen_height, screen_width);
   lights.setup(ui->day_lights, ui->night_lights, screen_height, screen_width);
