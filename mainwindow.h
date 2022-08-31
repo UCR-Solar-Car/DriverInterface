@@ -111,6 +111,6 @@ private:
   bool blink;
   Gears gear;
   TirePressure tire;
-  int seconds;
+  uint16_t seconds;
 };
 #endif // MAINWINDOW_H
