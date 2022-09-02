@@ -2,6 +2,7 @@
 
 Speed::Speed() : speed_value(25) {}
 
+
 void Speed::setup(QLCDNumber *speed, QLabel *mph, uint16_t height, uint16_t width) {
   this->speed = speed;
   this->mph = mph;

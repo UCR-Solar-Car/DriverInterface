@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen_height, screen_width);
 
 
-  this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+  move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
 }
