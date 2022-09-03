@@ -33,11 +33,6 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->battery_line_3->move(battery_x, battery_y + battery_height / SECTION_COUNT * 3);
   ui->battery_line_4->move(battery_x, battery_y + battery_height / SECTION_COUNT * 4);
 
-  ui->battery_line_1->setStyleSheet("QLabel {color : white; }");
-  ui->battery_line_2->setStyleSheet("QLabel {color : white; }");
-  ui->battery_line_3->setStyleSheet("QLabel {color : white; }");
-  ui->battery_line_4->setStyleSheet("QLabel {color : white; }");
-
   low_battery = QPixmap(":/icons/low-battery.png");
   ui->low_battery_label->setText("OFF");
 

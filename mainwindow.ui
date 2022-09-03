@@ -888,6 +888,9 @@ background-color:  rgb(0, 170, 0);
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -900,6 +903,9 @@ background-color:  rgb(0, 170, 0);
         <width>71</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -914,6 +920,9 @@ background-color:  rgb(0, 170, 0);
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -926,6 +935,9 @@ background-color:  rgb(0, 170, 0);
         <width>71</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
