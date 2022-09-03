@@ -7,24 +7,26 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->battery->setValue(battery);
   range = battery * efficiency_constant;
   ui->range->display(float(range));
-  battery_height = ui->battery->height();
-  battery_width = ui->battery->width();
-  battery_x = ui->battery->x();
-  battery_y = ui->battery->y();
 
   ui->battery->resize(width * 10 / 100, height * 30 / 100);
-  ui->battery->move(width * 20 / 100, height * 50 / 100 - battery_height / 2);
   ui->range_label->resize(width * 15 / 100, height * 8 / 100);
-  ui->range_label->move(ui->range_label->x(), ui->range_label->y() - ui->range->height());
   ui->range->resize(width * 15 / 100, height * 5 / 100);
-  ui->range->move(width - width * 90 / 100 + ui->range_label->width(), height - height * 15 / 100 - ui->range_label->height());
   ui->low_battery_label->resize(width * 10 / 100, width * 10 / 100);
-  ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
 
+  uint16_t battery_height = ui->battery->height();
+  uint16_t battery_width = ui->battery->width();
+
+  ui->battery->move(width * 20 / 100, height * 50 / 100 - battery_height / 2);
+  ui->range_label->move(ui->range_label->x(), ui->range_label->y() - ui->range->height());
+  ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
+  ui->range->move(width - width * 90 / 100 + ui->range_label->width(), height - height * 15 / 100 - ui->range_label->height());
   ui->battery_line_1->resize(battery_width, 1);
   ui->battery_line_2->resize(battery_width, 1);
   ui->battery_line_3->resize(battery_width, 1);
   ui->battery_line_4->resize(battery_width, 1);
+
+  uint16_t battery_x = ui->battery->x();
+  uint16_t battery_y = ui->battery->y();
 
   ui->battery_line_1->move(battery_x, battery_y + battery_height / SECTION_COUNT * 1);
   ui->battery_line_2->move(battery_x, battery_y + battery_height / SECTION_COUNT * 2);

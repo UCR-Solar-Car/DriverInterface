@@ -24,10 +24,6 @@ private:
   const float efficiency_constant = .85f;
   QPixmap low_battery;
   QPixmap battery_fault;
-  uint16_t battery_height;
-  uint16_t battery_width;
-  uint16_t battery_x;
-  uint16_t battery_y;
   Ui::MainWindow *ui;
 };
 
