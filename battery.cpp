@@ -7,9 +7,13 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->battery->setValue(battery);
   range = battery * efficiency_constant;
   ui->range->display(float(range));
+  battery_height = ui->battery->height();
+  battery_width = ui->battery->width();
+  battery_x = ui->battery->x();
+  battery_y = ui->battery->y();
 
   ui->battery->resize(width * 10 / 100, height * 30 / 100);
-  ui->battery->move(width * 20 / 100, height * 50 / 100 - ui->battery->height() / 2);
+  ui->battery->move(width * 20 / 100, height * 50 / 100 - battery_height / 2);
   ui->range_label->resize(width * 15 / 100, height * 8 / 100);
   ui->range_label->move(ui->range_label->x(), ui->range_label->y() - ui->range->height());
   ui->range->resize(width * 15 / 100, height * 5 / 100);
@@ -17,15 +21,20 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   ui->low_battery_label->resize(width * 10 / 100, width * 10 / 100);
   ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
 
-  ui->battery_line_1->resize(ui->battery->width(), 1);
-  ui->battery_line_2->resize(ui->battery->width(), 1);
-  ui->battery_line_3->resize(ui->battery->width(), 1);
-  ui->battery_line_4->resize(ui->battery->width(), 1);
+  ui->battery_line_1->resize(battery_width, 1);
+  ui->battery_line_2->resize(battery_width, 1);
+  ui->battery_line_3->resize(battery_width, 1);
+  ui->battery_line_4->resize(battery_width, 1);
 
-  ui->battery_line_1->move(ui->battery->x(), ui->battery->y() + ui->battery->height() / SECTION_COUNT * 1);
-  ui->battery_line_2->move(ui->battery->x(), ui->battery->y() + ui->battery->height() / SECTION_COUNT * 2);
-  ui->battery_line_3->move(ui->battery->x(), ui->battery->y() + ui->battery->height() / SECTION_COUNT * 3);
-  ui->battery_line_4->move(ui->battery->x(), ui->battery->y() + ui->battery->height() / SECTION_COUNT * 4);
+  ui->battery_line_1->move(battery_x, battery_y + battery_height / SECTION_COUNT * 1);
+  ui->battery_line_2->move(battery_x, battery_y + battery_height / SECTION_COUNT * 2);
+  ui->battery_line_3->move(battery_x, battery_y + battery_height / SECTION_COUNT * 3);
+  ui->battery_line_4->move(battery_x, battery_y + battery_height / SECTION_COUNT * 4);
+
+  ui->battery_line_1->setStyleSheet("QLabel {color : white; }");
+  ui->battery_line_2->setStyleSheet("QLabel {color : white; }");
+  ui->battery_line_3->setStyleSheet("QLabel {color : white; }");
+  ui->battery_line_4->setStyleSheet("QLabel {color : white; }");
 
   low_battery = QPixmap(":/icons/low-battery.png");
   ui->low_battery_label->setText("OFF");

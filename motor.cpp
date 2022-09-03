@@ -13,7 +13,7 @@ void Motor::setup(QLabel *motor_label, uint16_t height, uint16_t width) {
 
 void Motor::on(warnings warning) {
   if (warning == MOTOR_FAULT)
-    ui->motor_label->setPixmap(motor_fault);
+    motor_label->setPixmap(motor_fault);
 }
 
 void Motor::off(warnings warning) {
@@ -22,4 +22,4 @@ void Motor::off(warnings warning) {
   if (warning == MOTOR_FAULT) 
     motor_label->setPixmap(motor_fault);
 }
-}
+
