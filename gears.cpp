@@ -20,6 +20,7 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
   park_label->move(width / 2 - park_label->width() / 2,
                        height - park_label->height() - 100);
 
+
   park_label->setPixmap(park);
 }
 
