@@ -11,7 +11,7 @@ public:
   void horn_on();
   void horn_off();
   ~Horn(){};
-  
+
 private:
   states horn;
   QPixmap horn_icon;

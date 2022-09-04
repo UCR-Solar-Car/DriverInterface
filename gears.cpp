@@ -39,10 +39,10 @@ void Gears::switch_gears(gears state) {
     gear = state;
 
     park_label->setPixmap(neutral);
-    
+
   } else if (state == REVERSE) {
     gear = state;
-    
+
     park_label->setPixmap(reverse);
   }
   cruise_off();

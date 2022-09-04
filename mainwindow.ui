@@ -329,7 +329,7 @@ background: black;
 }
 
 QProgressBar::chunk {
-background-color:  #2dcc6b;
+background-color:  rgb(0, 170, 0);
 }</string>
       </property>
       <property name="value">
@@ -879,6 +879,70 @@ background-color:  #2dcc6b;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="Line" name="battery_line_2">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>320</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_4">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>540</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_3">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>550</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_1">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>320</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="bootup">
      <property name="enabled">
@@ -925,7 +989,7 @@ background-color:  #2dcc6b;
      <x>0</x>
      <y>0</y>
      <width>1650</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

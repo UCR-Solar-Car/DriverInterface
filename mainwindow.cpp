@@ -26,8 +26,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   indicators.setup(ui->left_indicator, ui->right_indicator, screen_height, screen_width);
   battery.setup(ui, screen_height, screen_width);
   lights.setup(ui->day_lights, ui->night_lights, screen_height, screen_width);
-  motors.setup(ui, screen_height, screen_width);
-  speed.setup(ui, screen_height, screen_width);
+  motors.setup(ui->motor_label, screen_height, screen_width);
+  speed.setup(ui->speed, ui->mph, screen_height, screen_width);
   distance.setup(ui->distance_label, ui->distance, screen_height, screen_width);
 
   timer = new QTimer();
