@@ -1,8 +1,8 @@
 #ifndef GEARS_H
 #define GEARS_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
 class Gears {
 public:

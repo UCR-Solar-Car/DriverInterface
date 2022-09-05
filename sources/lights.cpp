@@ -1,4 +1,4 @@
-#include "lights.h"
+#include "../headers/lights.h"
 
 Lights::Lights() : day(OFF), night(OFF) {}
 

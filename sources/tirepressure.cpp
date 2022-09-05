@@ -1,4 +1,4 @@
-#include "tirepressure.h"
+#include "../headers/tirepressure.h"
 
 TirePressure::TirePressure(){}
 

@@ -1,4 +1,4 @@
-#include "motor.h"
+#include "../headers/motor.h"
 
 Motor::Motor() {}
 

@@ -1,4 +1,4 @@
-#include "gears.h"
+#include "../headers/gears.h"
 
 Gears::Gears() : gear(PARK), cruise(OFF) {}
 

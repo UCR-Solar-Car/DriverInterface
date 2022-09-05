@@ -1,4 +1,4 @@
-#include "distance.h"
+#include "../headers/distance.h"
 
 Distance::Distance() : distance(0) {}
 
