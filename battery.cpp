@@ -17,21 +17,21 @@ void Battery::setup(Ui::MainWindow *ui, uint16_t height, uint16_t width) {
   uint16_t battery_width = ui->battery->width();
 
   ui->battery->move(width * 20 / 100, height * 50 / 100 - battery_height / 2);
-  ui->range_label->move(ui->range_label->x(), ui->range_label->y() - ui->range->height());
+  ui->range_label->move(ui->distance_label->x(), ui->distance_label->y() - ui->range->height());
   ui->low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 +(ui->low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
   ui->range->move(width - width * 90 / 100 + ui->range_label->width(), height - height * 15 / 100 - ui->range_label->height());
-  ui->battery_line_1->resize(battery_width, 1);
-  ui->battery_line_2->resize(battery_width, 1);
-  ui->battery_line_3->resize(battery_width, 1);
-  ui->battery_line_4->resize(battery_width, 1);
+  ui->battery_line_1->resize(battery_width - 10, 3);
+  ui->battery_line_2->resize(battery_width - 10, 3);
+  ui->battery_line_3->resize(battery_width - 10, 3);
+  ui->battery_line_4->resize(battery_width - 10, 3);
 
   uint16_t battery_x = ui->battery->x();
   uint16_t battery_y = ui->battery->y();
 
-  ui->battery_line_1->move(battery_x, battery_y + battery_height / SECTION_COUNT * 1);
-  ui->battery_line_2->move(battery_x, battery_y + battery_height / SECTION_COUNT * 2);
-  ui->battery_line_3->move(battery_x, battery_y + battery_height / SECTION_COUNT * 3);
-  ui->battery_line_4->move(battery_x, battery_y + battery_height / SECTION_COUNT * 4);
+  ui->battery_line_1->move(battery_x + 5, battery_y + battery_height / SECTION_COUNT * 1);
+  ui->battery_line_2->move(battery_x + 5, battery_y + battery_height / SECTION_COUNT * 2);
+  ui->battery_line_3->move(battery_x + 5, battery_y + battery_height / SECTION_COUNT * 3);
+  ui->battery_line_4->move(battery_x + 5, battery_y + battery_height / SECTION_COUNT * 4);
 
   low_battery = QPixmap(":/icons/low-battery.png");
   ui->low_battery_label->setText("");
