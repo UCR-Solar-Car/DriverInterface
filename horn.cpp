@@ -2,7 +2,7 @@
 
 Horn::Horn() : horn(OFF) {}
 
-void Horn::setup(QLabel* horn_label_ptr, uint16_t height, uint16_t width) {
+void Horn::setup(QLabel* horn_label_ptr, uint16_t width) {
   horn_label = horn_label_ptr;
 
   horn_icon = QPixmap(":/icons/horn.png");

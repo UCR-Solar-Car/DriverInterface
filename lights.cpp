@@ -2,7 +2,7 @@
 
 Lights::Lights() : day(OFF), night(OFF) {}
 
-void Lights::setup(QLabel* day_lights_ptr, QLabel* night_lights_ptr, uint16_t height, uint16_t width) {
+void Lights::setup(QLabel* day_lights_ptr, QLabel* night_lights_ptr, uint16_t width) {
   day_lights = day_lights_ptr;
   night_lights = night_lights_ptr;
   night_lights->setText("OFF");
