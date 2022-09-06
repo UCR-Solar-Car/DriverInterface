@@ -54,9 +54,9 @@ void Indicators::hazard_off() {
   left_off();
 }
 
-states Indicators::get_left_indicator_state() { return left; }
+states Indicators::get_left_indicator_state() const { return left; }
 
-states Indicators::get_right_indicator_state() { return right; }
+states Indicators::get_right_indicator_state() const { return right; }
 
 void Indicators::off() {
   left_indicator->setText("");
