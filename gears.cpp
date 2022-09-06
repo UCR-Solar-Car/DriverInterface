@@ -22,6 +22,7 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
 
 
   park_label->setPixmap(park);
+  cruise_control_label->setText("");
 }
 
 void Gears::switch_gears(gears state) {
