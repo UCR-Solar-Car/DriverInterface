@@ -7,8 +7,8 @@ Indicators::Indicators() : right(OFF), left(OFF) {}
 void Indicators::setup(QLabel* left_indicator_ptr, QLabel* right_indicator_ptr, uint16_t height, uint16_t width) {
   left_indicator = left_indicator_ptr;
   right_indicator = right_indicator_ptr;
-  left_indicator->setText("OFF");
-  right_indicator->setText("OFF");
+  left_indicator->setText("");
+  right_indicator->setText("");
 
   left_indicator->resize(100, 100);
   right_indicator->resize(100, 100);
@@ -28,7 +28,7 @@ void Indicators::left_on() {
 
 void Indicators::left_off() {
   left = OFF;
-  left_indicator->setText("OFF");
+  left_indicator->setText("");
 }
 
 void Indicators::right_on() {
@@ -39,7 +39,7 @@ void Indicators::right_on() {
 
 void Indicators::right_off() {
   right = OFF;
-  right_indicator->setText("OFF");
+  right_indicator->setText("");
 }
 
 void Indicators::hazard_on() {
@@ -59,6 +59,6 @@ states Indicators::get_left_indicator_state() const { return left; }
 states Indicators::get_right_indicator_state() const { return right; }
 
 void Indicators::off() {
-  left_indicator->setText("OFF");
-  right_indicator->setText("OFF");
+  left_indicator->setText("");
+  right_indicator->setText("");
 }
