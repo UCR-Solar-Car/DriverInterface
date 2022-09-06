@@ -18,7 +18,7 @@ void Motor::on(warnings warning) {
 
 void Motor::off(warnings warning) {
   if (warning == MOTOR_FAULT)
-    motor_label->setText("OFF");
+    motor_label->setText("");
   if (warning == MOTOR_FAULT) 
     motor_label->setPixmap(motor_fault);
 }

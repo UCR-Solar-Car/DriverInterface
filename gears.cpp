@@ -59,5 +59,5 @@ void Gears::cruise_on() {
 
 void Gears::cruise_off() {
   cruise = OFF;
-  cruise_control_label->setText("OFF");
+  cruise_control_label->setText("");
 }
