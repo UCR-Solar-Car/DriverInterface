@@ -65,9 +65,9 @@ void Battery::decrease_battery(uint8_t val) {
   }
 }
 
-uint8_t Battery::get_battery() { return battery; }
+uint8_t Battery::get_battery() const { return battery; }
 
-uint8_t Battery::get_range() { return range; }
+uint8_t Battery::get_range() const { return range; }
 
 void Battery::on(warnings warning) {
   if (warning == LOW_BATTERY) {
