@@ -15,8 +15,8 @@ public:
   void right_off();
   void hazard_on();
   void hazard_off();
-  states get_right_indicator_state();
-  states get_left_indicator_state();
+  states get_right_indicator_state() const;
+  states get_left_indicator_state() const;
   void off();
 
 private:
