@@ -10,8 +10,8 @@ public:
   void setup(QProgressBar*, QLabel*, QLabel*, QLabel*, QLCDNumber*, uint16_t, uint16_t);
   void decrease_battery(uint8_t);
   void increase_battery(uint8_t);
-  uint8_t get_battery();
-  uint8_t get_range();
+  uint8_t get_battery() const;
+  uint8_t get_range() const;
   void check_range();
   void on(warnings warning);
   void off(warnings warning);

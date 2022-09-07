@@ -5,8 +5,8 @@ Lights::Lights() : day(OFF), night(OFF) {}
 void Lights::setup(QLabel* day_lights_ptr, QLabel* night_lights_ptr, uint16_t height, uint16_t width) {
   day_lights = day_lights_ptr;
   night_lights = night_lights_ptr;
-  night_lights->setText("OFF");
-  day_lights->setText("OFF");
+  night_lights->setText("");
+  day_lights->setText("");
 
   day_lights->resize(width * 10 / 100, width * 10 / 100);
   day_lights->move((width - (width * ICON_COUNT) / 10) / 2 +(day_lights->width() * DAY_LIGHTS_ICON),0);
@@ -25,7 +25,7 @@ void Lights::day_on() {
 
 void Lights::day_off() {
   day = OFF;
-  day_lights->setText("OFF");
+  day_lights->setText("");
 }
 
 void Lights::night_on() {
@@ -36,7 +36,7 @@ void Lights::night_on() {
 
 void Lights::night_off() {
   night = OFF;
-  night_lights->setText("OFF");
+  night_lights->setText("");
 }
 
 void Lights::off() {
