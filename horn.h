@@ -7,7 +7,7 @@
 class Horn {
 public:
   Horn();
-  void setup(QLabel*, uint16_t, uint16_t);
+  void setup(QLabel*, uint16_t);
   void horn_on();
   void horn_off();
   ~Horn(){};
