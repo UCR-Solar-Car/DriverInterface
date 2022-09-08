@@ -1,7 +1,7 @@
 #ifndef DISTANCE_H
 #define DISTANCE_H
 
-#include "ui_mainwindow.h"
+#include "../ui_mainwindow.h"
 
 class Distance {
 public:

@@ -1,4 +1,4 @@
-#include "background.h"
+#include "headers/background.h"
 #include "mainwindow.h"
 //#include <wiringPi.h>
 

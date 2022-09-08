@@ -1,4 +1,4 @@
-#include "battery.h"
+#include "../headers/battery.h"
 
 Battery::Battery() : battery_val(100) { }
 
