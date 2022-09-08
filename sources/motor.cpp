@@ -2,7 +2,7 @@
 
 Motor::Motor() {}
 
-void Motor::setup(QLabel *motor_label, uint16_t height, uint16_t width) {
+void Motor::setup(QLabel *motor_label, uint16_t width) {
   motor_fault = QPixmap(":/icons/motor.png");
   this->motor_label = motor_label;
   motor_label->resize(width * 10 / 100, width * 10 / 100);
@@ -18,7 +18,7 @@ void Motor::on(warnings warning) {
 
 void Motor::off(warnings warning) {
   if (warning == MOTOR_FAULT)
-    motor_label->setText("OFF");
+    motor_label->setText("");
   if (warning == MOTOR_FAULT) 
     motor_label->setPixmap(motor_fault);
 }
