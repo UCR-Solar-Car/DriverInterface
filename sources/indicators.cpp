@@ -1,4 +1,4 @@
-#include "indicators.h"
+#include "../headers/indicators.h"
 #include <QMainWindow>
 
 Indicators::Indicators() : right(OFF), left(OFF) {}

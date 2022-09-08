@@ -1,8 +1,8 @@
 #ifndef HORN_H
 #define HORN_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
 class Horn {
 public:

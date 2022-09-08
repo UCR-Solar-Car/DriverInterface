@@ -1,8 +1,8 @@
 #ifndef BATTERY_H
 #define BATTERY_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
 class Battery {
 public:

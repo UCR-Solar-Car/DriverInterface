@@ -1,7 +1,7 @@
 #ifndef SPEED_H
 #define SPEED_H
 
-#include "ui_mainwindow.h"
+#include "../ui_mainwindow.h"
 
 class Speed {
 public:

@@ -1,8 +1,8 @@
 #ifndef LIGHTS_H
 #define LIGHTS_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
 class Lights {
 public:
