@@ -4,10 +4,11 @@
 #include "../global_variables/global_variables.h"
 #include "../ui_mainwindow.h"
 
-class Gears {
+class Gears
+{
 public:
   Gears();
-  void setup(QLabel*, QLabel*, uint16_t, uint16_t);
+  void setup(QLabel *, QLabel *, uint16_t, uint16_t);
   void switch_gears(gears);
   void cruise_on();
   void cruise_off();
@@ -20,8 +21,8 @@ private:
   QPixmap reverse;
   QPixmap neutral;
   QPixmap cruise_control;
-  QLabel* park_label;
-  QLabel* cruise_control_label;
+  QLabel *park_label;
+  QLabel *cruise_control_label;
 };
 
 #endif
