@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   timer = new QTimer();
   blink = true;
-  connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
+  connect(timer, SIGNAL(timeout()), this, SLOT(gather_info()));
   timer->start(500);
   
   horn.setup(ui->horn_label, screen_width);
@@ -95,7 +95,7 @@ void MainWindow::on_hornSignalON_clicked() { horn.horn_on(); }
 
 void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
-void MainWindow::flash() {
+void MainWindow::gather_info() {
   if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
     indicators.left_on();
 
