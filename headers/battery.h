@@ -4,10 +4,11 @@
 #include "../global_variables/global_variables.h"
 #include "../ui_mainwindow.h"
 
-class Battery {
+class Battery
+{
 public:
   Battery();
-  void setup(QProgressBar*, QLabel*, QLabel*, QLabel*, QLCDNumber*, uint16_t, uint16_t);
+  void setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *low_battery_label_ptr, QLabel *battery_label_ptr, QLCDNumber *range_ptr, QLabel *distance_label_ptr, QFrame *battery_line_1_ptr, QFrame *battery_line_2_ptr, QFrame *battery_line_3_ptr, QFrame *battery_line_4_ptr, uint16_t height, uint16_t width);
   void decrease_battery(uint8_t);
   void increase_battery(uint8_t);
   uint8_t get_battery() const;
@@ -24,11 +25,11 @@ private:
   const float efficiency_constant = .85f;
   QPixmap low_battery;
   QPixmap battery_fault;
-  QProgressBar* battery;
-  QLabel* range_label;
-  QLabel* low_battery_label;
-  QLabel* battery_label;
-  QLCDNumber* range;
+  QProgressBar *battery;
+  QLabel *range_label;
+  QLabel *low_battery_label;
+  QLabel *battery_label;
+  QLCDNumber *range;
 };
 
 #endif // BATTERY_H
