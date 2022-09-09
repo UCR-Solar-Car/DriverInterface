@@ -3,8 +3,8 @@
 
 Indicators::Indicators() : right(OFF), left(OFF) {}
 
-
-void Indicators::setup(QLabel* left_indicator_ptr, QLabel* right_indicator_ptr, uint16_t height, uint16_t width) {
+void Indicators::setup(QLabel *left_indicator_ptr, QLabel *right_indicator_ptr, uint16_t height, uint16_t width)
+{
   left_indicator = left_indicator_ptr;
   right_indicator = right_indicator_ptr;
   left_indicator->setText("");
@@ -20,36 +20,42 @@ void Indicators::setup(QLabel* left_indicator_ptr, QLabel* right_indicator_ptr, 
   right_icon = QPixmap(":/icons/right.png");
 }
 
-void Indicators::left_on() {
+void Indicators::left_on()
+{
   left = ON;
   left_indicator->setPixmap(left_icon);
   right_off();
 }
 
-void Indicators::left_off() {
+void Indicators::left_off()
+{
   left = OFF;
-  left_indicator->setText("");
+  left_indicator->setText(" ");
 }
 
-void Indicators::right_on() {
+void Indicators::right_on()
+{
   right = ON;
   right_indicator->setPixmap(right_icon);
   left_off();
 }
 
-void Indicators::right_off() {
+void Indicators::right_off()
+{
   right = OFF;
-  right_indicator->setText("");
+  right_indicator->setText(" ");
 }
 
-void Indicators::hazard_on() {
+void Indicators::hazard_on()
+{
   left = ON;
   right = ON;
   left_indicator->setPixmap(left_icon);
   right_indicator->setPixmap(right_icon);
 }
 
-void Indicators::hazard_off() {
+void Indicators::hazard_off()
+{
   right_off();
   left_off();
 }
@@ -58,7 +64,8 @@ states Indicators::get_left_indicator_state() const { return left; }
 
 states Indicators::get_right_indicator_state() const { return right; }
 
-void Indicators::off() {
-  left_indicator->setText("");
-  right_indicator->setText("");
+void Indicators::off()
+{
+  left_indicator->setText(" ");
+  right_indicator->setText(" ");
 }
