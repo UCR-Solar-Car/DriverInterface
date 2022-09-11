@@ -76,8 +76,8 @@
      <widget class="QPushButton" name="hazardIndicatorOFF">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>540</y>
+        <x>0</x>
+        <y>710</y>
         <width>100</width>
         <height>32</height>
        </rect>
@@ -89,8 +89,8 @@
      <widget class="QPushButton" name="hazardIndicatorON">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>490</y>
+        <x>0</x>
+        <y>680</y>
         <width>100</width>
         <height>32</height>
        </rect>
@@ -99,11 +99,11 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="layoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>380</y>
+        <x>0</x>
+        <y>600</y>
         <width>121</width>
         <height>76</height>
        </rect>
@@ -154,8 +154,8 @@
      <widget class="QWidget" name="verticalLayoutWidget_1">
       <property name="geometry">
        <rect>
-        <x>950</x>
-        <y>480</y>
+        <x>130</x>
+        <y>660</y>
         <width>101</width>
         <height>80</height>
        </rect>
@@ -324,12 +324,13 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QProgressBar {
-background: black;
-        border: 2px solid #2dcc6b;
+background: rgb(40, 40, 40);
+border: 5px solid rgb(0, 170, 0);
+
 }
 
 QProgressBar::chunk {
-background-color:  #2dcc6b;
+background-color:  rgb(0, 170, 0);
 }</string>
       </property>
       <property name="value">
@@ -485,8 +486,8 @@ background-color:  #2dcc6b;
      <widget class="QPushButton" name="increaseBattery">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>460</y>
+        <x>340</x>
+        <y>670</y>
         <width>100</width>
         <height>32</height>
        </rect>
@@ -498,8 +499,8 @@ background-color:  #2dcc6b;
      <widget class="QPushButton" name="decreaseBattery">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>490</y>
+        <x>340</x>
+        <y>700</y>
         <width>100</width>
         <height>32</height>
        </rect>
@@ -511,8 +512,8 @@ background-color:  #2dcc6b;
      <widget class="QWidget" name="verticalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>1010</x>
-        <y>610</y>
+        <x>770</x>
+        <y>430</y>
         <width>131</width>
         <height>71</height>
        </rect>
@@ -560,24 +561,11 @@ background-color:  #2dcc6b;
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="lightsOFF">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>240</y>
-        <width>100</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>OFF</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>140</y>
+        <x>450</x>
+        <y>650</y>
         <width>688</width>
         <height>91</height>
        </rect>
@@ -636,6 +624,13 @@ background-color:  #2dcc6b;
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="lightsOFF">
+         <property name="text">
+          <string>OFF</string>
+         </property>
+        </widget>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -879,6 +874,90 @@ background-color:  #2dcc6b;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="Line" name="battery_line_2">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>320</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background: rgb(40, 40, 40);
+}</string>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_4">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>540</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background: rgb(40, 40, 40);
+}</string>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_3">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>550</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background: rgb(40, 40, 40);
+}</string>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="battery_line_1">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>320</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background: rgb(40, 40, 40);
+}</string>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="bootup">
      <property name="enabled">
@@ -925,7 +1004,7 @@ background-color:  #2dcc6b;
      <x>0</x>
      <y>0</y>
      <width>1650</width>
-     <height>24</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>

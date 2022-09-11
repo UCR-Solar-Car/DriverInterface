@@ -12,6 +12,8 @@
 
 #define ICON_COUNT 7
 
+#define SECTION_COUNT 5
+
 enum states { OFF, ON };
 
 enum gears { PARK, DRIVE, NEUTRAL, REVERSE };

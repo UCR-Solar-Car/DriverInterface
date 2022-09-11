@@ -1,14 +1,15 @@
 #ifndef TIREPRESSURE_H
 #define TIREPRESSURE_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
-class TirePressure {
+class TirePressure
+{
 public:
   TirePressure();
 
-  void setup(QLabel *,QLabel *,QLabel *,QLabel *, uint16_t, uint16_t);
+  void setup(QLabel *, QLabel *, QLabel *, QLabel *, uint16_t, uint16_t);
   void increasePressure(tires tire);
   void decreasePressure(tires tire);
   ~TirePressure(){};
