@@ -1,12 +1,12 @@
 #include "background.h"
 #include "mainwindow.h"
-#include <wiringPi.h>
+//#include <wiringPi.h>
 
 #include <QApplication>
 #include <QStyleFactory>
 
 int main(int argc, char *argv[]) {
-  wiringPiSetup();
+  //wiringPiSetup();
   Background b;
   b.dark_theme();
   QApplication a(argc, argv);

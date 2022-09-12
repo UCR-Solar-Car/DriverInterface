@@ -2,7 +2,8 @@
 
 TirePressure::TirePressure(){}
 
-void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right, uint16_t height, uint16_t width) {
+void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right,
+                         QLCDNumber *front_left_lcd, QLCDNumber *front_right_lcd, QLCDNumber *back_left_lcd,QLCDNumber *back_right_lcd,uint16_t height, uint16_t width) {
   this->front_left = front_left;
   this->front_right = front_right;
   this->back_left = back_left;
@@ -12,6 +13,10 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   front_right_pressure = 35;
   back_left_pressure = 35;
   back_right_pressure = 35;
+  front_left_lcd->display(front_left_pressure);
+  front_right_lcd->display(front_right_pressure);
+  back_left_lcd->display(back_left_pressure);
+  back_right_lcd->display(back_right_pressure);
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
 
@@ -49,27 +54,41 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   back_left->move(front_left->x(), front_left->y() + height * 20 / 100);
   back_right->move(back_left->x() + width * 20 / 100, back_left->y());
   front_right->move(front_left->x() + width * 20 / 100, front_left->y());
+
+  front_left_lcd->resize(100, 100);
+  front_right_lcd->resize(100, 100);
+  back_left_lcd->resize(100, 100);
+  back_right_lcd->resize(100, 100);
+
+  front_left_lcd->move(width * 70 / 100, height * 35 / 100);
+  back_left_lcd->move(front_left_lcd->x(), front_left_lcd->y() + height * 20 / 100);
+  back_right_lcd->move(back_left_lcd->x() + width * 15 / 100, back_left_lcd->y());
+  front_right_lcd->move(front_left_lcd->x() + width * 15 / 100, front_left_lcd->y());
 }
 
 void TirePressure::increasePressure(tires tire) {
 
   if (tire == FRONT_LEFT) {
       front_left_pressure++;
+      front_left_lcd->display(front_left_pressure);
       if(front_left_pressure > pressure_threshold){
         front_left->setPixmap(normal_pressure_icon);
       }
   } else if (tire == FRONT_RIGHT) {
       front_right_pressure++;
+      front_right_lcd->display(front_right_pressure);
       if(front_right_pressure > pressure_threshold){
         front_right->setPixmap(normal_pressure_icon);
       }
   } else if (tire == BACK_LEFT) {
       back_left_pressure++;
+      back_left_lcd->display(back_left_pressure);
       if(back_left_pressure > pressure_threshold){
         back_left->setPixmap(normal_pressure_icon);
       }
   } else if (tire == BACK_RIGHT) {
       back_right_pressure++;
+      back_right_lcd->display(back_right_pressure);
       if(back_right_pressure > pressure_threshold){
         back_right->setPixmap(normal_pressure_icon);
       }
@@ -79,21 +98,25 @@ void TirePressure::increasePressure(tires tire) {
 void TirePressure::decreasePressure(tires tire) {
   if (tire == FRONT_LEFT) {
       front_left_pressure--;
+      front_left_lcd->display(front_left_pressure);
       if(front_left_pressure <= pressure_threshold){
          front_left->setPixmap(low_pressure_icon);
       }
   } else if (tire == FRONT_RIGHT) {
       front_right_pressure--;
+      front_right_lcd->display(front_right_pressure);
       if(front_right_pressure <= pressure_threshold){
          front_right->setPixmap(low_pressure_icon);
       }
   } else if (tire == BACK_LEFT) {
       back_left_pressure--;
+      back_left_lcd->display(back_left_pressure);
       if(back_left_pressure <= pressure_threshold){
          back_left->setPixmap(low_pressure_icon);
       }
   } else if (tire == BACK_RIGHT) {
       back_right_pressure--;
+      back_right_lcd->display(back_right_pressure);
       if(back_right_pressure <= pressure_threshold){
          back_right->setPixmap(low_pressure_icon);
       }

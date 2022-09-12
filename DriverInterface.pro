@@ -5,7 +5,7 @@ QT += widgets
 
 CONFIG += c++17
 
-LIBS += -lwiringPi
+#LIBS += -lwiringPi
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -49,4 +49,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     icons.qrc
-
