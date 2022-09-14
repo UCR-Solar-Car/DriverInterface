@@ -21,8 +21,6 @@ public:
 private:
   uint8_t battery_val;
   float range_val;
-  /* Efficency is (Miles traveled) per (Unit of Battery)*/
-  const float efficiency_constant = .85f;
   QPixmap low_battery;
   QPixmap battery_fault;
   QProgressBar *battery;

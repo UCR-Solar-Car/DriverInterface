@@ -11,7 +11,7 @@ void Battery::setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *
   range = range_ptr;
 
   battery->setValue(battery_val);
-  range_val = battery_val * efficiency_constant;
+  range_val = battery_val * EFFICIENCY_CONSTANT;
   range->display(float(range_val));
 
   battery->resize(width * 10 / 100, height * 30 / 100);
@@ -56,7 +56,7 @@ void Battery::increase_battery(uint8_t val)
     battery_val += val;
     battery->setValue(battery_val);
     battery->update();
-    range_val += efficiency_constant;
+    range_val += EFFICIENCY_CONSTANT;
     range->display(uint8_t(range_val));
     check_range();
   }
@@ -69,7 +69,7 @@ void Battery::decrease_battery(uint8_t val)
     battery_val -= val;
     battery->setValue(battery_val);
     battery->update();
-    range_val -= efficiency_constant;
+    range_val -= EFFICIENCY_CONSTANT;
     range->display(uint8_t(range_val));
     check_range();
   }
