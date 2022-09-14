@@ -14,6 +14,9 @@
 
 #define SECTION_COUNT 5
 
+#define PRESSURE_THRESHOLD 30
+#define EFFICIENCY_CONSTANT 0.85f
+
 enum states { OFF, ON };
 
 enum gears { PARK, DRIVE, NEUTRAL, REVERSE };
