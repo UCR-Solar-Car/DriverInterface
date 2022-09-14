@@ -1,10 +1,11 @@
 #ifndef TIREPRESSURE_H
 #define TIREPRESSURE_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
-class TirePressure {
+class TirePressure
+{
 public:
   TirePressure();
 
@@ -18,7 +19,6 @@ private:
   uint8_t front_right_pressure;
   uint8_t back_left_pressure;
   uint8_t back_right_pressure;
-  const uint8_t pressure_threshold = 30;
   QLabel *front_left;
   QLabel *front_right;
   QLabel *back_left;

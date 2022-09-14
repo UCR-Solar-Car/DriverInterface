@@ -1,15 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "battery.h"
-#include "distance.h"
-#include "gears.h"
-#include "horn.h"
-#include "indicators.h"
-#include "lights.h"
-#include "motor.h"
-#include "speed.h"
-#include "tirepressure.h"
+#include "headers/battery.h"
+#include "headers/distance.h"
+#include "headers/gears.h"
+#include "headers/horn.h"
+#include "headers/indicators.h"
+#include "headers/lights.h"
+#include "headers/motor.h"
+#include "headers/speed.h"
+#include "headers/tirepressure.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -68,7 +68,7 @@ private slots:
 
   void on_hornSignalOFF_clicked();
 
-  void flash();
+  void gather_info();
 
   void on_parkingSignalON_clicked();
 

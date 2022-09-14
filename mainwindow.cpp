@@ -4,7 +4,8 @@
 #include <QScreen>
 #include <QTimer>
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
+{
   ui->setupUi(this);
 
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
@@ -12,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   uint16_t screen_width = screen->geometry().width();
   uint16_t screen_height = screen->geometry().height();
 
-  ui->stackedWidget->resize(screen_width,screen_height);
+  ui->stackedWidget->resize(screen_width, screen_height);
   ui->stackedWidget->move(0, 0);
 
   uint16_t center_width = screen_width / 2 - ui->ucr_solar_car_logo->width() / 2;
@@ -24,22 +25,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->setCurrentIndex(1);
 
   indicators.setup(ui->left_indicator, ui->right_indicator, screen_height, screen_width);
-  lights.setup(ui->day_lights, ui->night_lights, screen_height, screen_width);
-  motors.setup(ui->motor_label, screen_height, screen_width);
+  lights.setup(ui->day_lights, ui->night_lights, screen_width);
+  motors.setup(ui->motor_label, screen_width);
   speed.setup(ui->speed, ui->mph, screen_height, screen_width);
   distance.setup(ui->distance_label, ui->distance, screen_height, screen_width);
-  battery.setup(ui, screen_height, screen_width);
+  battery.setup(ui->battery, ui->range_label, ui->low_battery_label, ui->battery_label, ui->range, ui->distance_label, ui->battery_line_1, ui->battery_line_2, ui->battery_line_3, ui->battery_line_4, screen_height, screen_width);
 
   timer = new QTimer();
   blink = true;
-  connect(timer, SIGNAL(timeout()), this, SLOT(flash()));
+  connect(timer, SIGNAL(timeout()), this, SLOT(gather_info()));
   timer->start(500);
 
-  horn.setup(ui->horn_label, screen_height, screen_width);
+  horn.setup(ui->horn_label, screen_width);
   gear.setup(ui->park_label, ui->cruise_control, screen_height, screen_width);
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right,
              ui->front_left_lcd, ui->front_right_lcd, ui->back_left_lcd, ui->back_right_lcd, screen_height, screen_width);
-
 
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -82,12 +82,14 @@ void MainWindow::on_motorWarningON_clicked() { motors.on(MOTOR_FAULT); }
 
 void MainWindow::on_motorWarningOFF_clicked() { motors.off(MOTOR_FAULT); }
 
-void MainWindow::on_increaseMPH_clicked() {
+void MainWindow::on_increaseMPH_clicked()
+{
   speed.increase_speed(1);
   distance.increase_distance(1);
 }
 
-void MainWindow::on_decreaseMPH_clicked() {
+void MainWindow::on_decreaseMPH_clicked()
+{
   speed.decrease_speed(1);
   distance.decrease_distance(1);
 }
@@ -96,7 +98,8 @@ void MainWindow::on_hornSignalON_clicked() { horn.horn_on(); }
 
 void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
-void MainWindow::flash() {
+void MainWindow::gather_info() {
+
   if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
     indicators.left_on();
 

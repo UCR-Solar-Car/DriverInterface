@@ -1,9 +1,10 @@
 #ifndef SPEED_H
 #define SPEED_H
 
-#include "ui_mainwindow.h"
+#include "../ui_mainwindow.h"
 
-class Speed {
+class Speed
+{
 public:
   Speed();
   void setup(QLCDNumber *, QLabel *, uint16_t, uint16_t);

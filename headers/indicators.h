@@ -1,14 +1,15 @@
 #ifndef INDICATORS_H
 #define INDICATORS_H
 
-#include "global_variables.h"
-#include "ui_mainwindow.h"
+#include "../global_variables/global_variables.h"
+#include "../ui_mainwindow.h"
 
-class Indicators {
+class Indicators
+{
 
 public:
   Indicators();
-  void setup(QLabel*, QLabel*, uint16_t, uint16_t);
+  void setup(QLabel *, QLabel *, uint16_t, uint16_t);
   void left_on();
   void left_off();
   void right_on();
@@ -24,8 +25,8 @@ private:
   states left;
   QPixmap left_icon;
   QPixmap right_icon;
-  QLabel* left_indicator;
-  QLabel* right_indicator;
+  QLabel *left_indicator;
+  QLabel *right_indicator;
 };
 
 #endif // INDICATORS_H
