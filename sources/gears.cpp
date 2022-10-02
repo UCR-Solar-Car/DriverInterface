@@ -1,6 +1,6 @@
 #include "../headers/gears.h"
 
-Gears::Gears() : gear(PARK), cruise(OFF) {}
+Gears::Gears() : gear(DRIVE), cruise(OFF) {}
 
 void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint16_t height, uint16_t width) {
   park_label = park_label_ptr;
@@ -21,7 +21,7 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
                        height *.95 - park_label->height() );
 
 
-  park_label->setPixmap(park);
+  park_label->setPixmap(drive);
   cruise_control_label->setText("");
   cruise_on();
 }
