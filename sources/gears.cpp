@@ -12,17 +12,18 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
   reverse = QPixmap(":/icons/reverse.png");
 
   cruise_control_label->resize(width * 10 / 100, width * 10 / 100);
-  cruise_control_label->move((width - (width * ICON_COUNT) / 10) / 2 + (cruise_control_label->width() * CRUISE_CONTROL_ICON), 0);
+  cruise_control_label->move((width - (width * ICON_COUNT) / 10) / 2 + (cruise_control_label->width() * CRUISE_CONTROL_ICON), height * 0.1);
   cruise_control = QPixmap(":/icons/cruise.png");
 
 
   park_label->resize(100, 100);
   park_label->move(width / 2 - park_label->width() / 2,
-                       height - park_label->height() - 100);
+                       height *.95 - park_label->height() );
 
 
   park_label->setPixmap(park);
   cruise_control_label->setText("");
+  cruise_on();
 }
 
 void Gears::switch_gears(gears state) {
