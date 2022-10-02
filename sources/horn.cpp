@@ -2,7 +2,7 @@
 
 Horn::Horn() : horn(OFF) {}
 
-void Horn::setup(QLabel *horn_label_ptr, uint16_t width)
+void Horn::setup(QLabel *horn_label_ptr, uint16_t width, uint16_t height)
 {
   horn_label = horn_label_ptr;
 
@@ -10,7 +10,8 @@ void Horn::setup(QLabel *horn_label_ptr, uint16_t width)
   horn_label->setText("");
 
   horn_label->resize(width * 10 / 100, width * 10 / 100);
-  horn_label->move((width - (width * ICON_COUNT) / 10) / 2 + (horn_label->width() * HORN_ICON), 0);
+  horn_label->move((width - (width * ICON_COUNT) / 10) / 2 + (horn_label->width() * HORN_ICON), height * 0.1);
+  horn_on();
 }
 
 void Horn::horn_on()
