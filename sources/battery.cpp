@@ -24,7 +24,7 @@ void Battery::setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *
 
   battery->move(width * 20 / 100, height * 50 / 100 - battery_height / 2);
   range_label->move(distance_label_ptr->x(), distance_label_ptr->y() - range->height());
-  low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + (low_battery_label->width() * LOW_BATTERY_WARNING_ICON), 0);
+  low_battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + (low_battery_label->width() * LOW_BATTERY_WARNING_ICON), height * 0.1);
   range->move(width - width * 90 / 100 + range_label->width(), height - height * 15 / 100 - range_label->height());
   battery_line_1_ptr->resize(battery_width - 10, 3);
   battery_line_2_ptr->resize(battery_width - 10, 3);
@@ -43,10 +43,12 @@ void Battery::setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *
   low_battery_label->setText(" ");
 
   battery_label->resize(width * 10 / 100, width * 10 / 100);
-  battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + (battery_label->width() * BATTERY_WARNING_ICON), 0);
+  battery_label->move((width - (width * ICON_COUNT) / 10) / 2 + (battery_label->width() * BATTERY_WARNING_ICON), height * 0.1);
 
   battery_fault = QPixmap(":/icons/battery.png");
   battery_label->setText(" ");
+  on(LOW_BATTERY);
+  on(BATTERY_FAULT);
 }
 
 void Battery::increase_battery(uint8_t val)
