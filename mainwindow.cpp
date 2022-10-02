@@ -25,8 +25,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->setCurrentIndex(1);
 
   indicators.setup(ui->left_indicator, ui->right_indicator, screen_height, screen_width);
-  lights.setup(ui->day_lights, ui->night_lights, screen_width);
-  motors.setup(ui->motor_label, screen_width);
+  lights.setup(ui->day_lights, ui->night_lights, screen_width, screen_height);
+  motors.setup(ui->motor_label, screen_width, screen_height);
   speed.setup(ui->speed, ui->mph, screen_height, screen_width);
   distance.setup(ui->distance_label, ui->distance, screen_height, screen_width);
   battery.setup(ui->battery, ui->range_label, ui->low_battery_label, ui->battery_label, ui->range, ui->distance_label, ui->battery_line_1, ui->battery_line_2, ui->battery_line_3, ui->battery_line_4, screen_height, screen_width);
@@ -36,9 +36,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   connect(timer, SIGNAL(timeout()), this, SLOT(gather_info()));
   timer->start(500);
 
-  horn.setup(ui->horn_label, screen_width);
+  horn.setup(ui->horn_label, screen_width, screen_height);
   gear.setup(ui->park_label, ui->cruise_control, screen_height, screen_width);
-  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right, screen_height, screen_width);
+  tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right,
+             ui->front_left_lcd, ui->front_right_lcd, ui->back_left_lcd, ui->back_right_lcd, screen_height, screen_width);
 
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
