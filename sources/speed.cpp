@@ -12,7 +12,7 @@ void Speed::setup(QLCDNumber *speed, QLabel *mph, uint16_t height, uint16_t widt
   speed->move(width / 2 - speed->width() / 2,height / 2 - speed->height() / 2);
 
   mph->resize(width / 3, height / 3);
-  mph->move(width / 2 - speed->width() / 2, height / 2);
+  mph->move(width / 2 - speed->width() / 2, height / 1.8);
 }
 
 void Speed::increase_speed(uint8_t value) {
