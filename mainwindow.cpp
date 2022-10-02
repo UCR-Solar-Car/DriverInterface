@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
   ui->setupUi(this);
 
-  ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
+  ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo(1).png"));
   QScreen *screen = QGuiApplication::primaryScreen();
   uint16_t screen_width = screen->geometry().width();
   uint16_t screen_height = screen->geometry().height();
@@ -16,10 +16,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   ui->stackedWidget->resize(screen_width, screen_height);
   ui->stackedWidget->move(0, 0);
 
-  uint16_t center_width = screen_width / 2 - ui->ucr_solar_car_logo->width() / 2;
-  uint16_t center_height = screen_height / 2 - ui->ucr_solar_car_logo->height() / 2;
+//  uint16_t center_width = screen_width / 2 - ui->ucr_solar_car_logo->width() / 2;
+//  uint16_t center_height = screen_height / 2 - ui->ucr_solar_car_logo->height() / 2;
 
+    uint16_t center_width = screen_width / 2 - (0.4*screen_width) / 2;
+    uint16_t center_height = screen_height / 2 - (0.4*screen_height) / 2;
+
+  ui->ucr_solar_car_logo->resize(0.4*screen_width, 0.4*screen_height);
   ui->ucr_solar_car_logo->move(center_width, center_height);
+
 
   ui->ucr_solar_car_logo->setScaledContents(true);
   ui->stackedWidget->setCurrentIndex(1);
