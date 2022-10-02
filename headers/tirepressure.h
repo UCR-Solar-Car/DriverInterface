@@ -9,7 +9,7 @@ class TirePressure
 public:
   TirePressure();
 
-  void setup(QLabel *, QLabel *, QLabel *, QLabel *, uint16_t, uint16_t);
+  void setup(QLabel *,QLabel *,QLabel *,QLabel *, QLCDNumber *, QLCDNumber *, QLCDNumber *, QLCDNumber *, uint16_t, uint16_t);
   void increasePressure(tires tire);
   void decreasePressure(tires tire);
   ~TirePressure(){};
@@ -23,6 +23,10 @@ private:
   QLabel *front_right;
   QLabel *back_left;
   QLabel *back_right;
+  QLCDNumber *front_left_lcd;
+  QLCDNumber *front_right_lcd;
+  QLCDNumber *back_left_lcd;
+  QLCDNumber *back_right_lcd;
   QPixmap low_pressure_icon;
   QPixmap normal_pressure_icon;
 };
