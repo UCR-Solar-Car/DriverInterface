@@ -18,6 +18,7 @@ void Indicators::setup(QLabel *left_indicator_ptr, QLabel *right_indicator_ptr, 
 
   left_icon = QPixmap(":/icons/left.png");
   right_icon = QPixmap(":/icons/right.png");
+  hazard_on();
 }
 
 void Indicators::left_on()
