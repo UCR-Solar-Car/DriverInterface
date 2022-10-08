@@ -12,6 +12,7 @@ public:
   void switch_gears(gears);
   void cruise_on();
   void cruise_off();
+  void reset();
 
 private:
   gears gear;

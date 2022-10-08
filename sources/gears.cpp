@@ -21,9 +21,23 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
                        height *.95 - park_label->height() );
 
 
-  park_label->setPixmap(drive);
+  park_label->setPixmap(park);
   cruise_control_label->setText("");
-  cruise_on();
+  gear = PARK;
+}
+
+void Gears::reset(){
+    if (gear == PARK)
+        switch_gears(DRIVE);
+    else if (gear == DRIVE)
+        switch_gears(NEUTRAL);
+    else if (gear == NEUTRAL)
+        switch_gears(REVERSE);
+    else {
+        switch_gears(DRIVE);
+        cruise_on();
+    }
+
 }
 
 void Gears::switch_gears(gears state) {

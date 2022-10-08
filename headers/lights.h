@@ -13,6 +13,7 @@ public:
   void night_on();
   void night_off();
   void off();
+  void reset();
   ~Lights() {}
 
 private:

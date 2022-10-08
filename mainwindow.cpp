@@ -102,17 +102,28 @@ void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
 void MainWindow::gather_info() {
 
-  if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
-    indicators.left_on();
+  if (seconds == 6){
+      lights.reset();
+//      indicators.reset();
+  }
 
-  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
-    indicators.right_on();
+  if (seconds >= 3 && seconds <= 6){
+      gear.reset();
+  }
 
-  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
-    indicators.hazard_on();
+  if (seconds >= 6){
+      if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
+        indicators.left_on();
 
-  if (!blink)
-    indicators.off();
+      if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
+        indicators.right_on();
+
+      if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
+        indicators.hazard_on();
+
+      if (!blink)
+        indicators.off();
+    }
 
   if (seconds == 2)
     ui->stackedWidget->setCurrentIndex(0);
