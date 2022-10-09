@@ -20,9 +20,8 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
 
-  if(front_left_pressure >= PRESSURE_THRESHOLD){
+  if(front_left_pressure >= PRESSURE_THRESHOLD)
       front_left->setPixmap(normal_pressure_icon);
-  }
   else{
      front_left->setPixmap(low_pressure_icon);
   }
