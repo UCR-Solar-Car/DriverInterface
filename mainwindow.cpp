@@ -43,9 +43,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right,
              ui->front_left_lcd, ui->front_right_lcd, ui->back_left_lcd, ui->back_right_lcd, screen_height, screen_width);
 
+  timer2 = new QTimer();
+  connect(timer2, SIGNAL(timeout()), this, SLOT(update_speed()));
+  timer2->start(50);
+
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
+  mseconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -104,7 +109,6 @@ void MainWindow::gather_info() {
 
   if (seconds == 6){
       lights.reset();
-//      indicators.reset();
   }
 
   if (seconds >= 3 && seconds <= 6){
@@ -125,11 +129,24 @@ void MainWindow::gather_info() {
         indicators.off();
     }
 
-  if (seconds == 2)
+  if (seconds == 2){
     ui->stackedWidget->setCurrentIndex(0);
+  }
 
   blink = !blink;
   seconds += 1;
+}
+
+void MainWindow::update_speed(){
+    if (mseconds >=0 && mseconds < 75){
+        speed.increase_speed(1);
+    }
+
+    if (mseconds == 75){
+        speed.reset();
+    }
+
+    mseconds += 1;
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }

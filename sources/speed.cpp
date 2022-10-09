@@ -22,6 +22,11 @@ void Speed::increase_speed(uint8_t value) {
   }
 }
 
+void Speed::reset(){
+    speed_value = 25;
+    speed->display(speed_value);
+}
+
 void Speed::decrease_speed(uint8_t value) {
   if (speed_value - value > -1) {
     this->speed_value -= value;
