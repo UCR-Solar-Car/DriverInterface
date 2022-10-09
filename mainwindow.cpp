@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   timer2 = new QTimer();
   connect(timer2, SIGNAL(timeout()), this, SLOT(update_speed()));
-  timer2->start(75);
+  timer2->start(65);
 
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -146,10 +146,15 @@ void MainWindow::gather_info() {
 void MainWindow::update_speed(){
     if (mseconds >=0 && mseconds < 65){
         speed.increase_speed(1);
+//        tire.increasePressure(FRONT_LEFT);
+//        tire.increasePressure(FRONT_RIGHT);
+//        tire.increasePressure(BACK_LEFT);
+//        tire.increasePressure(BACK_RIGHT);
     }
 
     if (mseconds == 75){
         speed.reset();
+//        tire.reset();
     }
 
     mseconds += 1;
