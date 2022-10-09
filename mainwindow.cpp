@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
   ui->setupUi(this);
 
-  ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo(1).png"));
+  ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo.png"));
   QScreen *screen = QGuiApplication::primaryScreen();
   uint16_t screen_width = screen->geometry().width();
   uint16_t screen_height = screen->geometry().height();
