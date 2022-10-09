@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   battery.setup(ui->battery, ui->range_label, ui->low_battery_label, ui->battery_label, ui->range, ui->distance_label, ui->battery_line_1, ui->battery_line_2, ui->battery_line_3, ui->battery_line_4, screen_height, screen_width);
 
   timer = new QTimer();
-  blink = true;
+  blink = false;
   connect(timer, SIGNAL(timeout()), this, SLOT(gather_info()));
   timer->start(500);
 
@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   timer2 = new QTimer();
   connect(timer2, SIGNAL(timeout()), this, SLOT(update_speed()));
-  timer2->start(50);
+  timer2->start(75);
 
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
@@ -107,28 +107,33 @@ void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
 void MainWindow::gather_info() {
 
-  if (seconds == 8){
+  if (seconds == 9){
       lights.reset();
-//      motors.reset();
+      motors.reset();
+      battery.reset();
+      horn.horn_off();
+      gear.cruise_off();
+      indicators.hazard_off();
+
   }
 
   if (seconds >= 2 && seconds <= 8 && seconds % 2 == 0){
       gear.reset();
   }
 
-  if (seconds >= 6){
-      if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
-        indicators.left_on();
 
-      if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
-        indicators.right_on();
+  if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
+    indicators.left_on();
 
-      if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
-        indicators.hazard_on();
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == OFF && blink)
+    indicators.right_on();
 
-      if (!blink)
-        indicators.off();
-    }
+  if (indicators.get_right_indicator_state() == ON && indicators.get_left_indicator_state() == ON && blink)
+    indicators.hazard_on();
+
+  if (!blink)
+    indicators.off();
+
 
   if (seconds == 2){
     ui->stackedWidget->setCurrentIndex(0);

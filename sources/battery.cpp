@@ -77,6 +77,11 @@ void Battery::decrease_battery(uint8_t val)
   }
 }
 
+void Battery::reset(){
+    off(LOW_BATTERY);
+    off(BATTERY_FAULT);
+}
+
 uint8_t Battery::get_battery() const { return battery_val; }
 
 uint8_t Battery::get_range() const { return range_val; }

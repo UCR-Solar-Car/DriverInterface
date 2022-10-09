@@ -21,7 +21,7 @@ void Lights::setup(QLabel *day_lights_ptr, QLabel *night_lights_ptr, uint16_t wi
 }
 
 void Lights::reset(){
-    night_on();
+    off();
 }
 
 void Lights::day_on()
