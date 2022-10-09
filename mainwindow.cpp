@@ -107,11 +107,12 @@ void MainWindow::on_hornSignalOFF_clicked() { horn.horn_off(); }
 
 void MainWindow::gather_info() {
 
-  if (seconds == 6){
+  if (seconds == 8){
       lights.reset();
+//      motors.reset();
   }
 
-  if (seconds >= 3 && seconds <= 6){
+  if (seconds >= 2 && seconds <= 8 && seconds % 2 == 0){
       gear.reset();
   }
 
@@ -138,7 +139,7 @@ void MainWindow::gather_info() {
 }
 
 void MainWindow::update_speed(){
-    if (mseconds >=0 && mseconds < 75){
+    if (mseconds >=0 && mseconds < 65){
         speed.increase_speed(1);
     }
 

@@ -34,7 +34,8 @@
 .DS_Store
 .vscode
 DriverInterface.pro.user
-DriverInterface.pro.user.*
+DriverInterface.pro.user.
+DriverInterface
 
 .qmake.stash
 Makefile
