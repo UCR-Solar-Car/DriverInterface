@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
   b.dark_theme();
   QApplication a(argc, argv);
   MainWindow w;
-  w.setWindowState(Qt::WindowFullScreen);
+  w.setFixedSize(800,480);
   w.show();
   return a.exec();
 }

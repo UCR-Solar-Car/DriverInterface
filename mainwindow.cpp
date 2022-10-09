@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   ui->ucr_solar_car_logo->setPixmap(QPixmap(":/icons/logo(1).png"));
   QScreen *screen = QGuiApplication::primaryScreen();
-  uint16_t screen_width = screen->geometry().width();
-  uint16_t screen_height = screen->geometry().height();
+  uint16_t screen_width = 800;
+  uint16_t screen_height = 480;
 
   ui->stackedWidget->resize(screen_width, screen_height);
   ui->stackedWidget->move(0, 0);
