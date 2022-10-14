@@ -3,7 +3,9 @@
 TirePressure::TirePressure(){}
 
 void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_left,QLabel *back_right,
-                         QLCDNumber *front_left_lcd, QLCDNumber *front_right_lcd, QLCDNumber *back_left_lcd,QLCDNumber *back_right_lcd,uint16_t height, uint16_t width) {
+                         QLCDNumber *front_left_lcd, QLCDNumber *front_right_lcd, QLCDNumber *back_left_lcd,
+                         QLCDNumber *back_right_lcd,uint16_t height, uint16_t width) {
+
   this->front_left = front_left;
   this->front_right = front_right;
   this->back_left = back_left;
@@ -20,30 +22,26 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   low_pressure_icon = QPixmap(":/icons/lowpressure.png");
   normal_pressure_icon = QPixmap(":/icons/normalpressure.png");
 
-  if(front_left_pressure >= PRESSURE_THRESHOLD){
+  if(front_left_pressure >= PRESSURE_THRESHOLD)
       front_left->setPixmap(normal_pressure_icon);
-  }
-  else{
+  else
      front_left->setPixmap(low_pressure_icon);
-  }
-  if(front_right_pressure >= PRESSURE_THRESHOLD){
+
+  if(front_right_pressure >= PRESSURE_THRESHOLD)
       front_right->setPixmap(normal_pressure_icon);
-  }
-  else{
+  else
      front_right->setPixmap(low_pressure_icon);
-  }
-  if(back_left_pressure >= PRESSURE_THRESHOLD){
+
+  if(back_left_pressure >= PRESSURE_THRESHOLD)
       back_left->setPixmap(normal_pressure_icon);
-  }
-  else{
+  else
      back_left->setPixmap(low_pressure_icon);
-  }
-  if(back_right_pressure >= PRESSURE_THRESHOLD){
+
+  if(back_right_pressure >= PRESSURE_THRESHOLD)
       back_right->setPixmap(normal_pressure_icon);
-  }
-  else{
+  else
      back_right->setPixmap(low_pressure_icon);
-  }
+
 
   back_left->resize(150, 150);
   back_right->resize(150, 150);
@@ -67,31 +65,26 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
 }
 
 void TirePressure::increasePressure(tires tire) {
-
   if (tire == FRONT_LEFT) {
       front_left_pressure++;
       front_left_lcd->display(front_left_pressure);
-      if(front_left_pressure > PRESSURE_THRESHOLD){
+      if(front_left_pressure > PRESSURE_THRESHOLD)
         front_left->setPixmap(normal_pressure_icon);
-      }
   } else if (tire == FRONT_RIGHT) {
       front_right_pressure++;
       front_right_lcd->display(front_right_pressure);
-      if(front_right_pressure > PRESSURE_THRESHOLD){
+      if(front_right_pressure > PRESSURE_THRESHOLD)
         front_right->setPixmap(normal_pressure_icon);
-      }
   } else if (tire == BACK_LEFT) {
       back_left_pressure++;
       back_left_lcd->display(back_left_pressure);
-      if(back_left_pressure > PRESSURE_THRESHOLD){
+      if(back_left_pressure > PRESSURE_THRESHOLD)
         back_left->setPixmap(normal_pressure_icon);
-      }
   } else if (tire == BACK_RIGHT) {
       back_right_pressure++;
       back_right_lcd->display(back_right_pressure);
-      if(back_right_pressure > PRESSURE_THRESHOLD){
+      if(back_right_pressure > PRESSURE_THRESHOLD)
         back_right->setPixmap(normal_pressure_icon);
-      }
   }
 }
 
@@ -99,26 +92,22 @@ void TirePressure::decreasePressure(tires tire) {
   if (tire == FRONT_LEFT) {
       front_left_pressure--;
       front_left_lcd->display(front_left_pressure);
-      if(front_left_pressure <= PRESSURE_THRESHOLD){
+      if(front_left_pressure <= PRESSURE_THRESHOLD)
          front_left->setPixmap(low_pressure_icon);
-      }
   } else if (tire == FRONT_RIGHT) {
       front_right_pressure--;
       front_right_lcd->display(front_right_pressure);
-      if(front_right_pressure <= PRESSURE_THRESHOLD){
+      if(front_right_pressure <= PRESSURE_THRESHOLD)
          front_right->setPixmap(low_pressure_icon);
-      }
   } else if (tire == BACK_LEFT) {
       back_left_pressure--;
       back_left_lcd->display(back_left_pressure);
-      if(back_left_pressure <= PRESSURE_THRESHOLD){
+      if(back_left_pressure <= PRESSURE_THRESHOLD)
          back_left->setPixmap(low_pressure_icon);
-      }
   } else if (tire == BACK_RIGHT) {
       back_right_pressure--;
       back_right_lcd->display(back_right_pressure);
-      if(back_right_pressure <= PRESSURE_THRESHOLD){
+      if(back_right_pressure <= PRESSURE_THRESHOLD)
          back_right->setPixmap(low_pressure_icon);
-      }
   }
 }
