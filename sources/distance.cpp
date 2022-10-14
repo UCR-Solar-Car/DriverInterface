@@ -9,11 +9,11 @@ void Distance::setup(QLabel *distance_label_ptr, QLCDNumber *distance_ptr, uint1
 
   distance->display(distance_val);
 
-  distance_label->resize(width * 15 / 100, height * 15 / 100);
-  distance->resize(width * 15 / 100, height * 15 / 100);
-  distance_label->move(width - width * 90 / 100, height - height * 20 / 100);
-  distance->move(width - width * 90 / 100 + distance_label->width(), height - height * 15 / 100);
-  distance->resize(width * 15 / 100, height * 5 / 100);
+  distance_label->resize(width * 25 / 100, height * 15 / 100);
+  distance_label->move(width * 0.02, height - height * 20 / 100);
+  distance->move(width * 0.25, height - height * 15 / 100);
+  distance->resize(width * 15 / 100
+                   , height * 5 / 100);
 }
 
 void Distance::decrease_distance(uint8_t value)
