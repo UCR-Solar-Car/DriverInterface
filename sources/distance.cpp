@@ -1,6 +1,6 @@
 #include "../headers/distance.h"
 
-Distance::Distance() : distance(0) {}
+Distance::Distance() : distance_val(200), distance(0) {}
 
 void Distance::setup(QLabel *distance_label_ptr, QLCDNumber *distance_ptr, uint16_t height, uint16_t width)
 {
