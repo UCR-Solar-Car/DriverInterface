@@ -17,10 +17,7 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
 
 
   park_label->resize(100, 100);
-  park_label->move(width / 2 - park_label->width() / 2,
-                       height *.95 - park_label->height() );
-
-
+  park_label->move(width / 2 - park_label->width() / 2, height *.95 - park_label->height() );
   park_label->setPixmap(drive);
   cruise_control_label->setText("");
   cruise_on();
