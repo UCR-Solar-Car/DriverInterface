@@ -47,10 +47,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   connect(timer2, SIGNAL(timeout()), this, SLOT(update_speed()));
   timer2->start(65);
 
+//  timer3 = new QTimer();
+//  connect(timer3, SIGNAL(timeout()),this, SLOT(update_tires()));
+//  timer3->start(500);
+
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
   mseconds = 0;
+  xseconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -112,8 +117,8 @@ void MainWindow::gather_info() {
       motors.reset();
       battery.reset();
       horn.horn_off();
-      gear.cruise_off();
       indicators.hazard_off();
+      gear.cruise_off();
 
   }
 
@@ -148,10 +153,6 @@ void MainWindow::update_speed(){
         speed.increase_speed(1);
         distance.increase_distance(1);
         battery.increase_battery(2);
-//        tire.increasePressure(FRONT_LEFT);
-//        tire.increasePressure(FRONT_RIGHT);
-//        tire.increasePressure(BACK_LEFT);
-//        tire.increasePressure(BACK_RIGHT);
     }
 
     if (mseconds == 75){
@@ -162,6 +163,19 @@ void MainWindow::update_speed(){
 
     mseconds += 1;
 }
+
+//void MainWindow::update_tires(){
+//    if (xseconds >= 0 && xseconds < 40){
+//        tire.increasePressureNum();
+//    }
+
+//    xseconds += 1;
+
+//    if (xseconds == 40){
+//        tire.reset();
+//    }
+
+//}
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
 

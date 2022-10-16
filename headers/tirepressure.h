@@ -12,6 +12,7 @@ public:
   void setup(QLabel *,QLabel *,QLabel *,QLabel *, QLCDNumber *, QLCDNumber *, QLCDNumber *, QLCDNumber *, uint16_t, uint16_t);
   void increasePressure(tires tire);
   void decreasePressure(tires tire);
+  void increasePressureNum();
   void reset();
   ~TirePressure(){};
 

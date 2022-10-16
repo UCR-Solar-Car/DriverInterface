@@ -72,6 +72,8 @@ private slots:
 
   void update_speed();
 
+//  void update_tires();
+
   void on_parkingSignalON_clicked();
 
   void on_drivingSignalON_clicked();
@@ -111,10 +113,12 @@ private:
   Horn horn;
   QTimer *timer;
   QTimer *timer2;
+  QTimer *timer3;
   bool blink;
   Gears gear;
   TirePressure tire;
   uint16_t seconds;
   uint16_t mseconds;
+  uint16_t xseconds;
 };
 #endif // MAINWINDOW_H

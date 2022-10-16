@@ -11,10 +11,10 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   this->back_left = back_left;
   this->back_right = back_right;
 
-  front_left_pressure = 0;
-  front_right_pressure = 0;
-  back_left_pressure = 0;
-  back_right_pressure = 0;
+  front_left_pressure = 35;
+  front_right_pressure = 35;
+  back_left_pressure = 35;
+  back_right_pressure = 35;
   front_left_lcd->display(front_left_pressure);
   front_right_lcd->display(front_right_pressure);
   back_left_lcd->display(back_left_pressure);
@@ -98,6 +98,18 @@ void TirePressure::reset(){
     else{
        back_right->setPixmap(low_pressure_icon);
     }
+}
+
+void TirePressure::increasePressureNum(){
+    front_left_pressure+=1;
+//    front_right_pressure++;
+//    back_left_pressure++;
+//    back_right_pressure++;
+//    front_left_lcd->display(12);
+//    front_right_lcd->display(front_right_pressure);
+//    back_left_lcd->display(back_left_pressure);
+//    back_right_lcd->display(back_right_pressure);
+///
 }
 
 void TirePressure::increasePressure(tires tire) {
