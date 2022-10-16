@@ -10,6 +10,7 @@ public:
   void setup(QLabel *, QLCDNumber *, uint16_t, uint16_t);
   void decrease_distance(uint8_t);
   void increase_distance(uint8_t);
+  void reset();
   ~Distance() {}
 
 private:

@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   battery.setup(ui->battery, ui->range_label, ui->low_battery_label, ui->battery_label, ui->range, ui->distance_label, ui->battery_line_1, ui->battery_line_2, ui->battery_line_3, ui->battery_line_4, screen_height, screen_width);
 
   timer = new QTimer();
-  blink = false;
+  blink = true;
   connect(timer, SIGNAL(timeout()), this, SLOT(gather_info()));
   timer->start(500);
 
@@ -146,6 +146,8 @@ void MainWindow::gather_info() {
 void MainWindow::update_speed(){
     if (mseconds >=0 && mseconds < 65){
         speed.increase_speed(1);
+        distance.increase_distance(1);
+        battery.increase_battery(2);
 //        tire.increasePressure(FRONT_LEFT);
 //        tire.increasePressure(FRONT_RIGHT);
 //        tire.increasePressure(BACK_LEFT);
@@ -154,7 +156,8 @@ void MainWindow::update_speed(){
 
     if (mseconds == 75){
         speed.reset();
-//        tire.reset();
+        distance.reset();
+        battery.reset();
     }
 
     mseconds += 1;

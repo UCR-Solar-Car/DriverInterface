@@ -1,6 +1,6 @@
 #include "../headers/battery.h"
 
-Battery::Battery() : battery_val(100) {}
+Battery::Battery() : battery_val(0) {}
 
 void Battery::setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *low_battery_label_ptr, QLabel *battery_label_ptr, QLCDNumber *range_ptr, QLabel *distance_label_ptr, QFrame *battery_line_1_ptr, QFrame *battery_line_2_ptr, QFrame *battery_line_3_ptr, QFrame *battery_line_4_ptr, uint16_t height, uint16_t width)
 {
@@ -78,6 +78,12 @@ void Battery::decrease_battery(uint8_t val)
 }
 
 void Battery::reset(){
+    battery_val = 100;
+    battery->setValue(battery_val);
+    battery->update();
+    range_val += EFFICIENCY_CONSTANT;
+    range->display(uint8_t(range_val));
+    check_range();
     off(LOW_BATTERY);
     off(BATTERY_FAULT);
 }
