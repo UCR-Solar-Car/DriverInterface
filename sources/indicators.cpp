@@ -13,8 +13,8 @@ void Indicators::setup(QLabel *left_indicator_ptr, QLabel *right_indicator_ptr, 
   left_indicator->resize(100, 100);
   right_indicator->resize(100, 100);
 
-  left_indicator->move(0, height / 2 - left_indicator->height() / 2);
-  right_indicator->move(width - right_indicator->width(), height / 2 - right_indicator->height() / 2);
+  left_indicator->move(0, height * .05);
+  right_indicator->move(width - right_indicator->width(), height * .05);
 
   left_icon = QPixmap(":/icons/left.png");
   right_icon = QPixmap(":/icons/right.png");
