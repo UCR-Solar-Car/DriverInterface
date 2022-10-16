@@ -48,20 +48,20 @@ void TirePressure::setup(QLabel *front_left,QLabel *front_right,QLabel *back_lef
   front_left->resize(150, 150);
   front_right->resize(150, 150);
 
-  front_left->move(width * 55 / 100, height * 53 / 100);
+  front_left->move(width * 60 / 100, height * 53 / 100);
   back_left->move(front_left->x(), front_left->y() + height * 20 / 100);
-  back_right->move(back_left->x() + width * 0.25, back_left->y());
-  front_right->move(front_left->x() + width * 0.25, front_left->y());
+  back_right->move(back_left->x() + width * 0.21, back_left->y());
+  front_right->move(front_left->x() + width * 0.21, front_left->y());
 
   front_left_lcd->resize(150, 150);
   front_right_lcd->resize(150, 150);
   back_left_lcd->resize(150, 150);
   back_right_lcd->resize(150, 150);
 
-  front_left_lcd->move(width * 50 / 100, height * 52 / 100);
+  front_left_lcd->move(width * 55 / 100, height * 52 / 100);
   back_left_lcd->move(front_left_lcd->x(), front_left_lcd->y() + height * 20 / 100);
-  back_right_lcd->move(back_left_lcd->x() + width * 25 / 100, back_left_lcd->y());
-  front_right_lcd->move(front_left_lcd->x() + width * 25 / 100, front_left_lcd->y());
+  back_right_lcd->move(back_left_lcd->x() + width * 20 / 100, back_left_lcd->y());
+  front_right_lcd->move(front_left_lcd->x() + width * 20 / 100, front_left_lcd->y());
 }
 
 void TirePressure::increasePressure(tires tire) {
