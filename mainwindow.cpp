@@ -119,6 +119,8 @@ void MainWindow::gather_info() {
 
   blink = !blink;
   seconds += 1;
+
+  std::cout << "Current Battery Output: " << digitalRead(0) << std::endl;
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
