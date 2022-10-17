@@ -120,7 +120,7 @@ void MainWindow::gather_info() {
 
   blink = !blink;
   seconds += 1;
-
+    pinMode(0, INPUT);
   std::cout << "Current Battery Output: " << digitalRead(0) << std::endl;
 }
 
