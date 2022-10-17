@@ -121,7 +121,9 @@ void MainWindow::gather_info() {
   blink = !blink;
   seconds += 1;
     pinMode(0, INPUT);
-  std::cout << "Current Battery Output: " << digitalRead(0) << std::endl;
+    pinMode(1, INPUT);
+  std::cout << "Current Pin 0 Output: " << digitalRead(0) << std::endl;
+  std::cout << "Current Pin 1 Output: " << digitalRead(1) << std::endl;
 }
 
 void MainWindow::on_parkingSignalON_clicked() { gear.switch_gears(PARK); }
