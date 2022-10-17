@@ -43,14 +43,39 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   tire.setup(ui->front_left, ui->front_right, ui->back_left, ui->back_right,
              ui->front_left_lcd, ui->front_right_lcd, ui->back_left_lcd, ui->back_right_lcd, screen_height, screen_width);
 
+  timer2 = new QTimer();
+  connect(timer2, SIGNAL(timeout()), this, SLOT(update_speed()));
+  timer2->start(65);
+
+//  timer3 = new QTimer();
+//  connect(timer3, SIGNAL(timeout()),this, SLOT(update_tires()));
+//  timer3->start(500);
+
   move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
   seconds = 0;
+  mseconds = 0;
+  xseconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::gather_info() {
+
+  if (seconds == 9){
+      lights.reset();
+      motors.reset();
+      battery.reset();
+      horn.horn_off();
+      indicators.hazard_off();
+      gear.cruise_off();
+
+  }
+
+  if (seconds >= 2 && seconds <= 8 && seconds % 2 == 0){
+      gear.reset();
+  }
+
 
   if (indicators.get_right_indicator_state() == OFF && indicators.get_left_indicator_state() == ON && blink)
     indicators.left_on();
@@ -64,9 +89,41 @@ void MainWindow::gather_info() {
   if (!blink)
     indicators.off();
 
-  if (seconds == 2)
+
+  if (seconds == 2){
     ui->stackedWidget->setCurrentIndex(0);
+  }
 
   blink = !blink;
   seconds += 1;
 }
+
+void MainWindow::update_speed(){
+    if (mseconds >=0 && mseconds < 65){
+        speed.increase_speed(1);
+        distance.increase_distance(1);
+        battery.increase_battery(2);
+    }
+
+    if (mseconds == 75){
+        speed.reset();
+        distance.reset();
+        battery.reset();
+    }
+
+    mseconds += 1;
+}
+
+//void MainWindow::update_tires(){
+//    if (xseconds >= 0 && xseconds < 40){
+//        tire.increasePressureNum();
+//    }
+
+//    xseconds += 1;
+
+//    if (xseconds == 40){
+//        tire.reset();
+//    }
+
+//}
+

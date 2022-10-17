@@ -18,10 +18,15 @@ void Motor::on(warnings warning)
     motor_label->setPixmap(motor_fault);
 }
 
+void Motor::reset(){
+    off(MOTOR_FAULT);
+
+}
+
 void Motor::off(warnings warning)
 {
   if (warning == MOTOR_FAULT)
     motor_label->setText(" ");
-  if (warning == MOTOR_FAULT)
-    motor_label->setPixmap(motor_fault);
+//  if (warning == MOTOR_FAULT)
+//    motor_label->setPixmap(motor_fault);
 }

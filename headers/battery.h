@@ -16,6 +16,7 @@ public:
   void check_range();
   void on(warnings warning);
   void off(warnings warning);
+  void reset();
   ~Battery(){};
 
 private:

@@ -16,7 +16,12 @@ void Lights::setup(QLabel *day_lights_ptr, QLabel *night_lights_ptr, uint16_t wi
   night_lights->resize(width * 10 / 100, width * 10 / 100);
   night_lights->move((width - (width * ICON_COUNT) / 10) / 2 + (night_lights->width() * NIGHT_LIGHTS_ICON), height*0.07);
   night_icon = QPixmap(":/icons/night.png");
-  night_on();
+  day_lights->setPixmap(day_icon);
+  night_lights->setPixmap(night_icon);
+}
+
+void Lights::reset(){
+    off();
 }
 
 void Lights::day_on()

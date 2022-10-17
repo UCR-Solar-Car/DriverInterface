@@ -25,9 +25,9 @@ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
-
 private slots:
-void gather_info();
+  void gather_info();
+
 
 private:
   Ui::MainWindow *ui;
@@ -39,9 +39,13 @@ private:
   Distance distance;
   Horn horn;
   QTimer *timer;
+  QTimer *timer2;
+  //QTimer *timer3;
   bool blink;
   Gears gear;
   TirePressure tire;
   uint16_t seconds;
+  uint16_t mseconds;
+  //uint16_t xseconds;
 };
 #endif // MAINWINDOW_H

@@ -17,16 +17,30 @@ void Gears::setup(QLabel* park_label_ptr, QLabel* cruise_control_label_ptr, uint
 
 
   park_label->resize(100, 100);
+
   park_label->move(width / 2 - park_label->width() / 2, height *.95 - park_label->height() );
   park_label->setPixmap(drive);
   cruise_control_label->setText("");
+  gear = PARK;
   cruise_on();
+}
+
+void Gears::reset(){
+    if (gear == PARK)
+        switch_gears(DRIVE);
+    else if (gear == DRIVE)
+        switch_gears(NEUTRAL);
+    else if (gear == NEUTRAL)
+        switch_gears(REVERSE);
+    else {
+        switch_gears(PARK);
+    }
+
 }
 
 void Gears::switch_gears(gears state) {
   if (state == PARK) {
     gear = state;
-
     park_label->setPixmap(park);
 
   } else if (state == DRIVE) {
@@ -41,7 +55,6 @@ void Gears::switch_gears(gears state) {
 
   } else if (state == REVERSE) {
     gear = state;
-
     park_label->setPixmap(reverse);
   }
   cruise_off();
@@ -58,5 +71,5 @@ void Gears::cruise_on() {
 
 void Gears::cruise_off() {
   cruise = OFF;
-  cruise_control_label->setText("");
+  cruise_control_label->setText(" ");
 }
