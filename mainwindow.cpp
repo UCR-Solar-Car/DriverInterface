@@ -95,13 +95,13 @@ void MainWindow::gather_info() {
   }
 
   if(analogRead(1) >= 0 && analogRead(1) <= 256)
-      park_label->setPixmap(park);
+      switch_gears(PARK);
   else if(analogRead(1) >= 257 && analogRead(1) <= 512)
-      park_label->setPixmap(drive);
+      switch_gears(DRIVE);
   else if(analogRead(1) >= 513 && analogRead(1) <= 768)
-      park_label->setPixmap(neutral);
+      switch_gears(NEUTRAL);
   else
-      park_label->setPixmap(reverse);
+      switch_gears(REVERSE);
 
   blink = !blink;
   seconds += 1;
