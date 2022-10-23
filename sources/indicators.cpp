@@ -21,6 +21,10 @@ void Indicators::setup(QLabel *left_indicator_ptr, QLabel *right_indicator_ptr, 
   hazard_on();
 }
 
+//void Indicators::reset(){
+//    hazard_on();
+//}
+
 void Indicators::left_on()
 {
   left = ON;

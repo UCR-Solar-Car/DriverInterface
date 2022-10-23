@@ -19,7 +19,7 @@ public:
   states get_right_indicator_state() const;
   states get_left_indicator_state() const;
   void off();
-
+  void reset();
 private:
   states right;
   states left;

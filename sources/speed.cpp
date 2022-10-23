@@ -1,6 +1,6 @@
 #include "../headers/speed.h"
 
-Speed::Speed() : speed_value(25) {}
+Speed::Speed() : speed_value(0) {}
 
 
 void Speed::setup(QLCDNumber *speed, QLabel *mph, uint16_t height, uint16_t width) {
@@ -20,6 +20,11 @@ void Speed::increase_speed(uint8_t value) {
     this->speed_value += value;
     speed->display(speed_value);
   }
+}
+
+void Speed::reset(){
+    speed_value = 0;
+    speed->display(speed_value);
 }
 
 void Speed::decrease_speed(uint8_t value) {
