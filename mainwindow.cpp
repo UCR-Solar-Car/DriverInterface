@@ -94,11 +94,13 @@ void MainWindow::gather_info() {
     ui->stackedWidget->setCurrentIndex(0);
   }
 
-  if(analogRead(1) >= 0 && analogRead(1) <= 256)
+  uint16_t gear_pin = analogRead(1);
+
+  if(gear_pin >= 0 && gear_pin <= 256)
       switch_gears(PARK);
-  else if(analogRead(1) >= 257 && analogRead(1) <= 512)
+  else if(gear_pin >= 257 && gear_pin <= 512)
       switch_gears(DRIVE);
-  else if(analogRead(1) >= 513 && analogRead(1) <= 768)
+  else if(gear_pin >= 513 && gear_pin <= 768)
       switch_gears(NEUTRAL);
   else
       switch_gears(REVERSE);
