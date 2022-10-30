@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
+#include <wiringPi.h>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -92,6 +93,14 @@ void MainWindow::gather_info() {
 
   if (seconds == 2){
     ui->stackedWidget->setCurrentIndex(0);
+  }
+
+  uint16_t indicators_pin = digitalRead(3);
+  if(indicators_pin == 1){
+      hazard_on();
+  }
+  else{
+      hazard_off();
   }
 
   blink = !blink;
