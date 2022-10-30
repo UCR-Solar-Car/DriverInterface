@@ -94,6 +94,14 @@ void MainWindow::gather_info() {
     ui->stackedWidget->setCurrentIndex(0);
   }
 
+  uint16_t battery_pin = digitalRead(5);
+  if(battery_pin == 1){
+      increase_battery();
+  }
+  else{
+      decrease_battery();
+  }
+
   blink = !blink;
   seconds += 1;
 }

@@ -1,7 +1,7 @@
 #include "headers/background.h"
 #include "mainwindow.h"
 
-// #include <wiringPi.h>
+#include <wiringPi.h>
 
 #include <QApplication>
 #include <QStyleFactory>
