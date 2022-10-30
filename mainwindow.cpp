@@ -95,13 +95,15 @@ void MainWindow::gather_info() {
     ui->stackedWidget->setCurrentIndex(0);
   }
 
-  uint16_t indicators_pin = digitalRead(3);
-  if(indicators_pin == 1){
-      hazard_on();
-  }
-  else{
-      hazard_off();
-  }
+  uint16_t indicators_pin = analogRead(3);
+  if(indicators_pin >= 0 && indicators_pin <= 256)
+        left_on();
+    else if(indicators_pin >= 257 && indicators_pin <= 512)
+        right_on();
+    else if(indicators_pin >= 513 && indicators_pin <= 768)
+        hazard_on();
+    else
+        hazard_off();
 
   blink = !blink;
   seconds += 1;
