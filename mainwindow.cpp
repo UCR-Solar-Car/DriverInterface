@@ -106,10 +106,19 @@ void MainWindow::gather_info() {
   else
       switch_gears(REVERSE);
 
+  uint16_t battery_pin = digitalRead(5);
+  if(battery_pin == 1){
+      increase_battery();
+  }
+  else{
+      decrease_battery();
+  }
+
   if (digitalRead(2)) 
     horn.horn_on();
   else
     horn.horn_off();
+
 
   blink = !blink;
   seconds += 1;
