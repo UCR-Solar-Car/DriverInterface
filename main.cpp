@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-  // wiringPiSetup();
+  wiringPiSetup();
   Background b;
   b.dark_theme();
   QApplication a(argc, argv);

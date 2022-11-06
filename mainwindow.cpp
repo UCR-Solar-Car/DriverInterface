@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
+#include <wiringPi.h>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -101,6 +102,12 @@ void MainWindow::gather_info() {
   else{
       decrease_battery();
   }
+  
+  if (digitalRead(2)) 
+    horn.horn_on();
+  else
+    horn.horn_off();
+
 
   blink = !blink;
   seconds += 1;
