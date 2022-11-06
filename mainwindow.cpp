@@ -56,7 +56,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
-  xseconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
