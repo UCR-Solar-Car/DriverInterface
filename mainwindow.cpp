@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
+#include <wiringPi.h>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -55,7 +56,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
-  xseconds = 0;
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -93,6 +93,20 @@ void MainWindow::gather_info() {
   if (seconds == 2){
     ui->stackedWidget->setCurrentIndex(0);
   }
+
+  uint16_t battery_pin = digitalRead(5);
+  if(battery_pin == 1){
+      increase_battery();
+  }
+  else{
+      decrease_battery();
+  }
+  
+  if (digitalRead(2)) 
+    horn.horn_on();
+  else
+    horn.horn_off();
+
 
   blink = !blink;
   seconds += 1;

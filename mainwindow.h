@@ -27,6 +27,7 @@ public:
 
 private slots:
   void gather_info();
+  void update_speed();
 
 
 private:
