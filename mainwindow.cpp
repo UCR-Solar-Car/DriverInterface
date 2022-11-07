@@ -56,6 +56,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
+
+  pinMode(1, INPUT);
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -94,6 +97,17 @@ void MainWindow::gather_info() {
     ui->stackedWidget->setCurrentIndex(0);
   }
 
+  uint16_t gear_pin = analogRead(1);
+
+  if(gear_pin >= 0 && gear_pin <= 256)
+      gear.switch_gears(PARK);
+  else if(gear_pin >= 257 && gear_pin <= 512)
+      gear.switch_gears(DRIVE);
+  else if(gear_pin >= 513 && gear_pin <= 768)
+      gear.switch_gears(NEUTRAL);
+  else
+      gear.switch_gears(REVERSE);
+
   uint16_t battery_pin = digitalRead(5);
   if(battery_pin == 1){
       battery.increase_battery(1);
@@ -101,7 +115,7 @@ void MainWindow::gather_info() {
   else{
       battery.decrease_battery(1);
   }
-  
+
   if (digitalRead(2)) 
     horn.horn_on();
   else
