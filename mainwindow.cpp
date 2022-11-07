@@ -96,10 +96,10 @@ void MainWindow::gather_info() {
 
   uint16_t battery_pin = digitalRead(5);
   if(battery_pin == 1){
-      increase_battery();
+      battery.increase_battery();
   }
   else{
-      decrease_battery();
+      battery.decrease_battery();
   }
   
   if (digitalRead(2)) 
