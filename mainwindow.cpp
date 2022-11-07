@@ -57,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   seconds = 0;
   mseconds = 0;
 
+  pinMode(3, INPUT);
   pinMode(1, INPUT);
 
 }
@@ -97,6 +98,17 @@ void MainWindow::gather_info() {
     ui->stackedWidget->setCurrentIndex(0);
   }
 
+
+  uint16_t indicators_pin = analogRead(3);
+  if(indicators_pin >= 0 && indicators_pin <= 256)
+        indicators.left_on();
+    else if(indicators_pin >= 257 && indicators_pin <= 512)
+        indicators.right_on();
+    else if(indicators_pin >= 513 && indicators_pin <= 768)
+        indicators.hazard_on();
+    else
+        indicators.hazard_off();
+
   uint16_t gear_pin = analogRead(1);
 
   if(gear_pin >= 0 && gear_pin <= 256)
@@ -107,6 +119,7 @@ void MainWindow::gather_info() {
       gear.switch_gears(NEUTRAL);
   else
       gear.switch_gears(REVERSE);
+
 
   uint16_t battery_pin = digitalRead(5);
   if(battery_pin == 1){
