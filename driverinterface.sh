@@ -8,7 +8,6 @@ if [[ ${res} =~ 'Already' ]]
 then
     echo 'No updates have been made :)'
 else
-  done
   qmake DriverInterface.pro
   make
 fi

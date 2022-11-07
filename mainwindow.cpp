@@ -56,7 +56,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
+
  pinMode(3, INPUT);
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -107,10 +109,10 @@ void MainWindow::gather_info() {
 
   uint16_t battery_pin = digitalRead(5);
   if(battery_pin == 1){
-      increase_battery();
+      battery.increase_battery(1);
   }
   else{
-      decrease_battery();
+      battery.decrease_battery(1);
   }
   
   if (digitalRead(2)) 
