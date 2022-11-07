@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
-  xseconds = 0;
+ pinMode(3, INPUT);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -97,13 +97,13 @@ void MainWindow::gather_info() {
 
   uint16_t indicators_pin = analogRead(3);
   if(indicators_pin >= 0 && indicators_pin <= 256)
-        left_on();
+        indicators.left_on();
     else if(indicators_pin >= 257 && indicators_pin <= 512)
-        right_on();
+        indicators.right_on();
     else if(indicators_pin >= 513 && indicators_pin <= 768)
-        hazard_on();
+        indicators.hazard_on();
     else
-        hazard_off();
+        indicators.hazard_off();
 
   uint16_t battery_pin = digitalRead(5);
   if(battery_pin == 1){
