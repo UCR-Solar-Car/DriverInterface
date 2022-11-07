@@ -56,7 +56,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   seconds = 0;
   mseconds = 0;
+
   pinMode(1, INPUT);
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
