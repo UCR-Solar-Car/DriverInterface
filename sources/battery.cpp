@@ -4,6 +4,7 @@ Battery::Battery() : battery_val(0) {}
 
 void Battery::setup(QProgressBar *battery_ptr, QLabel *range_label_ptr, QLabel *low_battery_label_ptr, QLabel *battery_label_ptr, QLCDNumber *range_ptr, QLabel *distance_label_ptr, QFrame *battery_line_1_ptr, QFrame *battery_line_2_ptr, QFrame *battery_line_3_ptr, QFrame *battery_line_4_ptr, uint16_t height, uint16_t width)
 {
+
   battery = battery_ptr;
   range_label = range_label_ptr;
   low_battery_label = low_battery_label_ptr;
