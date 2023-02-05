@@ -13,12 +13,14 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
+namespace Ui
+{
+  class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
   Q_OBJECT
 
 public:
@@ -27,8 +29,7 @@ public:
 
 private slots:
   void gather_info();
-  void update_speed();
-
+  // void update_speed();
 
 private:
   Ui::MainWindow *ui;
@@ -41,12 +42,12 @@ private:
   Horn horn;
   QTimer *timer;
   QTimer *timer2;
-  //QTimer *timer3;
+  // QTimer *timer3;
   bool blink;
   Gears gear;
   TirePressure tire;
   uint16_t seconds;
   uint16_t mseconds;
-  //uint16_t xseconds;
+  // uint16_t xseconds;
 };
 #endif // MAINWINDOW_H
