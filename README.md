@@ -4,7 +4,7 @@ Welcome to the Driver Interface for UCR Solar Car 2023! The driver interface is 
 interactive GUI display to display various kinds of system critical information. Check out the [Wiki](https://github.com/UCR-Solar-Car/DriverInterface/wiki) page for 
 more information! 
 
-## Software Requirments/Regulations
+## Software Requirements/Regulations
 - [ ] 11.7 Radios/Communication – Driver in radio contact with team, hands free
 - [ ] 9.8 Data logger – position for exposure to sky and fixed in position
 - [ ] 8.2.C Supplemental Batteries[Allowed for] – radios, meters, driver fan, main power switch, horn only, BPS momentarily, fans in BPS trip, BPS Strobe, BPS Fault Driver Indicator
