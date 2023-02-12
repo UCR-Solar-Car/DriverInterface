@@ -56,8 +56,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
   seconds = 0;
   // mseconds = 0;
 
-  pinMode(3, INPUT);
+  pinMode(0, INPUT);
   pinMode(1, INPUT);
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
+  pinMode(4, INPUT);
+  pinMode(5, INPUT);
+  pinMode(6, INPUT);
+  pinMode(7, INPUT);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -148,6 +154,12 @@ void MainWindow::gather_info()
     else
       horn.horn_off();
   }
+
+  for (int i = 0; i <= 7; i++)
+  {
+    std::cout << "\"" << i << "\": " << i << ", ";
+  }
+  std::cout << std::endl;
 }
 
 // void MainWindow::update_speed()
